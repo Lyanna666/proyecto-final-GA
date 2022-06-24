@@ -1,0 +1,61 @@
+:root {
+  --backgroundColor: #dedede;
+  --backgroudColorLogin: #fafafa;
+  --base-space: 1.5rem;
+}
+
+.login-container {
+  width: 100%;
+  padding: var(--base-space);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--backgroundColor);
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  padding: var(--base-space);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--backgroudColorLogin);
+  border-radius: 5%;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.social ul li {
+  list-style: none;
+  margin: 0 10px;
+  display: inline;
+}
+
+.social ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.terms p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
