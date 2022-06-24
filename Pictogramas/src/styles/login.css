@@ -14,7 +14,7 @@
 }
 
 .container {
-  width: 50%;
+  width: 20rem;
   margin: 0 auto;
   padding: var(--base-space);
   height: 100%;
@@ -68,6 +68,11 @@ input:hover {
 .register {
   border-top: 0.1rem rgb(212, 212, 212) solid;
   width: 100%;
+}
+
+.terms {
+  width: 50rem;
+  margin: 0 auto;
 }
 
 .terms p {
