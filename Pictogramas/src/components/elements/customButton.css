@@ -1,0 +1,70 @@
+.custom-button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: fit-content;
+  font-size: 1.1rem;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 2px 2px 6px grey;
+  transition: 0.25s;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Button Colors */
+.blue {
+  background-color: #0066ff;
+}
+.green {
+  background-color: #00ba78;
+}
+.red {
+  background-color: #db3236;
+}
+
+/* Button Effects */
+.button-container button.custom-button.blue:hover {
+  cursor: pointer;
+  background-color: #2b5294;
+  box-shadow: 1px 1px 10px grey;
+}
+.button-container button.custom-button.green:hover {
+  cursor: pointer;
+  background-color: #298039;
+  box-shadow: 1px 1px 10px grey;
+}
+.button-container button.custom-button.red:hover {
+  cursor: pointer;
+  background-color: #9e2427;
+  box-shadow: 1px 1px 10px grey;
+}
+
+.button-container button.custom-button.blue:disabled {
+  cursor: pointer;
+  background-color: #2b5294;
+  color: lightgray;
+}
+.button-container button.custom-button.green:disabled {
+  cursor: pointer;
+  background-color: #298039;
+  color: lightgray;
+}
+.button-container button.custom-button.red:disabled {
+  cursor: pointer;
+  background-color: #9e2427;
+  color: lightgray;
+}
+
+/* Button Size */
+.small {
+  padding: 5px 10px 5px 10px;
+}
+.medium {
+  padding: 10px 20px 10px 20px;
+}
+.large {
+  padding: 20px 30px 20px 30px;
+}
+.xlarge {
+  padding: 30px 40px 30px 40px;
+}
