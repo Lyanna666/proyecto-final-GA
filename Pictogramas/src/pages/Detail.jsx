@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
-import Header from '../components/header';
+import Header from '../components/Header/header';
 
 const Detail = () => {
   let { id } = useParams();

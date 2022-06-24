@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
-import Header from '../components/header';
+import Header from '../components/Header/header';
 import Pictograma from '../components/pictograma';
 
 const Dashboard = () => {
