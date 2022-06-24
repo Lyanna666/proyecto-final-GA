@@ -27,3 +27,16 @@ export const LOGIN_TERMS =
   'Al registrarte, aceptas nuestras condiciones de servicio y nuestra política de privacidad';
 export const LOGIN_TERMS_LINK = 'Condiciones de servicio';
 export const LOGIN_REGISTER_BUTTON = 'Registrarse';
+
+/* Sign up TEXT */
+export const SIGNUP_TITLE = 'Regístrate con tu correo electrónico';
+export const SIGNUP_EMAIL = 'Correo electrónico';
+export const SIGNUP_PASSWORD = 'Contraseña';
+export const SIGNUP_CONFIRM_PASSWORD = 'Confirmar contraseña';
+export const SIGNUP_BUTTON = 'Registrarse';
+export const SIGNUP_ERROR = 'Error al registrarse';
+export const SIGNUP_SOCIAL = 'O registrate con';
+export const SIGNUP_NAME = 'Nombre';
+export const SIGNUP_SURNAME = 'Apellido';
+export const LOGIN_SINGUP = '¿Ya tienes una cuenta?';
+export const LOGIN_SINGUP_ACTION = 'Iniciar sesión';
