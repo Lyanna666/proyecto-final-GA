@@ -4,7 +4,7 @@ import CustomButton from '../components/elements/customButton';
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
 // Hojas de estilo
-import '../styles/login.css';
+import '../styles/registrer.css';
 // Componente Header
 import Header from '../components/header';
 
@@ -32,9 +32,9 @@ const Login = (props) => {
   return (
     <>
       <Header />
-      <div className="login-container">
+      <div className="box-container">
         <div className="container">
-          <div className="login">
+          <div className="registrer">
             <h1> {props.title} </h1>
             <p>{props.language.SIGNUP_TITLE}</p>
             <form>
@@ -103,6 +103,7 @@ const Login = (props) => {
               size="small"
               /* onClick={props.changeLanguage} */
             />
+            <Link to={'/login'}>Ir a Login temporal</Link>
           </div>
         </div>
         <div className="terms">

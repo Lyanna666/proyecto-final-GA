@@ -32,7 +32,7 @@ const Login = (props) => {
   return (
     <>
       <Header />
-      <div className="login-container">
+      <div className="box-container">
         <div className="container">
           <div className="login">
             <h1> {props.title} </h1>
@@ -80,7 +80,7 @@ const Login = (props) => {
               size="small"
               /* onClick={props.changeLanguage} */
             />
-            <Link to={'/registrer'}>Registrate</Link>
+            <Link to={'/registrer'}>ir a registrate temporal</Link>
           </div>
         </div>
         <div className="terms">
