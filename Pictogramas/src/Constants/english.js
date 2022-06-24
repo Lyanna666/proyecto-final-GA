@@ -16,10 +16,10 @@ export const HEADER_NAV_HOW_DOES_IT_WORKS = 'How does it works?';
 export const HEADER_NAV_LOGIN = 'Sign Up or \n Sign In';
 
 export const HEADER_LANGUAGE = '▾ English (EN)';
-export const HEADER_LANGUAGE = 'English (EN)';
 
 /* LOGIN TEXTX */
-export const LOGIN_TITLE = 'Login with your email';
+export const LOGIN_TITLE = 'Login';
+export const LOGIN_SUBTITLE = 'Login with your email';
 export const LOGIN_EMAIL = 'Email';
 export const LOGIN_PASSWORD = 'Password';
 export const LOGIN_FORGOT_PASSWORD = 'Forgot your password?';
@@ -33,7 +33,8 @@ export const LOGIN_TERMS_LINK = 'Terms of Service';
 export const LOGIN_REGISTER_BUTTON = 'Sign up';
 
 /* Sign up TEXT */
-export const SIGNUP_TITLE = 'Sign up with your email';
+export const SIGNUP_TITLE = 'Sign up';
+export const SIGNUP_SUBTITLE = 'Sign up with your email';
 export const SIGNUP_EMAIL = 'Email';
 export const SIGNUP_PASSWORD = 'Password';
 export const SIGNUP_CONFIRM_PASSWORD = 'Confirm password';

@@ -1,18 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import CustomButton from '../components/elements/customButton';
-// import styled from 'styled-components'; Si quereís usar esto lo descomentamos
-
-// Hojas de estilo
 import '../styles/registrer.css';
-// Componente Header
-import Header from '../components/header';
+
+import { useContext, React } from 'react';
+import { Link } from 'react-router-dom';
+
+import AppContext from '../AppContext';
+
+import CustomButton from '../components/elements/customButton';
+import Header from '../components/Header/header';
 
 // Iconos
 const socialIcons = [
   {
     name: 'Facebook',
-    src: 'https://www.upn.org/wp-content/uploads/2015/11/social_facebook_box_blue.png',
+    src:
+      'https://www.upn.org/wp-content/uploads/2015/11/social_facebook_box_blue.png',
   },
   {
     name: 'Twitter',
@@ -20,29 +21,33 @@ const socialIcons = [
   },
   {
     name: 'Instagram',
-    src: 'https://i0.wp.com/welcometoelmundo.com/wp-content/uploads/2018/02/instagram-2.png?ssl=1',
+    src:
+      'https://i0.wp.com/welcometoelmundo.com/wp-content/uploads/2018/02/instagram-2.png?ssl=1',
   },
   {
     name: 'Google',
-    src: 'https://infos-geek.com/wp-content/uploads/2020/10/activer-desactiver-ok-google-assistant4.png?ezimgfmt=rs:256x256/rscb78/ng:webp/ngcb78',
+    src:
+      'https://infos-geek.com/wp-content/uploads/2020/10/activer-desactiver-ok-google-assistant4.png?ezimgfmt=rs:256x256/rscb78/ng:webp/ngcb78',
   },
 ];
 
-const Login = (props) => {
+const Register = () => {
+  const context = useContext(AppContext);
+
   return (
     <>
       <Header />
       <div className="box-container">
         <div className="container">
           <div className="registrer">
-            <h1> {props.title} </h1>
-            <p>{props.language.SIGNUP_TITLE}</p>
+            <h1>{context.language.SIGNUP_TITLE}</h1>
+            <p>{context.language.SIGNUP_SUBTITLE}</p>
             <form>
               <label>
                 <input
                   type="text"
                   name="name"
-                  placeholder={props.language.SIGNUP_NAME}
+                  placeholder={context.language.SIGNUP_NAME}
                   required="required"
                 />
               </label>
@@ -50,14 +55,14 @@ const Login = (props) => {
                 <input
                   type="text"
                   name="surname"
-                  placeholder={props.language.SIGNUP_SURNAME}
+                  placeholder={context.language.SIGNUP_SURNAME}
                 />
               </label>
               <label>
                 <input
                   type="text"
                   name="username"
-                  placeholder={props.language.SIGNUP_EMAIL}
+                  placeholder={context.language.SIGNUP_EMAIL}
                   required="required"
                 />
               </label>
@@ -65,29 +70,28 @@ const Login = (props) => {
                 <input
                   type="password"
                   name="password"
-                  placeholder={props.language.SIGNUP_PASSWORD}
+                  placeholder={context.language.SIGNUP_PASSWORD}
                 />
               </label>
               <label>
                 <input
                   type="text"
                   name="confirmPassword"
-                  placeholder={props.language.SIGNUP_CONFIRM_PASSWORD}
+                  placeholder={context.language.SIGNUP_CONFIRM_PASSWORD}
                 />
               </label>
               <CustomButton
                 color="blue"
-                name={props.language.SIGNUP_BUTTON}
+                name={context.language.SIGNUP_BUTTON}
                 size="small"
-                /* onClick={props.changeLanguage} */
               />
             </form>
           </div>
-          <p>{props.language.SIGNUP_SOCIAL}</p>
+          <p>{context.language.SIGNUP_SOCIAL}</p>
           <div className="social">
             <div>
               <ul>
-                {socialIcons.map((icon) => (
+                {socialIcons.map(icon => (
                   <li key={icon.name}>
                     <img src={icon.src} alt={icon.name} />
                   </li>
@@ -95,21 +99,21 @@ const Login = (props) => {
               </ul>
             </div>
           </div>
-          <div className="login">
-            <p> {props.language.LOGIN_SINGUP} </p>
+          <div className="login-registrer">
+            <p> {context.language.LOGIN_SINGUP} </p>
             <CustomButton
               color="green"
-              name={props.language.LOGIN_SINGUP_ACTION}
+              name={context.language.LOGIN_SINGUP_ACTION}
               size="small"
-              /* onClick={props.changeLanguage} */
             />
+
             <Link to={'/login'}>Ir a Login temporal</Link>
           </div>
         </div>
         <div className="terms">
-          <p> {props.language.LOGIN_TERMS} </p>
+          <p> {context.language.LOGIN_TERMS} </p>
           <p>
-            <strong> {props.language.LOGIN_TERMS_LINK} </strong>
+            <strong> {context.language.LOGIN_TERMS_LINK} </strong>
           </p>
         </div>
       </div>
@@ -117,4 +121,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Register;
