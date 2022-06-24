@@ -36,12 +36,18 @@ const Login = (props) => {
             <p>{props.language.LOGIN_TITLE}</p>
             <form>
               <label>
-                {props.language.LOGIN_EMAIL}:
-                <input type="text" name="username" />
+                <input
+                  type="text"
+                  name="username"
+                  placeholder={props.language.LOGIN_EMAIL}
+                />
               </label>
               <label>
-                {props.language.LOGIN_PASSWORD}:
-                <input type="password" name="password" />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder={props.language.LOGIN_PASSWORD}
+                />
               </label>
               <CustomButton
                 color="blue"
