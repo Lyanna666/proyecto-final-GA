@@ -16,10 +16,10 @@ export const HEADER_NAV_HOW_DOES_IT_WORKS = '¿Cómo funciona?';
 export const HEADER_NAV_LOGIN = 'Regístrate o \nInicia sesión';
 
 export const HEADER_LANGUAGE = '▾ Español (ES)';
-export const HEADER_LANGUAGE = 'English (EN)';
 
 /* LOGIN TEXTX */
-export const LOGIN_TITLE = 'Inicia sesión con tu correo electrónico';
+export const LOGIN_TITLE = 'Login';
+export const LOGIN_SUBTITLE = 'Inicia sesión con tu correo electrónico';
 export const LOGIN_EMAIL = 'Correo electrónico';
 export const LOGIN_PASSWORD = 'Contraseña';
 export const LOGIN_FORGOT_PASSWORD = '¿Olvidaste tu contraseña?';
@@ -34,6 +34,7 @@ export const LOGIN_REGISTER_BUTTON = 'Registrarse';
 
 /* Sign up TEXT */
 export const SIGNUP_TITLE = 'Regístrate con tu correo electrónico';
+export const SIGNUP_SUBTITLE = 'Registro';
 export const SIGNUP_EMAIL = 'Correo electrónico';
 export const SIGNUP_PASSWORD = 'Contraseña';
 export const SIGNUP_CONFIRM_PASSWORD = 'Confirmar contraseña';
