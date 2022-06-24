@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Detail from './pages/Detail';
+import Registrer from './pages/Registrer';
 
 import * as constantsSpanish from './Constants/spanish';
 import * as constantsEnglish from './Constants/english';
@@ -39,7 +40,6 @@ const App = () => {
         <Route path="/dashboard/:id" element={<Detail />} />
       </Routes>
     </AppContext.Provider>
-  );
 };
 
 export default App;
