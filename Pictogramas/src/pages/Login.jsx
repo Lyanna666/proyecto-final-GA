@@ -1,10 +1,30 @@
-import { Link } from "react-router-dom";
-import CustomButton from "../components/elements/customButton";
-import "../styles/login.css";
+import { Link } from 'react-router-dom';
+import CustomButton from '../components/elements/customButton';
+import '../styles/login.css';
+
+import Header from '../components/header';
 
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
-import Header from "../components/header";
+// Iconos
+const icons = [
+  {
+    name: 'Facebook',
+    src: 'https://www.upn.org/wp-content/uploads/2015/11/social_facebook_box_blue.png',
+  },
+  {
+    name: 'Twitter',
+    src: 'https://lcsi.umh.es/docs/twitter/pajarito.png',
+  },
+  {
+    name: 'Instagram',
+    src: 'https://i0.wp.com/welcometoelmundo.com/wp-content/uploads/2018/02/instagram-2.png?ssl=1',
+  },
+  {
+    name: 'Google',
+    src: 'https://infos-geek.com/wp-content/uploads/2020/10/activer-desactiver-ok-google-assistant4.png?ezimgfmt=rs:256x256/rscb78/ng:webp/ngcb78',
+  },
+];
 const Login = (props) => {
   return (
     <>
@@ -35,26 +55,29 @@ const Login = (props) => {
           <div className="social">
             <div>
               <ul>
-                <li>
-                  <a href="/">Facebook</a>
-                </li>
-                <li>
-                  <a href="/">Twitter</a>
-                </li>
-                <li>
-                  <a href="/">Instagram</a>
-                </li>
-                <li>
-                  <a href="/">Google</a>
-                </li>
+                {icons.map((icon) => (
+                  <li key={icon.name}>
+                    <img src={icon.src} alt={icon.name} />
+                  </li>
+                ))}
               </ul>
             </div>
+          </div>
+          <div className="register">
+            <p> {props.language.LOGIN_REGISTER} </p>
+            <CustomButton
+              color="green"
+              name={props.language.LOGIN_REGISTER_BUTTON}
+              size="small"
+              /* onClick={props.changeLanguage} */
+            />
           </div>
         </div>
         <div className="terms">
           <p> {props.language.LOGIN_TERMS} </p>
-          <p> {props.language.LOGIN_TERMS_LINK} </p>
-          <Link to={"/"}> {props.language.HEADER_NAV_HOME} </Link>
+          <p>
+            <strong> {props.language.LOGIN_TERMS_LINK} </strong>
+          </p>
         </div>
       </div>
     </>
