@@ -4,7 +4,7 @@ import CustomButton from '../components/elements/customButton';
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
 // Hojas de estilo
-import '../styles/login.css';
+import '../styles/registrer.css';
 // Componente Header
 import Header from '../components/header';
 
@@ -34,33 +34,56 @@ const Login = (props) => {
       <Header />
       <div className="box-container">
         <div className="container">
-          <div className="login">
+          <div className="registrer">
             <h1> {props.title} </h1>
-            <p>{props.language.LOGIN_TITLE}</p>
+            <p>{props.language.SIGNUP_TITLE}</p>
             <form>
               <label>
                 <input
                   type="text"
+                  name="name"
+                  placeholder={props.language.SIGNUP_NAME}
+                  required="required"
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="surname"
+                  placeholder={props.language.SIGNUP_SURNAME}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
                   name="username"
-                  placeholder={props.language.LOGIN_EMAIL}
+                  placeholder={props.language.SIGNUP_EMAIL}
+                  required="required"
                 />
               </label>
               <label>
                 <input
                   type="password"
                   name="password"
-                  placeholder={props.language.LOGIN_PASSWORD}
+                  placeholder={props.language.SIGNUP_PASSWORD}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="confirmPassword"
+                  placeholder={props.language.SIGNUP_CONFIRM_PASSWORD}
                 />
               </label>
               <CustomButton
                 color="blue"
-                name={props.language.LOGIN_BUTTON}
+                name={props.language.SIGNUP_BUTTON}
                 size="small"
                 /* onClick={props.changeLanguage} */
               />
             </form>
           </div>
-          <p>{props.language.LOGIN_SOCIAL}</p>
+          <p>{props.language.SIGNUP_SOCIAL}</p>
           <div className="social">
             <div>
               <ul>
@@ -72,15 +95,15 @@ const Login = (props) => {
               </ul>
             </div>
           </div>
-          <div className="register">
-            <p> {props.language.LOGIN_REGISTER} </p>
+          <div className="login">
+            <p> {props.language.LOGIN_SINGUP} </p>
             <CustomButton
               color="green"
-              name={props.language.LOGIN_REGISTER_BUTTON}
+              name={props.language.LOGIN_SINGUP_ACTION}
               size="small"
               /* onClick={props.changeLanguage} */
             />
-            <Link to={'/registrer'}>ir a registrate temporal</Link>
+            <Link to={'/login'}>Ir a Login temporal</Link>
           </div>
         </div>
         <div className="terms">

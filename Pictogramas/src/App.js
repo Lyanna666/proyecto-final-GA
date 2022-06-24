@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Detail from './pages/Detail';
+import Registrer from './pages/Registrer';
 
 import * as constantsSpanish from './Constants/spanish';
 import * as constantsEnglish from './Constants/english';
@@ -27,7 +28,8 @@ const App = () => {
         path="/"
         element={<Home language={language} changeLanguage={changeLanguage} />}
       />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login language={language} />} />
+      <Route path="/registrer" element={<Registrer language={language} />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/dashboard/:id" element={<Detail />} />
     </Routes>
