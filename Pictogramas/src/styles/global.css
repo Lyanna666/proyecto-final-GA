@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+:root {
+  --base-space: 1.25rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+picture {
+  display: block;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+a,
+.link {
+  text-decoration: none;
+  color: var(--black);
+}
+
+a:hover,
+.link:hover {
+  color: var(--green);
+}
+
+/* He puesto esto para que todas las listas por defecto salgan sin el circulito y en una linea */
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+}
+
+.content {
+  max-width: 1400px;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+}

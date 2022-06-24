@@ -1,0 +1,100 @@
+header {
+  background-color: white;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+header li,
+header .link {
+  margin-right: 1rem;
+  font-weight: 400;
+}
+
+header a,
+header .link:first-of-type {
+  font-weight: 300;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+}
+
+header picture {
+  margin: 0 4rem;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+header button:hover {
+  color: var(--green);
+}
+
+header .link-login {
+  white-space: pre;
+  margin: 0 4rem 0 1rem;
+}
+
+.menu-languages li {
+  float: left;
+  position: relative;
+  padding: 0.3rem;
+}
+
+.menu-languages li:hover > ul {
+  display: block;
+}
+
+/* Sub-menu */
+.menu-languages ul {
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0.1rem;
+  display: none;
+  position: absolute;
+  top: 1.8rem;
+  left: 0;
+  z-index: 99999;
+  border-radius: 0.2rem;
+  border: 1px solid lightgray;
+}
+
+.menu-languages ul li {
+  float: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.menu-languages ul li {
+  padding: 1rem;
+  height: auto;
+  display: block;
+  white-space: nowrap;
+  float: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.menu-languages ul li:last-of-type {
+  border: none;
+}
+
+/* Esto dibuja la flecha de arriba */
+.menu-languages ul li:first-child button:after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  top: -9px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid lightgray;
+}

@@ -1,26 +1,2 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 100%;
-}
-
-:root {
-  --base-space: 1.25rem;
-}
-
-body {
-  font-family: sans-serif;
-  padding: 0 var(--base-space);
-}
-
-picture {
-  display: block;
-}
-
-img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
+@import url(./constans.css);
+@import url(./global.css);

@@ -4,7 +4,7 @@
   color: white;
   width: fit-content;
   font-size: 1.1rem;
-  padding: 10px 20px 10px 20px;
+  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
   box-shadow: 2px 2px 6px grey;
   transition: 0.25s;
   overflow: hidden;
@@ -13,45 +13,55 @@
 
 /* Button Colors */
 .blue {
-  background-color: #0066ff;
+  background-color: var(--blue);
 }
 .green {
-  background-color: #00ba78;
+  background-color: var(--green);
 }
 .red {
-  background-color: #db3236;
+  background-color: var(--red);
+}
+
+.blue-border {
+  border: 1px solid var(--blue);
+}
+.green-border {
+  border: 1px solid var(--green);
+}
+.red-border {
+  border: 1px solid var(--red);
 }
 
 /* Button Effects */
 .button-container button.custom-button.blue:hover {
   cursor: pointer;
-  background-color: #2b5294;
+  background-color: var(--dark-blue);
   box-shadow: 1px 1px 10px grey;
 }
 .button-container button.custom-button.green:hover {
   cursor: pointer;
-  background-color: #298039;
+  background-color: var(--dark-green);
   box-shadow: 1px 1px 10px grey;
 }
 .button-container button.custom-button.red:hover {
   cursor: pointer;
-  background-color: #9e2427;
+  background-color: var(--dark-red);
   box-shadow: 1px 1px 10px grey;
 }
 
 .button-container button.custom-button.blue:disabled {
   cursor: pointer;
-  background-color: #2b5294;
+  background-color: var(--dark-blue);
   color: lightgray;
 }
 .button-container button.custom-button.green:disabled {
   cursor: pointer;
-  background-color: #298039;
+  background-color: var(--dark-green);
   color: lightgray;
 }
 .button-container button.custom-button.red:disabled {
   cursor: pointer;
-  background-color: #9e2427;
+  background-color: var(--dark-red);
   color: lightgray;
 }
 
@@ -60,7 +70,7 @@
   padding: 5px 10px 5px 10px;
 }
 .medium {
-  padding: 10px 20px 10px 20px;
+  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
 }
 .large {
   padding: 20px 30px 20px 30px;

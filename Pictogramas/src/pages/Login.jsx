@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import CustomButton from '../components/elements/customButton';
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
+import Header from '../components/Header/header';
+
+const Login = props => {
 // Hojas de estilo
 import '../styles/login.css';
 // Componente Header
-import Header from '../components/header';
 
 // Iconos
 const socialIcons = [

@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
+import AppContext from './AppContext';
+
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -14,8 +16,15 @@ import * as constantsEnglish from './Constants/english';
 const App = () => {
   const [language, setLanguage] = useState(constantsSpanish);
 
-  function changeLanguage() {
-    if (language === constantsSpanish) {
+  const userSettings = {
+    language: language,
+    changeLanguage: changeLanguage,
+  };
+
+  function changeLanguage(event) {
+    console.log(event.target.id);
+
+    if (event.target.id === 'EN') {
       setLanguage(constantsEnglish);
     } else {
       setLanguage(constantsSpanish);
@@ -23,17 +32,14 @@ const App = () => {
   }
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={<Home language={language} changeLanguage={changeLanguage} />}
-      />
-      <Route path="/login" element={<Login language={language} />} />
-      <Route path="/registrer" element={<Registrer language={language} />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/dashboard/:id" element={<Detail />} />
-    </Routes>
-  );
+    <AppContext.Provider value={userSettings}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/:id" element={<Detail />} />
+      </Routes>
+    </AppContext.Provider>
 };
 
 export default App;
