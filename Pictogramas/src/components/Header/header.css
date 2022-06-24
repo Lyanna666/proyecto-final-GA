@@ -13,7 +13,8 @@ header .link {
   font-weight: 400;
 }
 
-header a {
+header a,
+header .link:first-of-type {
   font-weight: 300;
 }
 

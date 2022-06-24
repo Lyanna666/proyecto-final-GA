@@ -19,7 +19,9 @@ const Header = () => {
         </picture>
         <nav>
           <li>
-            <a href="#home">{context.language.HEADER_NAV_HOME}</a>
+            <Link className="link" to={'/'}>
+              {context.language.HEADER_NAV_HOME}
+            </Link>
           </li>
           <li>
             <a href="#how-does-it-works">
