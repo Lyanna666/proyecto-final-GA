@@ -21,12 +21,16 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <a href="#how-does-it-works">
+            {/* Esto tampoco funciona */}
+            {/* <Link className="link" to={'/#how-does-it-works'}>
+              {context.language.HEADER_NAV_HOW_DOES_IT_WORKS}
+            </Link> */}
+            <a href="/#how-does-it-works">
               {context.language.HEADER_NAV_HOW_DOES_IT_WORKS}
             </a>
           </li>
           <li>
-            <a href="#users">{context.language.HEADER_NAV_USERS}</a>
+            <a href="/#users">{context.language.HEADER_NAV_USERS}</a>
           </li>
         </nav>
       </div>
