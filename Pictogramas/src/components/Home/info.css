@@ -1,6 +1,7 @@
 .info {
-  background-color: #f8f4ef;
+  background-color: #eaeaea;
   padding: 1rem;
+  border-bottom: 0.06rem solid lightgray;
 }
 
 .info .content {

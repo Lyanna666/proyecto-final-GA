@@ -1,6 +1,6 @@
 :root {
-  --backgroundColor: #dedede;
-  --backgroudColorLogin: #fafafa;
+  --backgroundColor: #eaeaea;
+  --backgroudColorLogin: white;
   --base-space: 1.5rem;
 }
 
@@ -11,7 +11,7 @@
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--backgroundColor);
+  background-color: var(--backgroundGrayColor);
 }
 
 .container {
@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--backgroudColorLogin);
+  background-color: var(--white);
   border-radius: 2%;
   box-shadow: 0.2rem 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
 }
@@ -103,4 +103,10 @@ input:hover {
 .terms p:last-of-type {
   font-weight: 600;
   cursor: pointer;
+}
+
+.login-registrer a {
+  width: 100%;
+  display: block;
+  text-align: center;
 }
