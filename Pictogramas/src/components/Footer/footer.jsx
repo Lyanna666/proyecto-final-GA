@@ -13,19 +13,40 @@ const Footer = (props) => {
   const socialIcons = [
     {
       name: 'Facebook',
-      src: 'https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Facebook_svg-512.png',
+      src: 'http://assets.stickpng.com/thumbs/60fea6c83d624000048712b7.png',
     },
     {
       name: 'Twitter',
-      src: 'https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png',
+      src: 'https://icon-library.com/images/twitter-white-icon/twitter-white-icon-19.jpg',
     },
     {
       name: 'Instagram',
-      src: 'https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/600/Instagram_glyph_svg-512.png',
+      src: 'https://www.citypng.com/public/uploads/preview/-51609193615decnmgwyz7.png',
     },
     {
       name: 'Google',
-      src: 'https://cdn4.iconfinder.com/data/icons/picons-social/57/09-google-3-256.png',
+      src: 'https://icon-library.com/images/google-plus-icon-white-png/google-plus-icon-white-png-5.jpg',
+    },
+  ];
+
+  const footerText = [
+    {
+      title: 'TeAyuda',
+      content: 'Home',
+      conten2: 'Como funciona',
+      conten3: 'FAQs',
+    },
+    {
+      title: 'About Us',
+      content: ' Officia fugit dolorem sapiente repudiandae laboriosam.',
+      conten2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      conten3: 'Eveniet inventore, quasi mollitia.',
+    },
+    {
+      title: 'Contact Us',
+      content: ' Officia fugit dolorem sapiente repudiandae laboriosam.',
+      conten2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      conten3: 'Eveniet inventore, quasi mollitia.',
     },
   ];
 
@@ -34,63 +55,58 @@ const Footer = (props) => {
       <div className="container-footer">
         <div className="row">
           <div className="col-md-12">
-            <div className="about-us">
-              <h3>About Us</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque euismod, nisi eu aliquam consectetur, nisl nisi
-                consectetur nisl, eget aliquam nisi nisl eget aliquam.
-              </p>
-            </div>
-            <div className="follow-us">
-              <h3>Follow Us</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Facilis numquam nostrum, aperiam commodi, quis maxime quia
-                corporis veniam sunt natus sit a maiores voluptates praesentium
-                voluptate earum corrupti minus eligendi?
-              </p>
-            </div>
-            <div className="footer-logo">
-              <a href="/">
-                <img src="./Resources/logo-black.png" alt="logo" />
-              </a>
-              <div className="footer-social">
-                {socialIcons.map((icon) => (
-                  <a href="/" key={icon.name}>
-                    <img src={icon.src} alt={icon.name} />
-                  </a>
-                ))}
-              </div>
+            {footerText.map((item, index) => (
+              <>
+                <div className="about">
+                  <h3 key={index}>{item.title}</h3>
+                  <ul>
+                    <li key={index}>{item.content}</li>
+                    <li key={index}>{item.conten2}</li>
+                    <li key={index}>{item.conten3}</li>
+                  </ul>
+                </div>
+              </>
+            ))}
+          </div>
+          <div className="footer-logo">
+            <a href="/">
+              <img src="./Resources/logo_white.png" alt="logo" />
+            </a>
+            <div className="footer-social">
+              {socialIcons.map((icon) => (
+                <a href="/" key={icon.name}>
+                  <img src={icon.src} alt={icon.name} />
+                </a>
+              ))}
             </div>
           </div>
         </div>
-        <div className="copy-right">
-          <p>
-            {context.language.FOOTER_COPYRIGHT}{' '}
-            <a
-              href="https://github.com/Lyanna666"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Andrea Gonzalez
-            </a>{' '}
-            &#38;{' '}
-            <a
-              href="https://github.com/jacobo87"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Jacobo Azmani
-            </a>
-            .
-          </p>
-        </div>
-        <div className="made">
-          <p>
-            {context.language.FOOTER_MADE} <span>&#10084;</span>{' '}
-          </p>
-        </div>
+      </div>
+      <div className="copy-right">
+        <p>
+          {context.language.FOOTER_COPYRIGHT}{' '}
+          <a
+            href="https://github.com/Lyanna666"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Andrea Gonzalez
+          </a>{' '}
+          &#38;{' '}
+          <a
+            href="https://github.com/jacobo87"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Jacobo Azmani
+          </a>
+          .
+        </p>
+      </div>
+      <div className="made">
+        <p>
+          {context.language.FOOTER_MADE} <span>&#10084;</span>{' '}
+        </p>
       </div>
     </footer>
   );
