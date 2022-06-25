@@ -34,10 +34,24 @@ const Footer = (props) => {
       <div className="container-footer">
         <div className="row">
           <div className="col-md-12">
-            <div className="footer-logo">
-              <a href="/">
-                <img src="../../assets/logo-black.png" alt="logo" />
-              </a>
+            <div className="about-us">
+              <h3>About Us</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque euismod, nisi eu aliquam consectetur, nisl nisi
+                consectetur nisl, eget aliquam nisi nisl eget aliquam.
+              </p>
+            </div>
+            <div className="contact-us">
+              <h3>Contact Us</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque euismod, nisi eu aliquam consectetur, nisl nisi
+                consectetur nisl, eget aliquam nisi nisl eget aliquam.
+              </p>
+            </div>
+            <div className="follow-us">
+              <h3>Follow Us</h3>
               <div className="footer-social">
                 {socialIcons.map((icon) => (
                   <a href="/" key={icon.name}>
@@ -45,6 +59,11 @@ const Footer = (props) => {
                   </a>
                 ))}
               </div>
+            </div>
+            <div className="footer-logo">
+              <a href="/">
+                <img src="../../assets/logo-black.png" alt="logo" />
+              </a>
             </div>
           </div>
         </div>
