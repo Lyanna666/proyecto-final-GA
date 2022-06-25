@@ -1,0 +1,53 @@
+.error-div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.error-div h1 {
+  font-size: 1.4rem;
+  color: var(--black);
+  margin-top: 0;
+}
+
+.error-div > div {
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  padding: 0.5rem;
+  text-align: right;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.error-div > div > button {
+  border: none;
+  background-color: transparent;
+  color: var(--dark-red);
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error-div > div > button:hover {
+  color: var(--red);
+}
+
+.error-div > div > div {
+  text-align: center;
+  padding: 2rem;
+}
+
+.div-no-login p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 2rem;
+}

@@ -10,6 +10,7 @@ import CustomButton from '../components/elements/customButton';
 import Footer from '../components/Footer/footer';
 import Hero from '../components/Home/hero';
 import Info from '../components/Home/info';
+import Error from '../components/Error/error';
 
 const Home = () => {
   const context = useContext(AppContext);
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <>
+      {/* <Error /> Lo dejo comentado, lo puse aquí para ver como se veía*/}
       <Header />
       <main>
         <Hero />
