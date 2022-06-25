@@ -104,8 +104,6 @@ const Register = () => {
               name={context.language.LOGIN_SINGUP_ACTION}
               size="small"
             />
-
-            <Link to={'/login'}>Ir a Login temporal</Link>
           </div>
         </div>
         <div className="terms">

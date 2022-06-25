@@ -37,7 +37,9 @@ const Login = () => {
       <div className="box-container">
         <div className="container">
           <div className="login">
-            <h1> {context.language.LOGIN_TITLE} </h1>
+            <picture>
+              <img src="./Resources/logo-black.png" alt="logo" />
+            </picture>
             <p>{context.language.LOGIN_SUBTITLE}</p>
             <form>
               <label>
@@ -80,7 +82,6 @@ const Login = () => {
               name={context.language.LOGIN_REGISTER_BUTTON}
               size="small"
             />
-            <Link to={'/registrer'}>ir a registrate temporal</Link>
           </div>
         </div>
         <div className="terms">

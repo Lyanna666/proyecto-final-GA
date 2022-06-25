@@ -42,16 +42,19 @@ const Footer = (props) => {
                 consectetur nisl, eget aliquam nisi nisl eget aliquam.
               </p>
             </div>
-            <div className="contact-us">
-              <h3>Contact Us</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque euismod, nisi eu aliquam consectetur, nisl nisi
-                consectetur nisl, eget aliquam nisi nisl eget aliquam.
-              </p>
-            </div>
             <div className="follow-us">
               <h3>Follow Us</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Facilis numquam nostrum, aperiam commodi, quis maxime quia
+                corporis veniam sunt natus sit a maiores voluptates praesentium
+                voluptate earum corrupti minus eligendi?
+              </p>
+            </div>
+            <div className="footer-logo">
+              <a href="/">
+                <img src="./Resources/logo-black.png" alt="logo" />
+              </a>
               <div className="footer-social">
                 {socialIcons.map((icon) => (
                   <a href="/" key={icon.name}>
@@ -59,11 +62,6 @@ const Footer = (props) => {
                   </a>
                 ))}
               </div>
-            </div>
-            <div className="footer-logo">
-              <a href="/">
-                <img src="../../assets/logo-black.png" alt="logo" />
-              </a>
             </div>
           </div>
         </div>
