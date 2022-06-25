@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 import AppContext from '../AppContext';
 
 import Header from '../components/Header/header';
+import CustomButton from '../components/elements/customButton';
+import Footer from '../components/Footer/footer';
 import Hero from '../components/Home/hero';
 import Info from '../components/Home/info';
-import Footer from '../components/footer';
 
 const Home = () => {
   const context = useContext(AppContext);
