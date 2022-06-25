@@ -1,0 +1,71 @@
+.info {
+  background-color: #f8f4ef;
+  padding: 1rem;
+}
+
+.info .content {
+  margin: auto;
+}
+
+.info .content .div-info picture {
+  max-width: 3vw;
+
+  margin: auto;
+}
+
+.info .info-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.info-list li {
+  margin: 0.5rem;
+  flex-grow: 1;
+  width: 33%;
+}
+
+.info .div-info {
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0.01rem 0.01rem 0.3rem 0.03rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+  width: 100%;
+  height: 100%;
+}
+
+.section-users {
+  margin: auto;
+}
+
+.users-list {
+  background-color: white;
+  display: block;
+}
+
+.users-list li {
+  display: flex;
+  border-bottom: 0.064rem solid lightgray;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.div-users {
+  width: 70%;
+  margin: 1rem;
+}
+
+.users-list picture {
+  margin: 0.5rem;
+}
+
+.section-users a {
+  display: block;
+  text-align: center;
+  padding: 0.5rem 0.9rem;
+  margin: auto;
+  margin-top: 2rem;
+  border: 0.08rem solid var(--blue);
+  border-radius: 0.5rem;
+}

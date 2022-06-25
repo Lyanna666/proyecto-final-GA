@@ -3,16 +3,13 @@ import './header.css';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-// import styled from 'styled-components'; Si quereís usar esto lo descomentamos
-
 import AppContext from '../../AppContext';
 
 const Header = () => {
   const context = useContext(AppContext);
-  console.log(context);
 
   return (
-    <header>
+    <header id="header">
       <div>
         <picture>
           <img src="./Resources/Logo-black.png" alt={context.language.TITLE} />

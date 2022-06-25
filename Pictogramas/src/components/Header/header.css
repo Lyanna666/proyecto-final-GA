@@ -64,7 +64,8 @@ header .link-login {
   left: 0;
   z-index: 99999;
   border-radius: 0.2rem;
-  border: 1px solid lightgray;
+  border: 0.064rem solid lightgray;
+  box-shadow: 0.01rem 0.01rem 0.3rem 0.03rem rgba(0, 0, 0, 0.2);
 }
 
 .menu-languages ul li {
