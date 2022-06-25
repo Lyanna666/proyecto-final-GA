@@ -7,6 +7,7 @@ import AppContext from '../AppContext';
 
 import Header from '../components/Header/header';
 import CustomButton from '../components/elements/customButton';
+import Footer from '../components/Footer/footer';
 
 const Home = () => {
   const context = useContext(AppContext);
@@ -24,6 +25,7 @@ const Home = () => {
           onClick={context.changeLanguage}
         />
       </main>
+      <Footer />
     </>
   );
 };

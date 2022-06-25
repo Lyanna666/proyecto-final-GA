@@ -45,3 +45,12 @@ export const SIGNUP_NAME = 'Nombre';
 export const SIGNUP_SURNAME = 'Apellido';
 export const LOGIN_SINGUP = '¿Ya tienes una cuenta?';
 export const LOGIN_SINGUP_ACTION = 'Iniciar sesión';
+
+/*Footer Text */
+export const FOOTER_TITLE = 'Pictogramas';
+export const FOOTER_CONTACT = 'Contacto';
+export const FOOTER_TERMS = 'Condiciones de servicio';
+export const FOOTER_PRIVACY = 'Política de privacidad';
+export const FOOTER_COPYRIGHT =
+  'Copyright © 2020 Pictogramas. Todos los derechos reservados. Diseñado por';
+export const FOOTER_MADE = 'Made with';
