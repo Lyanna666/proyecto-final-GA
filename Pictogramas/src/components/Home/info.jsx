@@ -30,10 +30,10 @@ const Info = props => {
     <>
       <section className="info">
         <div className="content">
-          <h2>{context.language.HOW_WORKS_TITLE}</h2>
+          <h2 id="how-does-it-works">{context.language.HOW_WORKS_TITLE}</h2>
           <ul className="info-list">
             {context.language.HOW_WORKS_INFO.map((information, index) => (
-              <li>
+              <li key={information.title}>
                 <div className="div-info">
                   <picture>
                     <img src={icons[index]} alt={information.title} />
@@ -47,10 +47,10 @@ const Info = props => {
         </div>
       </section>
       <section className="section-users content">
-        <h2>{context.language.USERS_TITLE}</h2>
+        <h2 id="users">{context.language.USERS_TITLE}</h2>
         <ul className="users-list">
           {context.language.USERS.map((information, index) => (
-            <li>
+            <li li key={information.title}>
               {index % 2 === 0 ? (
                 <picture>
                   <img src={images[index]} alt={information.title} />
@@ -72,6 +72,7 @@ const Info = props => {
             </li>
           ))}
         </ul>
+        <a href="#header">{context.language.TOP_PAGE}</a>
       </section>
     </>
   );

@@ -7,10 +7,9 @@ import AppContext from '../../AppContext';
 
 const Header = () => {
   const context = useContext(AppContext);
-  console.log(context);
 
   return (
-    <header>
+    <header id="header">
       <div>
         <picture>
           <img src="./Resources/Logo-black.png" alt={context.language.TITLE} />
