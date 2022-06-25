@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom';
 import AppContext from '../AppContext';
 
 import Header from '../components/Header/header';
-import CustomButton from '../components/elements/customButton';
+import Hero from '../components/Home/hero';
+import Info from '../components/Home/info';
+import Footer from '../components/footer';
 
 const Home = () => {
   const context = useContext(AppContext);
@@ -16,14 +18,10 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <h1>{context.language.TITLE}</h1>
-        <CustomButton
-          color="blue"
-          name={context.language.CHANGE_LANGUAGE}
-          size="medium"
-          onClick={context.changeLanguage}
-        />
+        <Hero />
+        <Info />
       </main>
+      <Footer />
     </>
   );
 };
