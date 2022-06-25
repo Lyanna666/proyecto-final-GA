@@ -61,6 +61,10 @@
   margin: 0.5rem;
 }
 
+.section-users {
+  padding: 1rem;
+}
+
 .section-users .top-link {
   display: block;
   width: auto;
@@ -68,4 +72,31 @@
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .info .info-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info .content .div-info picture {
+    max-width: 5vw;
+
+    margin: auto;
+  }
+
+  .info-list li {
+    margin: 0.4rem auto;
+    flex-grow: 1;
+    width: 90%;
+  }
+
+  .users-list picture {
+    display: none;
+  }
+
+  .div-users {
+    width: 100%;
+  }
 }

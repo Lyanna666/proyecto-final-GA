@@ -13,4 +13,8 @@
   --backgroundGrayColor: #eaeaea;
 
   --base-space: 1.5rem;
+
+  /* Media Query */
+  --mobile: 480px;
+  --tablet: 1024px;
 }

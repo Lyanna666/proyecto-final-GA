@@ -33,6 +33,7 @@ const Header = () => {
             <a href="/#users">{context.language.HEADER_NAV_USERS}</a>
           </li>
         </nav>
+        <button type="button">Menu</button>
       </div>
       <div>
         <ul className="menu-languages">

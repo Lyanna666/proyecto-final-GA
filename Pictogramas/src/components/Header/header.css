@@ -100,3 +100,9 @@ header .link-login {
   border-right: 5px solid transparent;
   border-bottom: 8px solid lightgray;
 }
+
+@media screen and (max-width: 1024px) {
+  header {
+    background-color: lightgray;
+  }
+}
