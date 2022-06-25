@@ -65,7 +65,5 @@
   text-align: center;
   padding: 0.5rem 0.9rem;
   margin: auto;
-  margin-top: 2rem;
-  border: 0.08rem solid var(--blue);
-  border-radius: 0.5rem;
+  margin: 2rem;
 }
