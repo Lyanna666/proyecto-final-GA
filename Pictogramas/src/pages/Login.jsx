@@ -69,7 +69,9 @@ const Login = () => {
               <ul>
                 {socialIcons.map((icon) => (
                   <li key={icon.name}>
-                    <img src={icon.src} alt={icon.name} />
+                    <a href="/">
+                      <img src={icon.src} alt={icon.name} />
+                    </a>
                   </li>
                 ))}
               </ul>
