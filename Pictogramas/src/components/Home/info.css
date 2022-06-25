@@ -60,10 +60,11 @@
   margin: 0.5rem;
 }
 
-.section-users a {
+.section-users .top-link {
   display: block;
-  text-align: center;
-  padding: 0.5rem 0.9rem;
+  width: auto;
   margin: auto;
-  margin: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

@@ -1,4 +1,5 @@
 .custom-button {
+  color: white;
   border: none;
   border-radius: 5px;
   color: white;
@@ -7,8 +8,6 @@
   padding: 0.7rem 1.5rem 0.7rem 1.5rem;
   box-shadow: 2px 2px 6px grey;
   transition: 0.25s;
-  overflow: hidden;
-  position: relative;
 }
 
 /* Button Colors */
@@ -33,33 +32,36 @@
 }
 
 /* Button Effects */
-.button-container button.custom-button.blue:hover {
+.custom-button.blue:hover {
   cursor: pointer;
   background-color: var(--dark-blue);
   box-shadow: 1px 1px 10px grey;
+  color: white;
 }
-.button-container button.custom-button.green:hover {
+.custom-button.green:hover {
   cursor: pointer;
   background-color: var(--dark-green);
   box-shadow: 1px 1px 10px grey;
+  color: white;
 }
-.button-container button.custom-button.red:hover {
+.custom-button.red:hover {
   cursor: pointer;
   background-color: var(--dark-red);
   box-shadow: 1px 1px 10px grey;
+  color: white;
 }
 
-.button-container button.custom-button.blue:disabled {
+.custom-button.blue:disabled {
   cursor: pointer;
   background-color: var(--dark-blue);
   color: lightgray;
 }
-.button-container button.custom-button.green:disabled {
+.custom-button.green:disabled {
   cursor: pointer;
   background-color: var(--dark-green);
   color: lightgray;
 }
-.button-container button.custom-button.red:disabled {
+.custom-button.red:disabled {
   cursor: pointer;
   background-color: var(--dark-red);
   color: lightgray;

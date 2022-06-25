@@ -16,14 +16,12 @@ const CustomButton = ({
     }
   };
   return (
-    <div className="button-container">
-      <button
-        className={`custom-button ${color} ${size} ${type}`}
-        onClick={onButtonClick}
-      >
-        {name}
-      </button>
-    </div>
+    <button
+      className={`custom-button ${color} ${size} ${type}`}
+      onClick={onButtonClick}
+    >
+      {name}
+    </button>
   );
 };
 export default CustomButton;

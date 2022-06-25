@@ -1,10 +1,9 @@
 import './hero.css';
 
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 
 import AppContext from '../../AppContext';
-import CustomButton from '../elements/customButton';
+import CustomLink from '../elements/customLink';
 
 const Hero = props => {
   const context = useContext(AppContext);
@@ -14,10 +13,10 @@ const Hero = props => {
       <p> {context.language.NAME_APP}</p>
       <h1>{context.language.HERO_TITLE}</h1>
       <p>{context.language.HERO_SUBTITLE}</p>
-      <CustomButton
-        color="blue"
+      <CustomLink
         name={context.language.HERO_BUTTON}
-        size="medium"
+        color="blue"
+        url="/login"
       />
     </div>
   );
