@@ -7,6 +7,7 @@ import AppContext from '../AppContext';
 
 import CustomButton from '../components/elements/customButton';
 import Header from '../components/Header/header';
+import Footer from '../components/Footer/footer';
 
 const Login = () => {
   const context = useContext(AppContext);
@@ -14,22 +15,19 @@ const Login = () => {
   const socialIcons = [
     {
       name: 'Facebook',
-      src:
-        'https://www.upn.org/wp-content/uploads/2015/11/social_facebook_box_blue.png',
+      src: 'https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Facebook_svg-512.png',
     },
     {
       name: 'Twitter',
-      src: 'https://lcsi.umh.es/docs/twitter/pajarito.png',
+      src: 'https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png',
     },
     {
       name: 'Instagram',
-      src:
-        'https://i0.wp.com/welcometoelmundo.com/wp-content/uploads/2018/02/instagram-2.png?ssl=1',
+      src: 'https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/600/Instagram_glyph_svg-512.png',
     },
     {
       name: 'Google',
-      src:
-        'https://infos-geek.com/wp-content/uploads/2020/10/activer-desactiver-ok-google-assistant4.png?ezimgfmt=rs:256x256/rscb78/ng:webp/ngcb78',
+      src: 'https://cdn4.iconfinder.com/data/icons/picons-social/57/09-google-3-256.png',
     },
   ];
 
@@ -39,7 +37,9 @@ const Login = () => {
       <div className="box-container">
         <div className="container">
           <div className="login">
-            <h1> {context.language.LOGIN_TITLE} </h1>
+            <picture>
+              <img src="./Resources/logo-black.png" alt="logo" />
+            </picture>
             <p>{context.language.LOGIN_SUBTITLE}</p>
             <form>
               <label>
@@ -67,7 +67,7 @@ const Login = () => {
           <div className="social">
             <div>
               <ul>
-                {socialIcons.map(icon => (
+                {socialIcons.map((icon) => (
                   <li key={icon.name}>
                     <img src={icon.src} alt={icon.name} />
                   </li>
@@ -82,7 +82,6 @@ const Login = () => {
               name={context.language.LOGIN_REGISTER_BUTTON}
               size="small"
             />
-            <Link to={'/registrer'}>ir a registrate temporal</Link>
           </div>
         </div>
         <div className="terms">
@@ -92,6 +91,7 @@ const Login = () => {
           </p>
         </div>
       </div>{' '}
+      <Footer />
     </>
   );
 };
