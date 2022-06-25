@@ -3,8 +3,6 @@ import './header.css';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-// import styled from 'styled-components'; Si quereís usar esto lo descomentamos
-
 import AppContext from '../../AppContext';
 
 const Header = () => {
