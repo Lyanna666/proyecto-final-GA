@@ -32,9 +32,9 @@ const Footer = (props) => {
   const footerText = [
     {
       title: 'TeAyuda',
-      content: 'Home',
-      conten2: 'Como funciona',
-      conten3: 'FAQs',
+      content: ' Officia fugit dolorem sapiente repudiandae laboriosam.',
+      conten2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      conten3: 'Eveniet inventore, quasi mollitia.',
     },
     {
       title: 'About Us',
