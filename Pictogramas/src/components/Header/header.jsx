@@ -25,11 +25,7 @@ const Header = () => {
   // En el evento onClick cambio ese estado a true o false en función de si se muestra el menú
 
   const onClickMenu = event => {
-    if (openedMenu) {
-      setOpenedMenu(false);
-    } else {
-      setOpenedMenu(true);
-    }
+    setOpenedMenu(!openedMenu);
   };
 
   return (
@@ -97,7 +93,7 @@ const Header = () => {
           </nav>
         </div>
         <button onClick={onClickMenu} className="btn-menu">
-          Menu
+          ☰
         </button>
       </header>
       {/* Si el estado del menú es true lo muestro, si no, no */}
