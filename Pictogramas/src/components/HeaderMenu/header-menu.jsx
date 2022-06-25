@@ -27,11 +27,11 @@ const HeaderMenu = () => {
       </li>
       <li>
         <button
-          id={context.language.EN_ID}
+          id={context.language.ES_ID}
           type="button"
           onClick={context.changeLanguage}
         >
-          {context.language.EN}
+          {context.language.ES}
         </button>{' '}
         <button
           id={context.language.EN_ID}
