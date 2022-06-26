@@ -57,6 +57,7 @@ export const FOOTER_COPYRIGHT =
   'Copyright © 2020 Pictogramas. Todos los derechos reservados. Diseñado por';
 export const FOOTER_MADE = 'Made with';
 
+export const FOOTER_TEAYUDA = 'TeAyuda';
 /* HOME Hero */
 export const HERO_TITLE =
   'Pictogramas y recursos para la Comunicación \nAumentativa y Alternativa';

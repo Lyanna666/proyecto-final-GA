@@ -104,3 +104,15 @@ input:hover {
   display: block;
   text-align: center;
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .terms {
+    width: 100%;
+    max-width: 100%;
+  }
+}
