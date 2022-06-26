@@ -32,21 +32,22 @@ const Footer = (props) => {
   const footerText = [
     {
       title: 'TeAyuda',
-      content: ' Officia fugit dolorem sapiente repudiandae laboriosam.',
-      conten2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      conten3: 'Eveniet inventore, quasi mollitia.',
+      content: 'Trabajar en equipo es una forma de crecer.',
+      conten2: 'Sobre nosotros y nuestros servicios.',
+      conten3: 'Sostenemos una comunidad de personas que quieren ayudar.',
     },
     {
       title: 'About Us',
-      content: ' Officia fugit dolorem sapiente repudiandae laboriosam.',
-      conten2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      conten3: 'Eveniet inventore, quasi mollitia.',
+      content:
+        'Nosotros somos una comunidad de personas que quieren ayudar a otros.',
+      conten2: 'Podemos ayudar a cualquiera que quiera.',
+      conten3: 'Somos un equipo de personas que quieren ayudar.',
     },
     {
       title: 'Contact Us',
-      content: ' Officia fugit dolorem sapiente repudiandae laboriosam.',
-      conten2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      conten3: 'Eveniet inventore, quasi mollitia.',
+      content: 'Madrid, ESP, Spain',
+      conten2: 'Calle Ventura Rodriguez, 28008 Madrid.',
+      conten3: 'Social Media Links (Facebook, Twitter, Instagram, Google)',
     },
   ];
 
