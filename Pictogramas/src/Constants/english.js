@@ -63,7 +63,7 @@ export const HERO_SUBTITLE = 'Sign up or Sign in to use the app! ';
 export const HERO_BUTTON = 'Sign up / Login';
 
 /* HOME INFO */
-export const TOP_PAGE = 'Scroll to the top';
+export const TOP_PAGE = 'Scroll to the top ⬆';
 export const HOW_WORKS_TITLE = 'How does it work?';
 export const HOW_WORKS_INFO = [
   {

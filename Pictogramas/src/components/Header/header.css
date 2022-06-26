@@ -4,8 +4,18 @@ header {
   border-bottom: 0.065rem solid rgba(0, 0, 0, 0.2);
   box-shadow: 0.01rem 0.01rem 0.3rem 0.03rem rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
+}
+
+header nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+header nav > div {
+  display: flex;
+  align-items: center;
 }
 
 header li,
@@ -21,6 +31,7 @@ header .link:first-of-type {
 
 header > div {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -62,7 +73,6 @@ header .link-login {
   position: absolute;
   top: 1.8rem;
   left: 0;
-  z-index: 99999;
   border-radius: 0.2rem;
   border: 0.064rem solid lightgray;
   box-shadow: 0.01rem 0.01rem 0.3rem 0.03rem rgba(0, 0, 0, 0.2);
@@ -88,6 +98,10 @@ header .link-login {
   border: none;
 }
 
+.btn-menu {
+  display: none;
+}
+
 /* Esto dibuja la flecha de arriba */
 .menu-languages ul li:first-child button:after {
   content: '';
@@ -99,4 +113,24 @@ header .link-login {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 8px solid lightgray;
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header > button {
+    font-size: 1.5rem;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .btn-menu {
+    display: inline;
+  }
 }

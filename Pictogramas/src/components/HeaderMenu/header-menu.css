@@ -1,0 +1,17 @@
+.header-menu {
+  background-color: var(--white);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  border-bottom: 0.06rem solid lightgray;
+  transition: ease all 0.5s;
+}
+
+.header-menu li {
+  padding: 0.5rem;
+  display: block;
+}
+
+.header-menu li:not(:last-of-type) {
+  border-bottom: 0.06rem solid lightgray;
+}

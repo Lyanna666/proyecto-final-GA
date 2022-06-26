@@ -64,7 +64,7 @@ export const HERO_SUBTITLE =
 export const HERO_BUTTON = 'Registro / Login';
 
 /* HOME INFO */
-export const TOP_PAGE = 'Volver arriba';
+export const TOP_PAGE = 'Volver arriba ⬆';
 export const HOW_WORKS_TITLE = '¿Cómo funciona?';
 export const HOW_WORKS_INFO = [
   {

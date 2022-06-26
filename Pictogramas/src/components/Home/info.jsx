@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import AppContext from '../../AppContext';
 import CustomButton from '../elements/customButton';
+import CustomLink from '../elements/customLink';
 
 const Info = props => {
   const context = useContext(AppContext);
@@ -72,7 +73,9 @@ const Info = props => {
             </li>
           ))}
         </ul>
-        <a href="#header">{context.language.TOP_PAGE}</a>
+        <a className="top-link" href="#header">
+          {context.language.TOP_PAGE}
+        </a>
       </section>
     </>
   );

@@ -1,5 +1,5 @@
 .hero-div {
-  background-color: #f8f8f8;
+  background-color: #eaeaea;
   margin: 0;
   padding: 2rem;
   text-align: center;
@@ -19,4 +19,8 @@
   margin: 0;
   padding: 0;
   text-transform: uppercase;
+}
+
+.hero-div p:last-of-type {
+  margin-bottom: 2rem;
 }
