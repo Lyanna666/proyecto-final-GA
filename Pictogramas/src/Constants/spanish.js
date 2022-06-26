@@ -134,5 +134,5 @@ export const USERS = [
 /* DASHBOARD */
 export const DASHBOARD_PICTOGRAMS = 'Pictogramas';
 export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
-export const DASHBOARD_SEARCH = 'Introduce el texto a buscar';
+export const DASHBOARD_SEARCH = '🔍 Introduce el texto a buscar';
 export const DASHBOARD_ALL_CATEGORIES = 'Todas las categorías';

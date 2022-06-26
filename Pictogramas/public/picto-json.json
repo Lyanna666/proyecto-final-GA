@@ -11,7 +11,11 @@
       "signaling system",
       "core vocabulary"
     ],
-    "synsets": ["04153115-n", "08293641-n", "08426574-n"],
+    "synsets": [
+      "04153115-n",
+      "08293641-n",
+      "08426574-n"
+    ],
     "sex": false,
     "lastUpdated": "2021-02-06T06:45:19.793Z",
     "schematic": true,
@@ -56,8 +60,16 @@
     "_id": 3082,
     "created": "2008-01-24T12:25:09.000Z",
     "downloads": 0,
-    "tags": ["education", "building", "place", "educational institution"],
-    "synsets": ["04153115-n", "08293641-n"],
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "educational institution"
+    ],
+    "synsets": [
+      "04153115-n",
+      "08293641-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:32:38.243Z",
     "schematic": false,
@@ -99,7 +111,9 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["04153115-n"],
+    "synsets": [
+      "04153115-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:27:27.462Z",
     "schematic": true,
@@ -142,7 +156,11 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["05765728-n", "04153115-n", "08293641-n"],
+    "synsets": [
+      "05765728-n",
+      "04153115-n",
+      "08293641-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:32:04.191Z",
     "schematic": true,
@@ -180,8 +198,18 @@
     "_id": 11376,
     "created": "2009-12-26T16:55:55.000Z",
     "downloads": 0,
-    "tags": ["education", "educational equipment", "object", "furniture"],
-    "synsets": ["03005231-n", "04168419-n", "04169042-n", "04338415-n"],
+    "tags": [
+      "education",
+      "educational equipment",
+      "object",
+      "furniture"
+    ],
+    "synsets": [
+      "03005231-n",
+      "04168419-n",
+      "04169042-n",
+      "04338415-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-06-01T07:24:55.493Z",
     "schematic": false,
@@ -195,7 +223,10 @@
       }
     ],
     "desc": "",
-    "categories": ["educational equipment", "furniture"],
+    "categories": [
+      "educational equipment",
+      "furniture"
+    ],
     "violence": false,
     "hair": false,
     "skin": false,
@@ -215,7 +246,9 @@
       "educational building",
       "educational_building"
     ],
-    "synsets": ["01839438-v"],
+    "synsets": [
+      "01839438-v"
+    ],
     "tags": [
       "communication",
       "language",
@@ -261,7 +294,10 @@
       "sanitary professional",
       "signaling system"
     ],
-    "synsets": ["08066153-n", "08129942-n"],
+    "synsets": [
+      "08066153-n",
+      "08129942-n"
+    ],
     "tags": [
       "person",
       "group",
@@ -294,7 +330,10 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["01549944-s", "04153115-n"],
+    "synsets": [
+      "01549944-s",
+      "04153115-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:30:11.688Z",
     "schematic": true,
@@ -324,8 +363,16 @@
     "_id": 11302,
     "created": "2009-12-24T18:15:00.000Z",
     "downloads": 0,
-    "tags": ["education", "educational equipment", "object", "furniture"],
-    "synsets": ["04386330-n", "04611087-n"],
+    "tags": [
+      "education",
+      "educational equipment",
+      "object",
+      "furniture"
+    ],
+    "synsets": [
+      "04386330-n",
+      "04611087-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-17T16:49:48.785Z",
     "schematic": false,
@@ -339,7 +386,10 @@
       }
     ],
     "desc": "",
-    "categories": ["educational equipment", "furniture"],
+    "categories": [
+      "educational equipment",
+      "furniture"
+    ],
     "violence": false,
     "hair": false,
     "skin": false,
@@ -353,8 +403,14 @@
     "sex": false,
     "violence": false,
     "downloads": 0,
-    "categories": ["verb", "educational building", "educational_building"],
-    "synsets": ["02003830-v"],
+    "categories": [
+      "verb",
+      "educational building",
+      "educational_building"
+    ],
+    "synsets": [
+      "02003830-v"
+    ],
     "tags": [
       "communication",
       "language",
@@ -384,8 +440,14 @@
     "sex": false,
     "violence": false,
     "downloads": 0,
-    "categories": ["verb", "educational building", "educational_building"],
-    "synsets": ["02310566-v"],
+    "categories": [
+      "verb",
+      "educational building",
+      "educational_building"
+    ],
+    "synsets": [
+      "02310566-v"
+    ],
     "tags": [
       "communication",
       "language",
@@ -420,7 +482,10 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["01549944-s", "04153115-n"],
+    "synsets": [
+      "01549944-s",
+      "04153115-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:29:57.707Z",
     "schematic": true,
@@ -458,7 +523,9 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["03229596-n"],
+    "synsets": [
+      "03229596-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:28:45.983Z",
     "schematic": true,
@@ -496,7 +563,10 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["01549944-s", "04153115-n"],
+    "synsets": [
+      "01549944-s",
+      "04153115-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:29:41.569Z",
     "schematic": true,
@@ -537,7 +607,9 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["08556480-n"],
+    "synsets": [
+      "08556480-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-25T15:42:42.757Z",
     "schematic": true,
@@ -551,7 +623,11 @@
       }
     ],
     "desc": "",
-    "categories": ["public building", "election", "signaling system"],
+    "categories": [
+      "public building",
+      "election",
+      "signaling system"
+    ],
     "violence": false,
     "hair": false,
     "skin": false,
@@ -571,7 +647,9 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["03229596-n"],
+    "synsets": [
+      "03229596-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:29:18.102Z",
     "schematic": true,
@@ -602,8 +680,16 @@
     "_id": 36285,
     "created": "2019-11-14T10:26:27.000Z",
     "downloads": 0,
-    "tags": ["education", "educational equipment", "object", "furniture"],
-    "synsets": ["04386330-n", "04611087-n"],
+    "tags": [
+      "education",
+      "educational equipment",
+      "object",
+      "furniture"
+    ],
+    "synsets": [
+      "04386330-n",
+      "04611087-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-06-01T14:28:23.121Z",
     "schematic": false,
@@ -617,7 +703,10 @@
       }
     ],
     "desc": "",
-    "categories": ["educational equipment", "furniture"],
+    "categories": [
+      "educational equipment",
+      "furniture"
+    ],
     "violence": false,
     "hair": false,
     "skin": false,
@@ -629,7 +718,12 @@
     "_id": 7811,
     "created": "2009-02-04T13:48:50.000Z",
     "downloads": 0,
-    "tags": ["movement", "traffic", "road safety", "traffic signal"],
+    "tags": [
+      "movement",
+      "traffic",
+      "road safety",
+      "traffic signal"
+    ],
     "synsets": [],
     "sex": false,
     "lastUpdated": "2020-06-01T08:21:42.028Z",
@@ -644,7 +738,9 @@
       }
     ],
     "desc": "",
-    "categories": ["traffic signal"],
+    "categories": [
+      "traffic signal"
+    ],
     "violence": false,
     "hair": false,
     "skin": false,
@@ -664,7 +760,9 @@
       "communication",
       "signaling system"
     ],
-    "synsets": ["03229596-n"],
+    "synsets": [
+      "03229596-n"
+    ],
     "sex": false,
     "lastUpdated": "2020-11-20T19:29:01.082Z",
     "schematic": true,

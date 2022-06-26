@@ -130,10 +130,6 @@ export const USERS = [
 
 /* DASHBOARD */
 export const DASHBOARD_PICTOGRAMS = 'Pictograms';
-export const DASHBOARD_CATEGORIES = [
-  'Categoría 1',
-  'Categoría 2',
-  'Categoría 3',
-];
+export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
 export const DASHBOARD_SEARCH = 'Enter seach text';
 export const DASHBOARD_ALL_CATEGORIES = 'All categories';
