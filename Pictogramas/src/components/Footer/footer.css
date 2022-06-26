@@ -50,6 +50,16 @@
   padding: var(--base-space);
 }
 
+.about ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--white);
+  padding: var(--base-space);
+}
+
 .footer-logo {
   display: flex;
   flex-direction: column;
