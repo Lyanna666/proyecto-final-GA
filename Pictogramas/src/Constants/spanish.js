@@ -54,8 +54,9 @@ export const FOOTER_CONTACT = 'Contacto';
 export const FOOTER_TERMS = 'Condiciones de servicio';
 export const FOOTER_PRIVACY = 'Política de privacidad';
 export const FOOTER_COPYRIGHT =
-  'Copyright © 2022 Pictogramas. Todos los derechos reservados. Diseñado por';
+  'Copyright © 2020 Pictogramas. Todos los derechos reservados. Diseñado por';
 export const FOOTER_MADE = 'Made with';
+
 export const FOOTER_TEAYUDA = 'TeAyuda';
 /* HOME Hero */
 export const HERO_TITLE =
@@ -129,3 +130,9 @@ export const USERS = [
       'Para cualquiera que se desplaza a un lugar desconocido dentro o fuera de su país, el uso de apoyos visuales le permitirá acceder y orientarse más fácilmente en su entorno y comunicarse con otras personas. Vivimos en un mundo eminentemente visual y, por lo tanto, los pictogramas como parte del lenguaje visual que nos rodea, nos resultan familiares y fáciles de entender.',
   },
 ];
+
+/* DASHBOARD */
+export const DASHBOARD_PICTOGRAMS = 'Pictogramas';
+export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
+export const DASHBOARD_SEARCH = '🔍 Introduce el texto a buscar';
+export const DASHBOARD_ALL_CATEGORIES = 'Todas las categorías';
