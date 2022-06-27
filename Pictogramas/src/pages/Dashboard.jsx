@@ -10,9 +10,10 @@ const Dashboard = () => {
   return (
     <>
       <Header />
-      <h1>Esto es el dashboard de usuario</h1>
-      <Pictograms />
-      {/* <Pictograma
+      <section className="dashboard-section">
+        <h1>Esto es el dashboard de usuario</h1>
+        <Pictograms />
+        {/* <Pictograma
         info={{
           url:
             'https://static.arasaac.org/pictograms/2349/2349_action-past_300.png',
@@ -20,6 +21,7 @@ const Dashboard = () => {
           id: 'comer',
         }}
       /> */}
+      </section>
     </>
   );
 };
