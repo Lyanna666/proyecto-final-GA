@@ -65,12 +65,17 @@
 .aside__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .aside__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
 }
 
