@@ -42,8 +42,11 @@
 }
 
 .aside__header picture img {
-  width: 100%;
+  width: 75%;
+  margin: 0 auto;
   height: auto;
+  border: 2px solid var(--white);
+  border-radius: 50%;
 }
 
 .aside__title {
@@ -69,6 +72,17 @@
 
 .aside__item {
   padding: 10px 0;
+}
+
+.aside_tools {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.6rem;
+}
+
+.aside__footer {
+  padding: 20px;
+  border-top: 1px solid #e6e6e6;
 }
 
 .aside__button {

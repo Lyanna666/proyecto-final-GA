@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
 import Header from "../components/Header/header";
+import Footer from "../components/Footer/footer";
 import Pictograma from "../components/pictograma";
 import Aside from "../components/aside/aside";
 
@@ -19,6 +20,7 @@ const Dashboard = () => {
           id: "comer",
         }}
       />
+      <Footer />
     </>
   );
 };
