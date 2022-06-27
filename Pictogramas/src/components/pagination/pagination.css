@@ -1,0 +1,78 @@
+.pictogram-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  border: 0.06rem solid lightgray;
+  margin: 0.4rem;
+  padding: 1rem;
+  background: #fff;
+  text-transform: uppercase;
+}
+
+.dataContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+small {
+  border: 2px solid #777;
+  border-radius: 7px;
+  padding: 5px 12px;
+  color: #777;
+}
+.pagination {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationItem {
+  background-color: transparent;
+  border: none;
+  margin: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.paginationItem span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prev,
+.next {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--black);
+  margin: 0.2rem;
+  cursor: pointer;
+}
+
+.paginationItem:hover,
+.prev:hover,
+.next:hover {
+  color: var(--green);
+}
+
+.paginationItem.active {
+  color: grey;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: grey;
+}

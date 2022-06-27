@@ -60,6 +60,16 @@
   padding: var(--base-space);
 }
 
+.about ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--white);
+  padding: var(--base-space);
+}
+
 .footer-logo {
   display: flex;
   flex-direction: column;

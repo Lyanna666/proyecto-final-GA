@@ -1,0 +1,22 @@
+.pictograms-section {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.pictograms-section h2 {
+  border-bottom: 0.06rem solid lightgray;
+}
+
+.category-button {
+  border-radius: 0.5rem;
+  background-color: lightgray;
+  border: none;
+  padding: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+.category-button:hover {
+  font-weight: 700;
+}
