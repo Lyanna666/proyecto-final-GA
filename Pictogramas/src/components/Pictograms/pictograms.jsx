@@ -1,60 +1,26 @@
 import './pictograms.css';
 
 import { useContext, React, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
+import Pagination from '../pagination/pagination';
+import Posts from './pictogram';
 import AppContext from '../../AppContext';
 
 const Pictograms = () => {
   const context = useContext(AppContext);
-  const [allPictos, setAllPictos] = useState([]);
-  const [pictos, setPictos] = useState({
-    allPictos: [],
-    filterPictos: [],
-  });
-  const [pages, setPages] = useState({ currentPage: 1, picsPerPage: 4 });
+  const [items, setItems] = useState([]);
 
   // Esto es temporal, cargo los datos de un json dummy
   async function printJSON() {
-    const response = await fetch('./picto-json.json');
+    const response = await fetch('./picto-all-json.json');
     const pictojson = await response.json();
-    console.log(pictojson);
-    setAllPictos(pictojson);
-
-    const finalArray = [];
-    console.log('Todos los pictos', pictojson);
-    let newArray = [];
-    pictojson.map((picto, index) => {
-      newArray.push(picto);
-      console.log(index, newArray);
-      console.log(pages.picsPerPage, newArray.length);
-      if (newArray.length === pages.picsPerPage) {
-        finalArray.push(newArray);
-        console.log(index, newArray, finalArray);
-        newArray = [];
-      }
-    });
-    console.log(finalArray);
-    setPictos({ allPictos: pictojson, filterPictos: finalArray });
-    console.log('Pictos', pictos);
+    console.log('Todos los pictogramas', pictojson);
+    setItems(pictojson);
   }
 
-  function separatedPictos() {
-    const finalArray = [];
-    console.log('Todos los pictos', pictos.allPictos, allPictos);
-    let newArray = [];
-    pictos.allPictos.map((picto, index) => {
-      newArray.push(picto);
-      if (newArray.length === pages.picsPerPage) {
-        separatedPictos.push(newArray);
-        newArray = [];
-      }
-    });
-    setPictos({ allPictos: pictos.allPictos, filterPictos: finalArray });
-    console.log(pictos);
-  }
-
-  function onClickPage(event) {}
+  useEffect(() => {
+    printJSON();
+  }, []);
 
   function onChangeSearchInput(event) {
     console.log(event.target.value);
@@ -79,27 +45,33 @@ const Pictograms = () => {
           </ul>
         </div>
         <form>
-          {/* <select
-            name="categories"
-            id="categories"
-            onChange={onChangeCategorie}
-          >
-            <option>{context.language.DASHBOARD_ALL_CATEGORIES}</option>
-            {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
-              <option>{information}</option>
-            ))}
-          </select> */}
           <input
             type="search"
             placeholder={context.language.DASHBOARD_SEARCH}
             onKeyUp={onChangeSearchInput}
           />
         </form>
-        {pictos.allPictos.map((picto, index) => (
+        {/* {pictos.allPictos.map((picto, index) => (
           <div>
             <p>{picto.keywords[0].keyword}</p>
           </div>
-        ))}
+        ))} */}
+        <div>
+          {items.length > 0 ? (
+            <>
+              <Pagination
+                data={items}
+                RenderComponent={Posts}
+                title="Pictogramas Paginación"
+                buttonConst={3}
+                contentPerPage={15}
+                siblingCount={1}
+              />
+            </>
+          ) : (
+            <h1>No hay pictogramas</h1>
+          )}
+        </div>
       </section>
     </>
   );
