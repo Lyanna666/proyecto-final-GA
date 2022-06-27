@@ -5,7 +5,29 @@ import CustomButton from "../../components/elements/customButton";
 import "./aside.css";
 
 const Aside = (props) => {
-  const icons = [
+  const iconsHeader = [
+    {
+      name: "home",
+      src: "https://cdn-icons-png.flaticon.com/512/553/553416.png",
+      url: "/dashboard",
+      alt: "home",
+    },
+
+    {
+      name: "Avanzados",
+      src: "https://cdn-icons-png.flaticon.com/512/2107/2107957.png",
+      url: "/dashboard",
+      alt: "advance-mode",
+    },
+    {
+      name: "Modo fácil",
+      src: "https://cdn-icons.flaticon.com/png/512/869/premium/869432.png?token=exp=1656326981~hmac=c5337311c2218e5f39e3f720b682e866",
+      url: "/dashboard",
+      alt: "easy-mode",
+    },
+  ];
+
+  const iconsFooter = [
     {
       name: "Ajustes",
       src: "https://cdn-icons.flaticon.com/png/128/738/premium/738853.png?token=exp=1656321653~hmac=6778a8194033bb864739fc6ce4104504",
@@ -35,14 +57,21 @@ const Aside = (props) => {
       </div>
       <div className="aside__body">
         <ul className="aside__list">
-          <li className="aside__item">Dashboard</li>
-          <li className="aside__item">Avanzados</li>
-          <li className="aside__item">Modo fácil</li>
+          {iconsHeader.map((icon, index) => (
+            <>
+              <li className="aside__item">
+                <span>
+                  <img src={icon.src} alt={icon.alt} className="aside_tools" />
+                </span>
+                {icon.name}
+              </li>
+            </>
+          ))}
         </ul>
       </div>
       <div className="aside__body">
         <ul className="aside__list">
-          {icons.map((icon, index) => (
+          {iconsFooter.map((icon, index) => (
             <>
               <li className="aside_item">
                 <img src={icon.src} alt={icon.name} className="aside_tools" />
