@@ -1,13 +1,15 @@
 .pictogram-div {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  margin: 0.5rem;
+  box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  border: 0.06rem solid lightgray;
+  margin: 0.4rem;
   padding: 1rem;
-  width: 17%;
   background: #fff;
+  text-transform: uppercase;
 }
 
 .dataContainer {
@@ -24,20 +26,18 @@ small {
   color: #777;
 }
 .pagination {
+  margin: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .paginationItem {
-  background: #fff;
-  border: 2px solid #666;
-  padding: 10px 15px;
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
+  background-color: transparent;
+  border: none;
+  margin: 1rem;
+  font-size: 1.1rem;
   position: relative;
-  margin: 0 5px;
   cursor: pointer;
 }
 
@@ -50,18 +50,23 @@ small {
 
 .prev,
 .next {
-  background: #fff;
+  background: transparent;
   border: none;
-  padding: 10px;
-  color: blue;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-  margin: 0 10px;
+  font-size: 1.5rem;
+  color: var(--black);
+  margin: 0.2rem;
   cursor: pointer;
 }
 
+.paginationItem:hover,
+.prev:hover,
+.next:hover {
+  color: var(--green);
+}
+
 .paginationItem.active {
-  border: 1px solid #888;
-  color: #888;
+  color: grey;
+  font-weight: 700;
   pointer-events: none;
 }
 
@@ -69,5 +74,5 @@ small {
 .next.disabled {
   pointer-events: none;
   box-shadow: none;
-  color: #999;
+  color: grey;
 }

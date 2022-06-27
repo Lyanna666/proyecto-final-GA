@@ -51,7 +51,6 @@ const Pagination = ({
 
   return (
     <div>
-      <h1>{title}</h1>
       {/* show the post 10 post at a time*/}
       <div className="dataContainer">
         {getPaginatedData().map((dataItem, index) => (
@@ -68,7 +67,7 @@ const Pagination = ({
           onClick={gotToPreviousPage}
           className={` prev ${currentPage === 1 ? 'disabled' : ''}`}
         >
-          ⬅️
+          ◀
         </button>
         {/* show paginated button group */}
         {paginationRange.map((item, index) => {
@@ -96,7 +95,7 @@ const Pagination = ({
           onClick={goToNextPage}
           className={`next ${currentPage === totalPageCount ? 'disabled' : ''}`}
         >
-          ➡️
+          ▶
         </button>
       </div>
     </div>

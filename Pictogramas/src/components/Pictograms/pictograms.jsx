@@ -28,17 +28,19 @@ const Pictograms = () => {
 
   return (
     <>
-      <section>
-        <button type="button" onClick={printJSON}>
+      <section className="pictograms-section">
+        {/* <button type="button" onClick={printJSON}>
           Cargar json dummy
-        </button>
+        </button> */}
         <h2>{context.language.DASHBOARD_PICTOGRAMS}</h2>
         <div>
           <ul>
             {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
               <>
                 <li key={information}>
-                  <button type="button">{information}</button>
+                  <button className="category-button" type="button">
+                    {information}
+                  </button>
                 </li>
               </>
             ))}
