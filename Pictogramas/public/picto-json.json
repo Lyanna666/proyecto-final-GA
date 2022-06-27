@@ -1,0 +1,792 @@
+[
+  {
+    "_id": 32446,
+    "created": "2018-01-29T17:53:49.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "communication",
+      "signaling system",
+      "core vocabulary"
+    ],
+    "synsets": [
+      "04153115-n",
+      "08293641-n",
+      "08426574-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2021-02-06T06:45:19.793Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "keyword": "colegio",
+        "type": 2,
+        "meaning": " m. Establecimiento de enseñanza. ",
+        "plural": "colegios",
+        "hasLocution": true
+      },
+      {
+        "keyword": "escuela",
+        "type": 2,
+        "meaning": " f. Establecimiento donde se imparte enseñanza, especialmente la obligatoria, colegio.",
+        "plural": "escuelas",
+        "hasLocution": true
+      },
+      {
+        "keyword": "instituto",
+        "type": 2,
+        "meaning": " m. Centro estatal en el que se cursan los estudios correspondientes a la enseñanza media.",
+        "plural": "institutos",
+        "hasLocution": true
+      }
+    ],
+    "categories": [
+      "educational building",
+      "educational_building",
+      "signaling system",
+      "core vocabulary-education",
+      "core vocabulary-place",
+      "core vocabulary-communication"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": true,
+    "aacColor": false
+  },
+  {
+    "_id": 3082,
+    "created": "2008-01-24T12:25:09.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "educational institution"
+    ],
+    "synsets": [
+      "04153115-n",
+      "08293641-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:32:38.243Z",
+    "schematic": false,
+    "keywords": [
+      {
+        "keyword": "colegio",
+        "type": 2,
+        "meaning": " m. Establecimiento de enseñanza. ",
+        "plural": "colegios",
+        "hasLocution": true
+      },
+      {
+        "keyword": "escuela",
+        "type": 2,
+        "meaning": " f. Establecimiento donde se imparte enseñanza, especialmente la obligatoria, colegio.",
+        "plural": "escuelas",
+        "hasLocution": true
+      }
+    ],
+    "categories": [
+      "educational building",
+      "educational_building",
+      "educational institution"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false
+  },
+  {
+    "_id": 6454,
+    "created": "2008-12-01T10:03:10.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "04153115-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:27:27.462Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "keyword": "colegio",
+        "type": 2,
+        "meaning": " m. Establecimiento de enseñanza. ",
+        "plural": "colegios",
+        "hasLocution": true
+      },
+      {
+        "keyword": "escuela",
+        "type": 2,
+        "meaning": " f. Establecimiento donde se imparte enseñanza, especialmente la obligatoria, colegio.",
+        "plural": "escuelas",
+        "hasLocution": true
+      }
+    ],
+    "categories": [
+      "educational building",
+      "educational_building",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false
+  },
+  {
+    "_id": 32824,
+    "created": "2018-04-09T10:11:55.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "educational institution",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "05765728-n",
+      "04153115-n",
+      "08293641-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:32:04.191Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Establecimiento de enseñanza especialmente dirigido a niños y jóvenes con algún tipo de diversidad funcional que les impide estar escolarizados en un centro educativo ordinario.",
+        "plural": "colegios de educación especial",
+        "keyword": "colegio de educación especial",
+        "hasLocution": false
+      },
+      {
+        "type": 2,
+        "meaning": "m. Establecimiento de enseñanza especialmente dirigido a niños y jóvenes con algún tipo de diversidad funcional que les impide estar escolarizados en un centro educativo ordinario.",
+        "plural": "centros de educación especial",
+        "keyword": "centro de educación especial",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational building",
+      "educational_building",
+      "educational institution",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 6.25
+  },
+  {
+    "_id": 11376,
+    "created": "2009-12-26T16:55:55.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "educational equipment",
+      "object",
+      "furniture"
+    ],
+    "synsets": [
+      "03005231-n",
+      "04168419-n",
+      "04169042-n",
+      "04338415-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-06-01T07:24:55.493Z",
+    "schematic": false,
+    "keywords": [
+      {
+        "keyword": "silla de colegio",
+        "type": 2,
+        "meaning": "f. Asiento con respaldo, por lo general con cuatro patas, y en que solo cabe una persona.",
+        "plural": "sillas de colegio",
+        "hasLocution": true
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational equipment",
+      "furniture"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 6.666666666666666
+  },
+  {
+    "_id": 36473,
+    "schematic": true,
+    "sex": false,
+    "violence": false,
+    "downloads": 0,
+    "categories": [
+      "verb",
+      "movement",
+      "educational building",
+      "educational_building"
+    ],
+    "synsets": [
+      "01839438-v"
+    ],
+    "tags": [
+      "communication",
+      "language",
+      "verb",
+      "movement",
+      "education",
+      "building",
+      "place"
+    ],
+    "keywords": [
+      {
+        "keyword": "trasladarse",
+        "type": 3,
+        "hasLocution": true
+      },
+      {
+        "keyword": "ir al colegio",
+        "type": 3,
+        "hasLocution": false
+      }
+    ],
+    "created": "2019-12-15T16:23:31.112Z",
+    "lastUpdated": "2020-11-20T19:30:40.267Z",
+    "hair": false,
+    "skin": true,
+    "aac": false,
+    "aacColor": false,
+    "score": 6.666666666666666
+  },
+  {
+    "_id": 38264,
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": true,
+    "hair": true,
+    "downloads": 0,
+    "categories": [
+      "group",
+      "health personnel",
+      "sanitary professional",
+      "signaling system"
+    ],
+    "synsets": [
+      "08066153-n",
+      "08129942-n"
+    ],
+    "tags": [
+      "person",
+      "group",
+      "health",
+      "medicine",
+      "professional",
+      "work",
+      "communication",
+      "signaling system"
+    ],
+    "keywords": [
+      {
+        "keyword": "colegio de enfermería",
+        "hasLocution": false,
+        "type": 2
+      }
+    ],
+    "created": "2022-03-30T09:53:07.076Z",
+    "lastUpdated": "2022-03-31T07:48:50.621Z",
+    "score": 6.666666666666666
+  },
+  {
+    "_id": 34246,
+    "created": "2018-12-15T16:59:52.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "01549944-s",
+      "04153115-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:30:11.688Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Establecimiento de enseñanza donde se ofrece un aprendizaje Integrado de Contenidos y Lenguas Extranjeras",
+        "plural": "colegios bilingües",
+        "keyword": "colegio bilingüe",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational building",
+      "educational_building",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  },
+  {
+    "_id": 11302,
+    "created": "2009-12-24T18:15:00.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "educational equipment",
+      "object",
+      "furniture"
+    ],
+    "synsets": [
+      "04386330-n",
+      "04611087-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-17T16:49:48.785Z",
+    "schematic": false,
+    "keywords": [
+      {
+        "keyword": "mesa de colegio",
+        "type": 2,
+        "meaning": "f. Mueble, por lo común de madera, que se compone de una o de varias tablas lisas sostenidas por uno o varios pies, y que sirve para comer, escribir, jugar u otros usos.",
+        "plural": "mesas de colegio",
+        "hasLocution": true
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational equipment",
+      "furniture"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 6.666666666666666
+  },
+  {
+    "_id": 37036,
+    "schematic": true,
+    "sex": false,
+    "violence": false,
+    "downloads": 0,
+    "categories": [
+      "verb",
+      "educational building",
+      "educational_building"
+    ],
+    "synsets": [
+      "02003830-v"
+    ],
+    "tags": [
+      "communication",
+      "language",
+      "verb",
+      "education",
+      "building",
+      "place"
+    ],
+    "keywords": [
+      {
+        "keyword": "llevar al colegio",
+        "hasLocution": false,
+        "type": 3
+      }
+    ],
+    "created": "2020-09-21T08:39:55.331Z",
+    "lastUpdated": "2020-11-20T19:31:08.686Z",
+    "hair": false,
+    "skin": true,
+    "aac": false,
+    "aacColor": false,
+    "score": 6.666666666666666
+  },
+  {
+    "_id": 37047,
+    "schematic": true,
+    "sex": false,
+    "violence": false,
+    "downloads": 0,
+    "categories": [
+      "verb",
+      "educational building",
+      "educational_building"
+    ],
+    "synsets": [
+      "02310566-v"
+    ],
+    "tags": [
+      "communication",
+      "language",
+      "verb",
+      "education",
+      "building",
+      "place"
+    ],
+    "keywords": [
+      {
+        "keyword": "recoger del colegio",
+        "hasLocution": false,
+        "type": 3
+      }
+    ],
+    "created": "2020-09-21T08:39:55.333Z",
+    "lastUpdated": "2020-11-20T19:31:28.969Z",
+    "hair": false,
+    "skin": true,
+    "aac": false,
+    "aacColor": false,
+    "score": 6.666666666666666
+  },
+  {
+    "_id": 34248,
+    "created": "2018-12-15T16:59:52.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "01549944-s",
+      "04153115-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:29:57.707Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Establecimiento de enseñanza donde se ofrece un aprendizaje Integrado de Contenidos y Lenguas Extranjeras",
+        "plural": "colegios bilingües",
+        "keyword": "colegio bilingüe",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational building",
+      "educational_building",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  },
+  {
+    "_id": 30674,
+    "created": "2016-06-06T10:55:09.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "home",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "03229596-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:28:45.983Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Residencia de estudiantes universitarios reconocida como tal oficialmente y sometida muchas veces a un régimen especial.",
+        "plural": "colegios mayores",
+        "keyword": "colegio mayor",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational building",
+      "residential building",
+      "educational_building",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": true,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  },
+  {
+    "_id": 34247,
+    "created": "2018-12-15T16:59:52.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "01549944-s",
+      "04153115-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:29:41.569Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Establecimiento de enseñanza donde se ofrece un aprendizaje Integrado de Contenidos y Lenguas Extranjeras",
+        "plural": "colegios bilingües",
+        "keyword": "colegio bilingüe",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational building",
+      "educational_building",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  },
+  {
+    "_id": 32736,
+    "created": "2018-04-07T19:17:14.000Z",
+    "downloads": 0,
+    "tags": [
+      "place",
+      "building",
+      "public administration",
+      "work",
+      "tertiary sector",
+      "political representation",
+      "election",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "08556480-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-25T15:42:42.757Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Sitio donde se puede acudir para votar.",
+        "plural": "colegios electorales",
+        "keyword": "colegio electoral",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "public building",
+      "election",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  },
+  {
+    "_id": 30676,
+    "created": "2016-06-06T10:55:09.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "home",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "03229596-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:29:18.102Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Residencia de estudiantes universitarios reconocida como tal oficialmente y sometida muchas veces a un régimen especial.",
+        "plural": "colegios mayores",
+        "keyword": "colegio mayor",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational building",
+      "residential building",
+      "educational_building",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": true,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  },
+  {
+    "_id": 36285,
+    "created": "2019-11-14T10:26:27.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "educational equipment",
+      "object",
+      "furniture"
+    ],
+    "synsets": [
+      "04386330-n",
+      "04611087-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-06-01T14:28:23.121Z",
+    "schematic": false,
+    "keywords": [
+      {
+        "keyword": "mesa de colegio",
+        "type": 2,
+        "meaning": "f. Mueble, por lo común de madera, que se compone de una o de varias tablas lisas sostenidas por uno o varios pies, y que sirve para comer, escribir, jugar u otros usos.",
+        "plural": "mesas de colegio",
+        "hasLocution": true
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational equipment",
+      "furniture"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 6.666666666666666
+  },
+  {
+    "_id": 7811,
+    "created": "2009-02-04T13:48:50.000Z",
+    "downloads": 0,
+    "tags": [
+      "movement",
+      "traffic",
+      "road safety",
+      "traffic signal"
+    ],
+    "synsets": [],
+    "sex": false,
+    "lastUpdated": "2020-06-01T08:21:42.028Z",
+    "schematic": false,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "Señal que indica que debemos circular con precaución por la proximidad de una zona escolar.",
+        "plural": "",
+        "keyword": "peligro colegio",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "traffic signal"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": false,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  },
+  {
+    "_id": 30675,
+    "created": "2016-06-06T10:55:09.000Z",
+    "downloads": 0,
+    "tags": [
+      "education",
+      "building",
+      "place",
+      "home",
+      "communication",
+      "signaling system"
+    ],
+    "synsets": [
+      "03229596-n"
+    ],
+    "sex": false,
+    "lastUpdated": "2020-11-20T19:29:01.082Z",
+    "schematic": true,
+    "keywords": [
+      {
+        "type": 2,
+        "meaning": "m. Residencia de estudiantes universitarios reconocida como tal oficialmente y sometida muchas veces a un régimen especial.",
+        "plural": "colegios mayores",
+        "keyword": "colegio mayor",
+        "hasLocution": false
+      }
+    ],
+    "desc": "",
+    "categories": [
+      "educational building",
+      "residential building",
+      "educational_building",
+      "signaling system"
+    ],
+    "violence": false,
+    "hair": false,
+    "skin": true,
+    "aac": false,
+    "aacColor": false,
+    "score": 7.5
+  }
+]

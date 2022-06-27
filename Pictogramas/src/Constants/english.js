@@ -127,3 +127,9 @@ export const USERS = [
       'For anyone who moves to an unknown place inside or outside their country, the use of visual aids will allow them to access and orient themselves more easily in their environment and communicate with other people. We live in an eminently visual world and therefore, symbols that are part of the visual language that surrounds us, are familiar and easy to understand.',
   },
 ];
+
+/* DASHBOARD */
+export const DASHBOARD_PICTOGRAMS = 'Pictograms';
+export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
+export const DASHBOARD_SEARCH = 'Enter seach text';
+export const DASHBOARD_ALL_CATEGORIES = 'All categories';

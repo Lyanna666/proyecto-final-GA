@@ -13,6 +13,12 @@ import Footer from '../components/Footer/footer';
 const Login = () => {
   const context = useContext(AppContext);
 
+  function onClickSignIn(event) {
+    //Esto es temporal
+    window.location.href = '/dashboard';
+    console.log('Aqui no entra');
+  }
+
   const socialIcons = [
     {
       name: 'Facebook',
@@ -61,12 +67,15 @@ const Login = () => {
                   placeholder={context.language.LOGIN_PASSWORD}
                 />
               </label>
-              <CustomButton
-                color="blue"
-                name={context.language.LOGIN_BUTTON}
-                size="small"
-              />
             </form>
+            {/* Custom button estaba dentro del form, lo he sacado fuera para que pueda redirigir a la pag dashboard, cuando integremos firebase lo volvemos a meter dentro del form */}
+            <CustomButton
+              color="blue"
+              name={context.language.LOGIN_BUTTON}
+              size="small"
+              type="submit"
+              onClick={onClickSignIn}
+            />
           </div>
           <p>{context.language.LOGIN_SOCIAL}</p>
           <div className="social">
