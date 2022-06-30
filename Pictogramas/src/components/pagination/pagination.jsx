@@ -22,7 +22,6 @@ const Pagination = ({
   });
 
   /* 👇 little UX tweak when user clicks on any button we scoll to top of the page */
-
   useEffect(
     () => {
       window.scrollTo({

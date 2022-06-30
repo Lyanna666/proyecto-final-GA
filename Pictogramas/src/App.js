@@ -1,5 +1,6 @@
 import { useState, React, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { WebView } from 'react-native-webview';
 
 import AppContext from './AppContext';
 
