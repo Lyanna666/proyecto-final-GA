@@ -1,25 +1,39 @@
 import './pictograms.css';
 
 import { useContext, React, useState, useEffect } from 'react';
-
+import fetchAllPictograms from '../../api/api-rest';
 import Pagination from '../pagination/pagination';
 import Posts from './pictogram';
 import AppContext from '../../AppContext';
+import Spinner from '../loading/loading';
 
 const Pictograms = () => {
   const context = useContext(AppContext);
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  // Esto es temporal, cargo los datos de un json dummy
-  async function printJSON() {
-    const response = await fetch('./picto-all-json.json');
-    const pictojson = await response.json();
-    console.log('Todos los pictogramas', pictojson);
-    setItems(pictojson);
+  function getAllPictograms() {
+    setLoading(true);
+    console.log(context.language.LANGUAGE);
+    fetchAllPictograms(context.language.LANGUAGE)
+      .then((data) => {
+        setItems(data);
+        console.log(data.length);
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.error(e);
+        setLoading(false);
+      });
+  }
+
+  function load() {
+    return <Spinner />;
   }
 
   useEffect(() => {
-    printJSON();
+    // printJSON();
+    getAllPictograms();
   }, []);
 
   function onChangeSearchInput(event) {
@@ -28,6 +42,8 @@ const Pictograms = () => {
 
   return (
     <>
+      {loading ? load() : <></>}
+      {/* {load()} */}
       <section className="pictograms-section">
         {/* <button type="button" onClick={printJSON}>
           Cargar json dummy
@@ -53,11 +69,6 @@ const Pictograms = () => {
             onKeyUp={onChangeSearchInput}
           />
         </form>
-        {/* {pictos.allPictos.map((picto, index) => (
-          <div>
-            <p>{picto.keywords[0].keyword}</p>
-          </div>
-        ))} */}
         <div>
           {items.length > 0 ? (
             <>

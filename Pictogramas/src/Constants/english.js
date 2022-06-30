@@ -9,6 +9,8 @@ export const ES = 'Español (ES)';
 export const EN_ID = 'EN';
 export const ES_ID = 'ES';
 
+export const LANGUAGE = 'en';
+
 export const NAME_APP = 'TEAyudo';
 
 /* HEADER TEXTS */
@@ -33,6 +35,9 @@ export const LOGIN_TERMS =
   'By signing up, you agree to our Terms of Service and Privacy Policy.';
 export const LOGIN_TERMS_LINK = 'Terms of Service';
 export const LOGIN_REGISTER_BUTTON = 'Sign up';
+
+/* Loading */
+export const LOADING_TITLE = 'Loading...';
 
 /* Sign up TEXT */
 export const SIGNUP_TITLE = 'Sign up';

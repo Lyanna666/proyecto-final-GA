@@ -8,21 +8,39 @@ import Pictograms from '../components/Pictograms/pictograms';
 import Aside from '../components/aside/aside';
 
 const Dashboard = () => {
-  const Dashboardmain = styled.main`
+  const Container = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
     min-height: 150vh;
+    background-color: #eaeaea;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  `;
+
+  const DashboardMain = styled.main`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 150vh;
+    background-color: #eaeaea;
+
+    @media (max-width: 400px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
   `;
 
   return (
     <>
       <Header />
-      <Aside />
-      <Dashboardmain>
-        <h1>Esto es el dashboard de usuario</h1>
+
+      <DashboardMain>
+        <Aside />
         <Pictograms />
-      </Dashboardmain>
+      </DashboardMain>
       <Footer />
     </>
   );
