@@ -16,12 +16,12 @@ const Pictograms = () => {
     setLoading(true);
     console.log(context.language.LANGUAGE);
     fetchAllPictograms(context.language.LANGUAGE)
-      .then((data) => {
+      .then(data => {
         setItems(data);
         console.log(data.length);
         setLoading(false);
       })
-      .catch((e) => {
+      .catch(e => {
         console.error(e);
         setLoading(false);
       });
@@ -77,7 +77,7 @@ const Pictograms = () => {
                 RenderComponent={Posts}
                 title="Pictogramas Paginación"
                 buttonConst={3}
-                contentPerPage={15}
+                contentPerPage={24}
                 siblingCount={1}
               />
             </>

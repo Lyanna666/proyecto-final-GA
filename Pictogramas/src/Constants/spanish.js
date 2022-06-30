@@ -11,7 +11,7 @@ export const ES_ID = 'ES';
 
 export const LANGUAGE = 'es';
 
-export const NAME_APP = 'TEAyudo';
+export const NAME_APP = 'TEA Ayudo';
 
 /* HEADER TEXTS */
 export const HEADER_NAV_HOME = 'Home';

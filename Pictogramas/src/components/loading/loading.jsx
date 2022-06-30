@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 import AppContext from '../../AppContext';
 
-const Spinner = (props) => {
+const Spinner = props => {
   console.log(props);
 
   const context = useContext(AppContext);
@@ -15,11 +15,9 @@ const Spinner = (props) => {
         transform: rotate(360deg);
     }
 `;
-
-  // que punto más feo😓
   const Spinner = styled.div`
     display: incline-block;
-    border: 0.5rem solid red;
+    border: 0.5rem solid var(--green);
     border-top: 0.5rem solid transparent;
     border-radius: 50%;
     width: 5rem;
@@ -60,10 +58,10 @@ const Spinner = (props) => {
       <SpinnerBackground>
         <SpinnerContainer>
           <SpinnerH1> {context.language.LOADING_TITLE} </SpinnerH1>
-          <Spinner></Spinner>
+          <Spinner />
         </SpinnerContainer>
 
-        <Spinner></Spinner>
+        <Spinner />
       </SpinnerBackground>
     </>
   );
