@@ -11,6 +11,7 @@
   --dark-red: #9e2427;
 
   --backgroundGrayColor: #eaeaea;
+  --backgroundAside: #273343;
 
   --base-space: 1.5rem;
 
@@ -32,7 +33,7 @@
   transition: all 0.3s ease;
   overflow-y: auto;
   margin: var(--base-space);
-  background-color: var(--black);
+  background-color: var(--backgroundAside);
   color: var(--white);
   font-size: 1.2rem;
   font-family: 'Roboto', sans-serif;
@@ -108,8 +109,29 @@
   border-top: 1px solid #e6e6e6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .aside {
-    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .aside__header picture img {
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    border: 0.25rem solid var(--white);
+    border-radius: 50%;
+  }
+
+  .aside__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
   }
 }

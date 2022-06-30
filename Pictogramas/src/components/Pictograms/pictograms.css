@@ -1,4 +1,7 @@
 .pictograms-section {
+  width: 100%;
+  min-width: 70vw;
+  min-height: 50vh;
   padding: 1rem;
   background-color: white;
   border-radius: 0.5rem;
