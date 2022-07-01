@@ -4,13 +4,14 @@ import { usePaginationRange, DOTS } from './usePaginateRange';
 
 const Pagination = ({
   data,
+  numberPages,
   RenderComponent,
   title,
   buttonConst,
   contentPerPage,
   siblingCount,
 }) => {
-  const [totalPageCount] = useState(Math.ceil(data.length / contentPerPage));
+  const [totalPageCount] = useState(Math.ceil(numberPages / contentPerPage));
   const [currentPage, setCurrentPage] = useState(1);
 
   const paginationRange = usePaginationRange({
@@ -23,21 +24,18 @@ const Pagination = ({
 
   /* 👇 little UX tweak when user clicks on any button we scoll to top of the page */
 
-  useEffect(
-    () => {
-      window.scrollTo({
-        behavior: 'smooth',
-        top: '0px',
-      });
-    },
-    [currentPage],
-  );
+  useEffect(() => {
+    window.scrollTo({
+      behavior: 'smooth',
+      top: '0px',
+    });
+  }, [currentPage]);
 
   function goToNextPage() {
-    setCurrentPage(page => page + 1);
+    setCurrentPage((page) => page + 1);
   }
   function gotToPreviousPage() {
-    setCurrentPage(page => page - 1);
+    setCurrentPage((page) => page - 1);
   }
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);

@@ -10,16 +10,17 @@ import Spinner from '../loading/loading';
 const Pictograms = () => {
   const context = useContext(AppContext);
   const [items, setItems] = useState([]);
+  const [pictograms, setPictograms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [keyword, setKeyword] = useState('');
 
   function getAllPictograms() {
     setLoading(true);
-    console.log(context.language.LANGUAGE);
+    // console.log(context.language.LANGUAGE);
     fetchAllPictograms(context.language.LANGUAGE)
       .then((data) => {
         setItems(data);
-        console.log(data.length);
+        setPictograms(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -42,31 +43,26 @@ const Pictograms = () => {
   } */
 
   // -------------- Búsqueda de pictogramas -----------------
-  /*   const getFilteredPictograms = ({ search, keyword }) => {
+  const getFilteredPictograms = ({ search }) => {
     const searchString = new RegExp(search, 'i');
-
+    // console.log('******************', pictograms);
     const filteredPictograms = items.filter((pictogram) => {
-      return (
-        searchString.test(pictogram.keyword) && pictogram.keyword === keyword
-      );
+      console.log(pictogram.keywords[0].keyword);
+      return searchString.test(pictogram.keywords[0].keyword);
     });
+    console.log(filteredPictograms);
     return filteredPictograms;
   };
 
   const handleKeyUp = (event) => {
-    const {
-      target: { value },
-    } = event;
+    const value = event.target.value;
     setKeyword(value);
     const filteredPictograms = getFilteredPictograms({
       keyword,
       search: value,
     });
-    setItems(filteredPictograms);
+    setPictograms(filteredPictograms);
   };
-
-  console.log(handleKeyUp);
-  console.log(getFilteredPictograms); */
 
   // -----------------------------------------------------
 
@@ -96,15 +92,16 @@ const Pictograms = () => {
           <input
             type="search"
             placeholder={context.language.DASHBOARD_SEARCH}
-            /* onKeyUp={handleKeyUp} */
+            onKeyUp={handleKeyUp}
             id="search"
           />
         </form>
         <div>
-          {items.length > 0 ? (
+          {pictograms.length > 0 ? (
             <>
               <Pagination
-                data={items}
+                data={pictograms}
+                numberPages={pictograms.length}
                 RenderComponent={Posts}
                 title="Pictogramas Paginación"
                 buttonConst={3}

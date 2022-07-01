@@ -4,7 +4,7 @@
 const urlAll = 'https://api.arasaac.org/api/pictograms/all/';
 
 export async function fetchAllPictograms(language) {
-  console.log(urlAll + language);
+  /* console.log(urlAll + language); */
 
   try {
     const response = await fetch(urlAll + language, {
