@@ -53,9 +53,9 @@ const Pictograms = () => {
           <ul>
             {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
               <>
-                <li key={information}>
+                <li key={information.endpoint}>
                   <button className="category-button" type="button">
-                    {information}
+                    {information.id}
                   </button>
                 </li>
               </>

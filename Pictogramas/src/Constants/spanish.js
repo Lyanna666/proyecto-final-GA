@@ -138,6 +138,51 @@ export const USERS = [
 
 /* DASHBOARD */
 export const DASHBOARD_PICTOGRAMS = 'Pictogramas';
-export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
 export const DASHBOARD_SEARCH = '🔍 Introduce el texto a buscar';
 export const DASHBOARD_ALL_CATEGORIES = 'Todas las categorías';
+export const DASHBOARD_CATEGORIES = [
+  {
+    id: 'Alimentación',
+    endpoint: '/pictograms/search/alimentaci%C3%B3n',
+    subcategories: [
+      {
+        id: 'Alimentos de origen animal',
+        endpoint: '/pictograms/search/comida%20de%20origen%20animal',
+        subcategies: [
+          { id: 'Carne', endpoint: '/pictograms/search/carnes' },
+          { id: 'Pescado', endpoint: '/pictograms/search/pescados' },
+          { id: 'Marisco', endpoint: '/pictograms/search/mariscos' },
+          {
+            id: 'Produto lácteo',
+            endpoint: '/pictograms/search/productos%20l%C3%A1cteos',
+          },
+          {
+            id: 'Ovoproducto',
+            endpoint: 'pictograms/search/productos%20derivados%20del%20huevo',
+          },
+        ],
+      },
+      {
+        id: 'Alimento de origen mineral',
+        endpoint: '/pictograms/search/alimentos%20de%20origen%20mineral',
+        subcategies: [],
+      },
+      {
+        id: 'Alimentos de origen vegetal',
+        endpoint: '/pictograms/search/comida%20de%20origen%20animal',
+        subcategies: [
+          { id: 'Fruta', endpoint: '/pictograms/search/frutas' },
+          { id: 'Verdura', endpoint: '/pictograms/search/verduras' },
+          { id: 'Fruto seco', endpoint: '/pictograms/search/frutos%20secos' },
+          { id: 'Legumbre', endpoint: '/pictograms/search/legumbres' },
+          { id: 'Cereal', endpoint: 'pictograms/search/cereales' },
+          { id: 'Especias', endpoint: 'pictograms/search/especias' },
+          {
+            id: 'Hierba aromática',
+            endpoint: '/pictograms/search/hierbas%20arom%C3%A1ticas',
+          },
+        ],
+      },
+    ],
+  },
+];
