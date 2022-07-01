@@ -28,9 +28,8 @@
   .pictograms-section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
-    min-width: 100vw;
-    min-height: 100vh;
     padding: 1rem;
     background-color: white;
     border-radius: 0.5rem;

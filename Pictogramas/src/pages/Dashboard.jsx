@@ -17,6 +17,10 @@ const Dashboard = () => {
     width: 100%;
     padding: 0;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   `;
 
   const DashboardMain = styled.main`
@@ -26,7 +30,7 @@ const Dashboard = () => {
     min-height: 150vh;
     background-color: #eaeaea;
 
-    @media (max-width: 400px) {
+    @media (min-width: 720px) {
       display: flex;
       flex-direction: column;
       width: 100%;
