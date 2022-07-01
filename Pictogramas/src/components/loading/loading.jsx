@@ -16,7 +16,6 @@ const Spinner = (props) => {
     }
 `;
 
-  // que punto más feo😓
   const Spinner = styled.div`
     display: incline-block;
     border: 0.5rem solid red;

@@ -11,6 +11,7 @@ const Pictograms = () => {
   const context = useContext(AppContext);
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [keyword, setKeyword] = useState('');
 
   function getAllPictograms() {
     setLoading(true);
@@ -21,8 +22,8 @@ const Pictograms = () => {
         console.log(data.length);
         setLoading(false);
       })
-      .catch((e) => {
-        console.error(e);
+      .catch((error) => {
+        console.error(error);
         setLoading(false);
       });
   }
@@ -36,9 +37,38 @@ const Pictograms = () => {
     getAllPictograms();
   }, []);
 
-  function onChangeSearchInput(event) {
+  /*   function onChangeSearchInput(event) {
     console.log(event.target.value);
-  }
+  } */
+
+  // -------------- Búsqueda de pictogramas -----------------
+  /*   const getFilteredPictograms = ({ search, keyword }) => {
+    const searchString = new RegExp(search, 'i');
+
+    const filteredPictograms = items.filter((pictogram) => {
+      return (
+        searchString.test(pictogram.keyword) && pictogram.keyword === keyword
+      );
+    });
+    return filteredPictograms;
+  };
+
+  const handleKeyUp = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setKeyword(value);
+    const filteredPictograms = getFilteredPictograms({
+      keyword,
+      search: value,
+    });
+    setItems(filteredPictograms);
+  };
+
+  console.log(handleKeyUp);
+  console.log(getFilteredPictograms); */
+
+  // -----------------------------------------------------
 
   return (
     <>
@@ -66,7 +96,8 @@ const Pictograms = () => {
           <input
             type="search"
             placeholder={context.language.DASHBOARD_SEARCH}
-            onKeyUp={onChangeSearchInput}
+            /* onKeyUp={handleKeyUp} */
+            id="search"
           />
         </form>
         <div>
