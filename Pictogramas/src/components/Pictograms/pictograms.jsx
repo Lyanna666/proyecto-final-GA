@@ -1,7 +1,10 @@
 import './pictograms.css';
 
 import { useContext, React, useState, useEffect } from 'react';
-import fetchAllPictograms from '../../api/api-rest';
+import {
+  fetchAllPictograms,
+  fetchAllPictogramsBySearch,
+} from '../../api/api-rest';
 import Pagination from '../pagination/pagination';
 import Posts from './pictogram';
 import AppContext from '../../AppContext';
@@ -65,6 +68,9 @@ const Pictograms = () => {
   };
 
   // -----------------------------------------------------
+  // ----------------- Búsqueda de pictogramas por palabra -----------------------
+  /* const fetchAllPictogramsBySearch  */
+  // -----------------------------------------------------
 
   return (
     <>
@@ -95,6 +101,9 @@ const Pictograms = () => {
             onKeyUp={handleKeyUp}
             id="search"
           />
+          <button type="submit" id="buscar">
+            buscar
+          </button>
         </form>
         <div>
           {pictograms.length > 0 ? (

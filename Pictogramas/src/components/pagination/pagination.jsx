@@ -11,7 +11,8 @@ const Pagination = ({
   contentPerPage,
   siblingCount,
 }) => {
-  const [totalPageCount] = useState(Math.ceil(numberPages / contentPerPage));
+  const [totalPageCount, setTotalPageCount] = useState(0);
+  console.log(numberPages, totalPageCount);
   const [currentPage, setCurrentPage] = useState(1);
 
   const paginationRange = usePaginationRange({
@@ -25,11 +26,12 @@ const Pagination = ({
   /* 👇 little UX tweak when user clicks on any button we scoll to top of the page */
 
   useEffect(() => {
+    setTotalPageCount(Math.ceil(numberPages / contentPerPage));
     window.scrollTo({
       behavior: 'smooth',
       top: '0px',
     });
-  }, [currentPage]);
+  });
 
   function goToNextPage() {
     setCurrentPage((page) => page + 1);
