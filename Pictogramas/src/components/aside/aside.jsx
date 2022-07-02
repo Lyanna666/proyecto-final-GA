@@ -8,20 +8,20 @@ const Aside = (props) => {
   const iconsHeader = [
     {
       name: 'home',
-      src: 'https://cdn-icons-png.flaticon.com/512/553/553416.png',
+      src: './assets/icons/home.png',
       url: '/dashboard',
       alt: 'home',
     },
 
     {
       name: 'Avanzados',
-      src: 'https://cdn-icons-png.flaticon.com/512/2107/2107957.png',
+      src: './assets/icons/favoritos.png',
       url: '/dashboard',
       alt: 'advance-mode',
     },
     {
       name: 'Modo fácil',
-      src: 'https://cdn-icons.flaticon.com/png/512/869/premium/869432.png?token=exp=1656326981~hmac=c5337311c2218e5f39e3f720b682e866',
+      src: './assets/icons/class.png',
       url: '/dashboard',
       alt: 'easy-mode',
     },
@@ -30,15 +30,15 @@ const Aside = (props) => {
   const iconsFooter = [
     {
       name: 'Ajustes',
-      src: 'https://cdn-icons.flaticon.com/png/128/738/premium/738853.png?token=exp=1656321653~hmac=6778a8194033bb864739fc6ce4104504',
+      src: './assets/icons/setting.png',
     },
     {
       name: 'Ayuda',
-      src: 'https://cdn-icons-png.flaticon.com/512/682/682055.png',
+      src: './assets/icons/help-web-button.png',
     },
     {
       name: 'Feedback',
-      src: 'https://cdn-icons.flaticon.com/png/512/2839/premium/2839172.png?token=exp=1656321625~hmac=1ea60c7abb5fdc0750de109dbe61ec41',
+      src: './assets/icons/information-button.png',
     },
   ];
 
@@ -74,7 +74,9 @@ const Aside = (props) => {
           {iconsFooter.map((icon, index) => (
             <>
               <li className="aside_item">
-                <img src={icon.src} alt={icon.name} className="aside_tools" />
+                <span>
+                  <img src={icon.src} alt={icon.name} className="aside_tools" />
+                </span>
                 {icon.name}
               </li>
             </>

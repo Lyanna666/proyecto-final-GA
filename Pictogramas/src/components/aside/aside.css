@@ -100,10 +100,25 @@
   padding: 10px 0;
 }
 
+span img {
+  filter: invert(1);
+}
+
+span img:hover {
+  filter: invert(0);
+  transform: scale(1.5);
+}
+
 .aside_tools {
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
 }
 
 .aside__footer {
