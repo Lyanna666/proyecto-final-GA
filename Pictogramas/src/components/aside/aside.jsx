@@ -4,7 +4,7 @@ import CustomButton from '../../components/elements/customButton';
 
 import './aside.css';
 
-const Aside = (props) => {
+const Aside = props => {
   const iconsHeader = [
     {
       name: 'home',

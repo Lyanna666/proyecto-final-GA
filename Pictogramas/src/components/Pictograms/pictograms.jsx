@@ -21,12 +21,12 @@ const Pictograms = () => {
     setLoading(true);
     // console.log(context.language.LANGUAGE);
     fetchAllPictograms(context.language.LANGUAGE)
-      .then((data) => {
+      .then(data => {
         setItems(data);
         setPictograms(data);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
         setLoading(false);
       });
@@ -49,7 +49,7 @@ const Pictograms = () => {
   const getFilteredPictograms = ({ search }) => {
     const searchString = new RegExp(search, 'i');
     // console.log('******************', pictograms);
-    const filteredPictograms = items.filter((pictogram) => {
+    const filteredPictograms = items.filter(pictogram => {
       console.log(pictogram.keywords[0].keyword);
       return searchString.test(pictogram.keywords[0].keyword);
     });
@@ -57,7 +57,7 @@ const Pictograms = () => {
     return filteredPictograms;
   };
 
-  const handleKeyUp = (event) => {
+  const handleKeyUp = event => {
     const value = event.target.value;
     setKeyword(value);
     const filteredPictograms = getFilteredPictograms({
@@ -85,9 +85,9 @@ const Pictograms = () => {
           <ul>
             {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
               <>
-                <li key={information}>
+                <li key={information.endpoint}>
                   <button className="category-button" type="button">
-                    {information}
+                    {information.id}
                   </button>
                 </li>
               </>
@@ -114,7 +114,7 @@ const Pictograms = () => {
                 RenderComponent={Posts}
                 title="Pictogramas Paginación"
                 buttonConst={3}
-                contentPerPage={15}
+                contentPerPage={24}
                 siblingCount={1}
               />
             </>

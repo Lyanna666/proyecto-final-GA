@@ -13,7 +13,7 @@
   --backgroundGrayColor: #eaeaea;
   --backgroundAside: #273343;
 
-  --base-space: 1.5rem;
+  --base-space: 1rem;
 
   /* Media Query */
   --mobile: 480px;
@@ -21,30 +21,10 @@
 }
 
 .aside {
-  /* position: fixed; */
-  /*   float: left;
-  top: 0;
-  left: 0;
-  width: 15.2rem;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  overflow-y: auto;
-  background-color: var(--backgroundAside);
-  font-size: 1.2rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-align: left;
-  padding: 0.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
   height: 100%;
-  z-index: 100;
+  width: 14.3rem;
   color: var(--white);
   border-radius: 0.5rem;
-  width: 100%;
   margin: var(--base-space);
   border-bottom: 0.065rem solid rgba(0, 0, 0, 0.2);
   box-shadow: 0.01rem 0.01rem 0.3rem 0.03rem rgba(0, 0, 0, 0.2);

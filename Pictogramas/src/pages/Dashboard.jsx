@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import Header from '../components/Header/header';
 import Footer from '../components/Footer/footer';
-import Aside from '../components/aside/aside';
 import Pictograms from '../components/Pictograms/pictograms';
+import Aside from '../components/aside/aside';
 
 const Dashboard = () => {
   const Container = styled.div`
@@ -15,7 +15,7 @@ const Dashboard = () => {
     min-height: 150vh;
     background-color: #eaeaea;
     width: 100%;
-    padding: 0;
+    padding: 1rem;
     margin: 0 auto;
 
     @media (max-width: 768px) {
@@ -25,9 +25,12 @@ const Dashboard = () => {
 
   const DashboardMain = styled.main`
     display: flex;
+    flex-wrap: nonwrap;
     width: 100%;
     height: 100%;
-    min-height: 150vh;
+    flex-direction: row;
+    min-height: 100vh;
+
     background-color: #eaeaea;
 
     @media (min-width: 720px) {
@@ -42,12 +45,7 @@ const Dashboard = () => {
       <Header />
       <Container>
         <Aside />
-        <DashboardMain>
-          <section className="dashboard-section">
-            <h1>Esto es el dashboard de usuario</h1>
-            <Pictograms />
-          </section>
-        </DashboardMain>
+        <Pictograms />
       </Container>
       <Footer />
     </>

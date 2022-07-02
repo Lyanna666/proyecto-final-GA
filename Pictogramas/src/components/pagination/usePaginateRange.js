@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-export const DOTS = '...';
+export const DOTS = '. . .';
 // our range generator function
 const range = (start, end) => {
   let length = end - start + 1;
