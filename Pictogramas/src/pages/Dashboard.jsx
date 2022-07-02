@@ -39,7 +39,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Header />
+      {/*       <Header />
       <Container>
         <Aside />
         <DashboardMain>
@@ -48,6 +48,12 @@ const Dashboard = () => {
             <Pictograms />
           </section>
         </DashboardMain>
+      </Container>
+      <Footer /> */}
+      <Header />
+      <Container>
+        <Aside />
+        <Pictograms />
       </Container>
       <Footer />
     </>
