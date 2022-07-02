@@ -1,4 +1,7 @@
 .pictograms-section {
+  width: 100%;
+  min-width: 70vw;
+  min-height: 50vh;
   padding: 1rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -19,4 +22,17 @@
 
 .category-button:hover {
   font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .pictograms-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+  }
 }

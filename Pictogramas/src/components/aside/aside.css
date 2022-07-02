@@ -11,6 +11,7 @@
   --dark-red: #9e2427;
 
   --backgroundGrayColor: #eaeaea;
+  --backgroundAside: #273343;
 
   --base-space: 1.5rem;
 
@@ -21,28 +22,48 @@
 
 .aside {
   /* position: fixed; */
-  float: left;
+  /*   float: left;
   top: 0;
   left: 0;
-  width: 15rem;
-  height: 100%;
+  width: 15.2rem;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 100;
   transition: all 0.3s ease;
   overflow-y: auto;
-  margin: var(--base-space);
-  background-color: var(--black);
+  background-color: var(--backgroundAside);
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  height: 100%;
+  z-index: 100;
   color: var(--white);
+  border-radius: 0.5rem;
+  width: 100%;
+  margin: var(--base-space);
+  border-bottom: 0.065rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0.01rem 0.01rem 0.3rem 0.03rem rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  background-color: var(--backgroundAside);
 }
 
 .aside__header {
   padding: 20px;
   border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .aside__header picture img {
-  width: 75%;
+  width: 50%;
   margin: 0 auto;
   height: auto;
   border: 2px solid var(--white);
@@ -79,10 +100,25 @@
   padding: 10px 0;
 }
 
+span img {
+  filter: invert(1);
+}
+
+span img:hover {
+  filter: invert(0);
+  transform: scale(1.5);
+}
+
 .aside_tools {
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
 }
 
 .aside__footer {
@@ -98,8 +134,28 @@
   border-top: 1px solid #e6e6e6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .aside {
-    width: 10rem;
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .aside__header picture img {
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    border: 0.25rem solid var(--white);
+    border-radius: 50%;
+  }
+
+  .aside__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
   }
 }
