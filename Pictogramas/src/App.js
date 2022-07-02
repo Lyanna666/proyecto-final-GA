@@ -9,6 +9,9 @@ import Register from './pages/Registrer';
 import Dashboard from './pages/Dashboard';
 import Detail from './pages/Detail';
 
+// PRUEBAS PARA STORAGE LOCAL
+import Data from './pages/Data';
+
 import * as constantsSpanish from './Constants/spanish';
 import * as constantsEnglish from './Constants/english';
 
@@ -58,6 +61,7 @@ const App = () => {
         <Route path="/registrer" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/:id" element={<Detail />} />
+        <Route path="/data" element={<Data />} />
       </Routes>
     </AppContext.Provider>
   );

@@ -140,6 +140,17 @@ export const USERS = [
 export const DASHBOARD_PICTOGRAMS = 'Pictogramas';
 export const DASHBOARD_SEARCH = '🔍 Introduce el texto a buscar';
 export const DASHBOARD_ALL_CATEGORIES = 'Todas las categorías';
+
+/* Aside */
+export const ASIDE_HOME = 'Home';
+export const ASIDE_FAVO = 'Favoritos';
+export const ASIDE_EASY = 'Modo fácil';
+export const ASIDE_SETTINGS = 'Ajustes';
+export const ASIDE_HELP = 'Ayuda';
+export const ASIDE_LOGOUT = 'Cerrar sesión';
+export const ASIDE_FEEDBACK = 'Feedback';
+
+/* Categorias */
 export const DASHBOARD_CATEGORIES = [
   {
     id: 'Alimentación',

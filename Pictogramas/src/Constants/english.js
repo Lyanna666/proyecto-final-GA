@@ -138,3 +138,12 @@ export const DASHBOARD_PICTOGRAMS = 'Pictograms';
 export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
 export const DASHBOARD_SEARCH = 'Enter seach text';
 export const DASHBOARD_ALL_CATEGORIES = 'All categories';
+
+/* Aside */
+export const ASIDE_HOME = 'Home';
+export const ASIDE_FAV = 'Favorites';
+export const ASIDE_EASY = 'Easy to use';
+export const ASIDE_SETTINGS = 'Settings';
+export const ASIDE_HELP = 'Help';
+export const ASIDE_LOGOUT = 'Logout';
+export const ASIDE_FEEDBACK = 'Feedback';

@@ -42,6 +42,12 @@ const Dashboard = () => {
 
   return (
     <>
+      {/*       <Header />
+      <Container>
+        <Aside />
+        <Pictograms />
+      </Container>
+      <Footer /> */}
       <Header />
       <Container>
         <Aside />

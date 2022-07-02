@@ -1,26 +1,30 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CustomButton from '../../components/elements/customButton';
+import AppContext from '../../AppContext';
 
 import './aside.css';
 
-const Aside = props => {
+const Aside = (props) => {
+  const context = useContext(AppContext);
+
   const iconsHeader = [
     {
-      name: 'home',
+      name: context.language.ASIDE_HOME,
       src: './assets/icons/home.png',
       url: '/dashboard',
       alt: 'home',
     },
 
     {
-      name: 'Avanzados',
+      name: context.language.ASIDE_FAVO,
       src: './assets/icons/favoritos.png',
       url: '/dashboard',
       alt: 'advance-mode',
     },
     {
-      name: 'Modo fácil',
+      name: context.language.ASIDE_EASY,
       src: './assets/icons/class.png',
       url: '/dashboard',
       alt: 'easy-mode',
@@ -29,15 +33,15 @@ const Aside = props => {
 
   const iconsFooter = [
     {
-      name: 'Ajustes',
+      name: context.language.ASIDE_SETTINGS,
       src: './assets/icons/setting.png',
     },
     {
-      name: 'Ayuda',
+      name: context.language.ASIDE_HELP,
       src: './assets/icons/help-web-button.png',
     },
     {
-      name: 'Feedback',
+      name: context.language.ASIDE_FEEDBACK,
       src: './assets/icons/information-button.png',
     },
   ];

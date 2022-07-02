@@ -25,6 +25,7 @@
   width: 14.3rem;
   color: var(--white);
   border-radius: 0.5rem;
+  width: 14.3rem;
   margin: var(--base-space);
   border-bottom: 0.065rem solid rgba(0, 0, 0, 0.2);
   box-shadow: 0.01rem 0.01rem 0.3rem 0.03rem rgba(0, 0, 0, 0.2);
