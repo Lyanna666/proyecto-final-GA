@@ -119,7 +119,7 @@ const Pictograms = () => {
               />
             </>
           ) : (
-            <h1>No hay pictogramas</h1>
+            <h1>No se encontraron pictogramas</h1>
           )}
         </div>
       </section>

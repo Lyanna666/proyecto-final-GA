@@ -34,6 +34,7 @@ const Spinner = props => {
     margin: 0;
     width: 100vw;
     height: 100vh;
+    z-index: 100;
     background-color: rgba(0, 0, 0, 0.6);
   `;
 
