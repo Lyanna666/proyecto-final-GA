@@ -34,22 +34,24 @@ const App = () => {
 
   const { pathname, hash, key } = useLocation(); // Aquí guardamos la sección a la que nos queremos mover
 
-  useEffect(() => {
-    // Si no hay nada hacemos scroll al inicio de la pag
-    if (hash === '') {
-      window.scrollTo(0, 0);
-    }
-    // si no scroll hasta el id
-    else {
-      setTimeout(() => {
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView();
-        }
-      }, 0);
-    }
-  }, [pathname, hash, key]);
+  // Si no hay nada hacemos scroll al inicio de la pag
+  useEffect(
+    () => {
+      // Si no hay nada hacemos scroll al inicio de la pag
+      if (hash === '') {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      } else {
+        setTimeout(() => {
+          const id = hash.replace('#', '');
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 0);
+      }
+    },
+    [pathname, hash, key],
+  );
 
   return (
     <AppContext.Provider value={userSettings}>
