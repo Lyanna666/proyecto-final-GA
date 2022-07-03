@@ -29,7 +29,6 @@ const PictogramDetail = props => {
   }
 
   useEffect(() => {
-    // printJSON();
     getPictogram();
   }, []);
 
@@ -40,14 +39,21 @@ const PictogramDetail = props => {
         <h2>Pictograma {props.id}</h2>
 
         <div className="pictograma-img">
-          <picture>
-            <img
-              src={`https://static.arasaac.org/pictograms/${
-                pictogramInfo._id
-              }/${pictogramInfo._id}_300.png`}
-              alt={pictogramInfo._id}
-            />
-          </picture>
+          <div>
+            <h1>{pictogramInfo.keywords[0].keyword}</h1>
+            <picture>
+              <img
+                src={`https://static.arasaac.org/pictograms/${
+                  pictogramInfo._id
+                }/${pictogramInfo._id}_300.png`}
+                alt={pictogramInfo._id}
+              />
+            </picture>
+            <div>
+              <button type="button">Descargar</button>
+              <button type="button">Imprimir</button>
+            </div>
+          </div>
         </div>
       </div>
     </>
