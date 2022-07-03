@@ -1,12 +1,11 @@
 .custom-button {
-  color: white;
   border: none;
   border-radius: 5px;
   color: white;
   width: fit-content;
   font-size: 1.1rem;
   padding: 0.7rem 1.5rem 0.7rem 1.5rem;
-  box-shadow: 2px 2px 6px grey;
+  box-shadow: 2px 2px 6px rgb(0, 0, 0, 0.5);
   transition: 0.25s;
 }
 
@@ -35,19 +34,19 @@
 .custom-button.blue:hover {
   cursor: pointer;
   background-color: var(--dark-blue);
-  box-shadow: 1px 1px 10px grey;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
   color: white;
 }
 .custom-button.green:hover {
   cursor: pointer;
   background-color: var(--dark-green);
-  box-shadow: 1px 1px 10px grey;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
   color: white;
 }
 .custom-button.red:hover {
   cursor: pointer;
   background-color: var(--dark-red);
-  box-shadow: 1px 1px 10px grey;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
   color: white;
 }
 
