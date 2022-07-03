@@ -13,16 +13,26 @@
   border-bottom: 0.06rem solid lightgray;
 }
 
+.pictograms-section ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pictograms-section ul li {
+  margin: 0.2rem;
+}
+
 .category-button {
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   background-color: lightgray;
   border: none;
-  padding: 0.4rem;
-  margin-right: 0.4rem;
+  padding: 0.5rem;
 }
 
 .category-button:hover {
-  font-weight: 700;
+  background-color: darkgray;
+  cursor: pointer;
 }
 
 @media (max-width: 720px) {
