@@ -6,7 +6,7 @@ import AppContext from '../../AppContext';
 
 import './aside.css';
 
-const Aside = (props) => {
+const Aside = props => {
   const context = useContext(AppContext);
 
   const iconsHeader = [
@@ -92,7 +92,7 @@ const Aside = (props) => {
           className="aside__button"
           color="blue"
           name="Cerrar sesión"
-          size="small"
+          size="large"
           onClick={() => {
             props.logout();
           }}

@@ -82,7 +82,10 @@ const Pictograms = () => {
     <>
       {loading ? <Spinner allWindow={true} /> : <></>}
       <section className="pictograms-section">
-        <h2>{context.language.DASHBOARD_PICTOGRAMS}</h2>
+        {' '}
+        <button type="button" onClick={getAllPictograms}>
+          <h2>{context.language.DASHBOARD_PICTOGRAMS}</h2>
+        </button>
         <form>
           <input
             type="search"
