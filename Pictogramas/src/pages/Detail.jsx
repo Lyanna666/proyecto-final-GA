@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from '../components/Header/header';
 import Aside from '../components/aside/aside';
+import PictogramDetail from '../components/Pictograms/pictogramDetail';
 
 const Detail = () => {
   let { id } = useParams();
@@ -28,7 +29,7 @@ const Detail = () => {
       <Header />
       <Container>
         <Aside />
-        <h1>Esto es el detalle del pictograma {id}</h1>
+        <PictogramDetail id={id} />
       </Container>
     </>
   );

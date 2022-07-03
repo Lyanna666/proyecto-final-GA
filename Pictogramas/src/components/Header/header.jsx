@@ -35,7 +35,7 @@ const Header = () => {
           <picture>
             <img
               src="./Resources/Logo-black.png"
-              alt={context.language.TITLE}
+              alt={context.language.APP_NAME}
             />
           </picture>
           <nav>
