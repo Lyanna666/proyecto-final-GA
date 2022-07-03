@@ -135,7 +135,6 @@ export const USERS = [
 
 /* DASHBOARD */
 export const DASHBOARD_PICTOGRAMS = 'Pictograms';
-export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
 export const DASHBOARD_SEARCH = 'Enter seach text';
 export const DASHBOARD_ALL_CATEGORIES = 'All categories';
 
@@ -147,3 +146,18 @@ export const ASIDE_SETTINGS = 'Settings';
 export const ASIDE_HELP = 'Help';
 export const ASIDE_LOGOUT = 'Logout';
 export const ASIDE_FEEDBACK = 'Feedback';
+
+// categories
+export const DASHBOARD_CATEGORIES = [
+  { id: 'Food', endpoint: '/search/food' },
+  { id: 'Place', endpoint: '/search/place' },
+  { id: 'education', endpoint: '/search/education' },
+  { id: 'Time', endpoint: '/search/time' },
+  { id: 'Comunication', endpoint: '/search/comunication' },
+  { id: 'Feeling', endpoint: '/search/feeling' },
+  { id: 'Animals', endpoint: '/search/animals' },
+  { id: 'People', endpoint: '/search/people' },
+  { id: 'Plants', endpoint: '/search/plants' },
+  { id: 'Colours', endpoint: '/search/colours' },
+  { id: 'Numbers', endpoint: '/search/numbers' },
+];

@@ -3,7 +3,7 @@ import './pictograms.css';
 import { useContext, React, useState, useEffect } from 'react';
 import {
   fetchAllPictograms,
-  fetchAllPictogramsBySearch,
+  fetchPictogramsByCategory,
 } from '../../api/api-rest';
 import Pagination from '../pagination/pagination';
 import Posts from './pictogram';
@@ -32,28 +32,39 @@ const Pictograms = () => {
       });
   }
 
-  function load() {
-    return <Spinner />;
-  }
-
   useEffect(() => {
     // printJSON();
     getAllPictograms();
   }, []);
 
-  /*   function onChangeSearchInput(event) {
-    console.log(event.target.value);
-  } */
+  // -------------- Búsqueda de pictogramas por categoría -----------------
+  const onClickCategory = event => {
+    const value = event.target.id;
+    console.log(value);
+    getFilteredPictogramsByCategory(value);
+  };
 
-  // -------------- Búsqueda de pictogramas -----------------
+  const getFilteredPictogramsByCategory = url => {
+    setLoading(true);
+    fetchPictogramsByCategory(url, context.language.LANGUAGE)
+      .then(data => {
+        setPictograms(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setPictograms(items);
+        console.error(error);
+        setLoading(false);
+      });
+  };
+
+  // -------------- Búsqueda de pictogramas por palabra -----------------
   const getFilteredPictograms = ({ search }) => {
     const searchString = new RegExp(search, 'i');
-    // console.log('******************', pictograms);
     const filteredPictograms = items.filter(pictogram => {
       console.log(pictogram.keywords[0].keyword);
       return searchString.test(pictogram.keywords[0].keyword);
     });
-    console.log(filteredPictograms);
     return filteredPictograms;
   };
 
@@ -67,26 +78,33 @@ const Pictograms = () => {
     setPictograms(filteredPictograms);
   };
 
-  // -----------------------------------------------------
-  // ----------------- Búsqueda de pictogramas por palabra -----------------------
-  /* const fetchAllPictogramsBySearch  */
-  // -----------------------------------------------------
-
   return (
     <>
-      {loading ? load() : <></>}
-      {/* {load()} */}
+      {loading ? <Spinner allWindow={true} /> : <></>}
       <section className="pictograms-section">
-        {/* <button type="button" onClick={printJSON}>
-          Cargar json dummy
-        </button> */}
         <h2>{context.language.DASHBOARD_PICTOGRAMS}</h2>
+        <form>
+          <input
+            type="search"
+            placeholder={context.language.DASHBOARD_SEARCH}
+            onChange={handleKeyUp}
+            id="search"
+          />
+          {/* <button type="submit" id="buscar">
+            buscar
+          </button> */}
+        </form>
         <div>
           <ul>
             {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
               <>
                 <li key={information.endpoint}>
-                  <button className="category-button" type="button">
+                  <button
+                    id={information.endpoint}
+                    className="category-button"
+                    type="button"
+                    onClick={onClickCategory}
+                  >
                     {information.id}
                   </button>
                 </li>
@@ -94,18 +112,8 @@ const Pictograms = () => {
             ))}
           </ul>
         </div>
-        <form>
-          <input
-            type="search"
-            placeholder={context.language.DASHBOARD_SEARCH}
-            onKeyUp={handleKeyUp}
-            id="search"
-          />
-          <button type="submit" id="buscar">
-            buscar
-          </button>
-        </form>
         <div>
+          {/* {loadingSearch ? <Spinner allWindow={false} /> : <></>} */}
           {pictograms.length > 0 ? (
             <>
               <Pagination
@@ -119,7 +127,7 @@ const Pictograms = () => {
               />
             </>
           ) : (
-            <h1>No se encontraron pictogramas</h1>
+            <p>No se encontraron pictogramas</p>
           )}
         </div>
       </section>
