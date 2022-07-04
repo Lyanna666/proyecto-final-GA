@@ -5,6 +5,7 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
+  Dimensions,
 } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
@@ -73,13 +74,14 @@ export default function TabOneScreen({
   const renderItem = ({ item }) => {
     const name = item.name.common;
     const flag = item.flags.png;
-    console.log('*******+ Item ********', flag, name);
 
     return (
       <>
         <View style={styles.containerLista}>
-          <Text>{name}</Text>
-          <Image style={styles.image} source={{ uri: flag }} />
+          <View style={styles.contentLista}>
+            <Text>{name}</Text>
+            <Image style={styles.image} source={{ uri: flag }} />
+          </View>
         </View>
       </>
     );
@@ -135,6 +137,9 @@ export default function TabOneScreen({
   );
 }
 
+const numColumns = 3;
+const size = Dimensions.get('window').width / numColumns;
+
 const styles = StyleSheet.create({
   loading: {
     width: '100%',
@@ -153,8 +158,18 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   containerLista: {
-    backgroundColor: '#f9c2ff',
-    margin: 4,
+    textAlign: 'center',
+    width: size,
+    height: size,
+  },
+  contentLista: {
+    borderColor: '#ddd',
+    borderStyle: 'solid',
+    borderRadius: 5,
+    alignItems: 'center',
+    margin: 3,
+    borderWidth: 1,
+    padding: 1,
   },
   title: {
     fontSize: 20,
@@ -172,8 +187,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   image: {
-    width: 50,
-    height: 50,
-    margin: 1,
+    resizeMode: 'contain',
+    width: '80%',
+    height: undefined,
+    aspectRatio: 1,
   },
 });
