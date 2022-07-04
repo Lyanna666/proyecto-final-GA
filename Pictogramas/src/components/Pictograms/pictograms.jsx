@@ -62,7 +62,7 @@ const Pictograms = () => {
   const getFilteredPictograms = ({ search }) => {
     const searchString = new RegExp(search, 'i');
     const filteredPictograms = items.filter(pictogram => {
-      console.log(pictogram.keywords[0].keyword);
+      // console.log(pictogram.keywords[0].keyword);
       return searchString.test(pictogram.keywords[0].keyword);
     });
     return filteredPictograms;
@@ -92,6 +92,7 @@ const Pictograms = () => {
             placeholder={context.language.DASHBOARD_SEARCH}
             onChange={handleKeyUp}
             id="search"
+            autoComplete="off"
           />
           {/* <button type="submit" id="buscar">
             buscar
