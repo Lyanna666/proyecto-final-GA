@@ -62,14 +62,14 @@ const PictogramDetail = props => {
               </div>
             </DivPictogram>
             <div>
-              <ul>
+              <UlCategory>
                 {pictogramInfo.keywords.map((information, index) => (
                   <li key={index}>
                     <h3>{information.keyword.toUpperCase()}</h3>
                     <p>{information.meaning}</p>
                   </li>
                 ))}
-              </ul>
+              </UlCategory>
 
               <ul>
                 {pictogramInfo.tags.map((tag, index) => (
@@ -102,7 +102,13 @@ const DivPictogram = styled.div`
   }
 `;
 
+const UlCategory = styled.ul`
+  display: flex;
+  flex-direction: column;
+`;
+
 const LiCategory = styled.li`
+  display: block;
   margin: 0.2rem;
   background-color: rgb(229, 229, 229);
   padding: 0.5rem;
