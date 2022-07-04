@@ -12,75 +12,68 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import React, { useState, useEffect } from 'react';
-import { fetchAllCountries } from '../components/Utils/conexiones/services';
+import { fetchAllPictograms, fetchPictogramsByCategory } from '../api/api-rest';
 
 export default function TabOneScreen({
   navigation,
 }: RootTabScreenProps<'TabOne'>) {
-  const [countries, setCountries] = useState([]);
-  const [countriesToRender, setCountriesToRender] = useState([]);
+  const [items, setItems] = useState([]);
+  const [pictograms, setPictograms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    getAllCountries();
-    setCountriesToRender(countries);
+    getAllPictograms();
   }, []);
 
-  const getFilteredCountries = ({ search }) => {
+  const getFilteredPictograms = ({ search }) => {
     const searchString = new RegExp(search, 'i');
-
-    const filteredCountries = countries.filter(country => {
-      return searchString.test(country.name.common);
+    const filteredPictograms = items.filter(pictogram => {
+      // console.log(pictogram.keywords[0].keyword);
+      return searchString.test(pictogram.keywords[0].keyword);
     });
-    return filteredCountries;
+    return filteredPictograms;
   };
 
-  const handleKeyUp = event => {
-    // alert(event);
-    setSearch(event);
-    const filteredCountries = getFilteredCountries({ search: event });
+  function handleKeyUp(e) {
+    console.log('***********', e);
+    // // const value = event.target.value;
+    const filteredPictograms = getFilteredPictograms({
+      search: e,
+    });
+    setPictograms(filteredPictograms);
+  }
 
-    setCountriesToRender(filteredCountries);
-  };
-
-  function getAllCountries() {
+  function getAllPictograms() {
     setLoading(true);
-    fetchAllCountries()
-      .then(countriesData => {
-        // alert(countriesData);
-        const dataArray = Object.entries(countriesData);
-        if (countriesData.length > 0) {
-          setCountries(countriesData);
-          setCountriesToRender(countriesData);
-          setLoading(false);
-          console.log(countriesData);
-        } else {
-          setCountries([]);
-          alert(
-            'Ha ocurrido un error al cargar los países, vuelva a intentarlo más tarde.',
-          );
-          setLoading(false);
-        }
+    // console.log(context.language.LANGUAGE);
+    fetchAllPictograms('es')
+      .then(data => {
+        setItems(data);
+        setPictograms(data);
+        setLoading(false);
       })
-      .catch(e => {
-        console.log(e);
-        setCountries([]);
-        alert('Error al cargar países: ' + e);
+      .catch(error => {
+        console.error(error);
         setLoading(false);
       });
   }
 
   const renderItem = ({ item }) => {
-    const name = item.name.common;
-    const flag = item.flags.png;
+    const name = item.keywords[0].keyword;
+    const image =
+      'https://static.arasaac.org/pictograms/' +
+      item._id +
+      '/' +
+      item._id +
+      '_300.png';
 
     return (
       <>
         <View style={styles.containerLista}>
           <View style={styles.contentLista}>
             <Text>{name}</Text>
-            <Image style={styles.image} source={{ uri: flag }} />
+            <Image style={styles.image} source={{ uri: image }} />
           </View>
         </View>
       </>
@@ -108,22 +101,22 @@ export default function TabOneScreen({
           style={styles.input}
           placeholder="Buscar pictogramas"
           keyboardType="default"
-          onChangeText={handleKeyUp}
+          onSubmitEditing={e => handleKeyUp(e.nativeEvent.text)}
         />
         {/* // onChangeText={onChangeNumber}// onPress={onPressLearnMore} */}
         <Button
           title="Buscar"
           accessibilityLabel="Buscar"
-          onPress={getAllCountries}
+          onPress={getAllPictograms}
         />
 
         <FlatList
           contentContainerStyle={styles.lista}
           numColumns={3}
           horizontal={false}
-          data={countriesToRender}
+          data={pictograms}
           renderItem={renderItem}
-          keyExtractor={item => item.name.common}
+          keyExtractor={item => item._id}
         />
 
         {/* {countries.map((country, index) => {

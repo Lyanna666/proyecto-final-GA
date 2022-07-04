@@ -1,6 +1,9 @@
 .pictograms-section {
+  width: 100%;
+  min-width: 80%;
+  min-height: 50vh;
   padding: 1rem;
-  margin: 0.4rem;
+  margin: 1rem;
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
@@ -10,14 +13,50 @@
   border-bottom: 0.06rem solid lightgray;
 }
 
+.pictograms-section > button {
+  background-color: transparent;
+  border: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pictograms-section > button :hover {
+  color: var(--green);
+}
+
+.pictograms-section ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pictograms-section ul li {
+  margin: 0.2rem;
+}
+
 .category-button {
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   background-color: lightgray;
   border: none;
-  padding: 0.4rem;
-  margin-right: 0.4rem;
+  padding: 0.5rem;
 }
 
 .category-button:hover {
-  font-weight: 700;
+  background-color: darkgray;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .pictograms-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+  }
 }

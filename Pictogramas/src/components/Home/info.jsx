@@ -73,9 +73,9 @@ const Info = props => {
             </li>
           ))}
         </ul>
-        <a className="top-link" href="#header">
+        <Link className="link top-link" to={'/#header'}>
           {context.language.TOP_PAGE}
-        </a>
+        </Link>
       </section>
     </>
   );

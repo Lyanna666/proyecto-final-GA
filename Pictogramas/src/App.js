@@ -1,6 +1,5 @@
 import { useState, React, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { WebView } from 'react-native-webview';
 
 import AppContext from './AppContext';
 
@@ -9,6 +8,9 @@ import Login from './pages/Login';
 import Register from './pages/Registrer';
 import Dashboard from './pages/Dashboard';
 import Detail from './pages/Detail';
+
+// PRUEBAS PARA STORAGE LOCAL
+import Data from './pages/Data';
 
 import * as constantsSpanish from './Constants/spanish';
 import * as constantsEnglish from './Constants/english';
@@ -32,19 +34,18 @@ const App = () => {
 
   const { pathname, hash, key } = useLocation(); // Aquí guardamos la sección a la que nos queremos mover
 
+  // Si no hay nada hacemos scroll al inicio de la pag
   useEffect(
     () => {
       // Si no hay nada hacemos scroll al inicio de la pag
       if (hash === '') {
-        window.scrollTo(0, 0);
-      }
-      // si no scroll hasta el id
-      else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      } else {
         setTimeout(() => {
           const id = hash.replace('#', '');
           const element = document.getElementById(id);
           if (element) {
-            element.scrollIntoView();
+            element.scrollIntoView({ behavior: 'smooth' });
           }
         }, 0);
       }
@@ -55,15 +56,12 @@ const App = () => {
   return (
     <AppContext.Provider value={userSettings}>
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={<Home language={language} changeLanguage={changeLanguage} />}
-        />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route path="/registrer" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/:id" element={<Detail />} />
+        <Route path="/data" element={<Data />} />
       </Routes>
     </AppContext.Provider>
   );

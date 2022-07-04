@@ -9,7 +9,9 @@ export const ES = 'Español (ES)';
 export const EN_ID = 'EN';
 export const ES_ID = 'ES';
 
-export const NAME_APP = 'TEAyudo';
+export const LANGUAGE = 'es';
+
+export const NAME_APP = 'TEA Ayudo';
 
 /* HEADER TEXTS */
 export const HEADER_NAV_HOME = 'Home';
@@ -33,6 +35,9 @@ export const LOGIN_TERMS =
   'Al registrarte, aceptas nuestras condiciones de servicio y nuestra política de privacidad';
 export const LOGIN_TERMS_LINK = 'Condiciones de servicio';
 export const LOGIN_REGISTER_BUTTON = 'Registrarse';
+
+/* Loading */
+export const LOADING_TITLE = 'Cargando...';
 
 /* Sign up TEXT */
 export const SIGNUP_TITLE = 'Regístrate con tu correo electrónico';
@@ -133,6 +138,29 @@ export const USERS = [
 
 /* DASHBOARD */
 export const DASHBOARD_PICTOGRAMS = 'Pictogramas';
-export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
 export const DASHBOARD_SEARCH = '🔍 Introduce el texto a buscar';
 export const DASHBOARD_ALL_CATEGORIES = 'Todas las categorías';
+
+/* Aside */
+export const ASIDE_HOME = 'Home';
+export const ASIDE_FAVO = 'Favoritos';
+export const ASIDE_EASY = 'Modo fácil';
+export const ASIDE_SETTINGS = 'Ajustes';
+export const ASIDE_HELP = 'Ayuda';
+export const ASIDE_LOGOUT = 'Cerrar sesión';
+export const ASIDE_FEEDBACK = 'Feedback';
+
+/* Categorias */
+export const DASHBOARD_CATEGORIES = [
+  { id: 'Alimentación', endpoint: '/search/alimentos' },
+  { id: 'Lugar', endpoint: '/search/lugar' },
+  { id: 'Educación', endpoint: '/search/educaci%C3%B3n' },
+  { id: 'Tiempo', endpoint: '/search/tiempo' },
+  { id: 'Comunicación', endpoint: '/search/comunicaci%C3%B3n' },
+  { id: 'Sentimientos', endpoint: '/search/sentimientos' },
+  { id: 'Animales', endpoint: '/search/animales' },
+  { id: 'Personas', endpoint: '/search/personas' },
+  { id: 'Plantas', endpoint: '/search/plantas' },
+  { id: 'Colores', endpoint: '/search/colores' },
+  { id: 'Números', endpoint: '/search/numeros' },
+];

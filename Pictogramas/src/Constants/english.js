@@ -9,7 +9,9 @@ export const ES = 'Español (ES)';
 export const EN_ID = 'EN';
 export const ES_ID = 'ES';
 
-export const NAME_APP = 'TEAyudo';
+export const LANGUAGE = 'en';
+
+export const NAME_APP = 'TEA Ayudo';
 
 /* HEADER TEXTS */
 export const HEADER_NAV_HOME = 'Home';
@@ -33,6 +35,9 @@ export const LOGIN_TERMS =
   'By signing up, you agree to our Terms of Service and Privacy Policy.';
 export const LOGIN_TERMS_LINK = 'Terms of Service';
 export const LOGIN_REGISTER_BUTTON = 'Sign up';
+
+/* Loading */
+export const LOADING_TITLE = 'Loading...';
 
 /* Sign up TEXT */
 export const SIGNUP_TITLE = 'Sign up';
@@ -130,6 +135,29 @@ export const USERS = [
 
 /* DASHBOARD */
 export const DASHBOARD_PICTOGRAMS = 'Pictograms';
-export const DASHBOARD_CATEGORIES = ['Categoría1', 'Categoría2', 'Categoría3'];
 export const DASHBOARD_SEARCH = 'Enter seach text';
 export const DASHBOARD_ALL_CATEGORIES = 'All categories';
+
+/* Aside */
+export const ASIDE_HOME = 'Home';
+export const ASIDE_FAV = 'Favorites';
+export const ASIDE_EASY = 'Easy to use';
+export const ASIDE_SETTINGS = 'Settings';
+export const ASIDE_HELP = 'Help';
+export const ASIDE_LOGOUT = 'Logout';
+export const ASIDE_FEEDBACK = 'Feedback';
+
+// categories
+export const DASHBOARD_CATEGORIES = [
+  { id: 'Food', endpoint: '/search/food' },
+  { id: 'Place', endpoint: '/search/place' },
+  { id: 'education', endpoint: '/search/education' },
+  { id: 'Time', endpoint: '/search/time' },
+  { id: 'Comunication', endpoint: '/search/comunication' },
+  { id: 'Feeling', endpoint: '/search/feeling' },
+  { id: 'Animals', endpoint: '/search/animals' },
+  { id: 'People', endpoint: '/search/people' },
+  { id: 'Plants', endpoint: '/search/plants' },
+  { id: 'Colours', endpoint: '/search/colours' },
+  { id: 'Numbers', endpoint: '/search/numbers' },
+];

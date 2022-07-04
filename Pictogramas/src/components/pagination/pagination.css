@@ -1,5 +1,9 @@
 .pictogram-div {
   display: flex;
+  /* Esto es para que todos tengan el mismo tamaño */
+  width: 15rem;
+  height: 15rem;
+
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -12,9 +16,15 @@
   text-transform: uppercase;
 }
 
+.pictogram-div picture {
+  max-width: 8rem;
+  width: 90%;
+}
+
 .dataContainer {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 2;
   justify-content: center;
   align-items: stretch;
 }

@@ -35,7 +35,7 @@ const Header = () => {
           <picture>
             <img
               src="./Resources/Logo-black.png"
-              alt={context.language.TITLE}
+              alt={context.language.APP_NAME}
             />
           </picture>
           <nav>
@@ -50,12 +50,14 @@ const Header = () => {
                 {/* <Link className="link" to={'/#how-does-it-works'}>
               {context.language.HEADER_NAV_HOW_DOES_IT_WORKS}
             </Link> */}
-                <a href="/#how-does-it-works">
+                <Link className="link" to={'/#how-does-it-works'}>
                   {context.language.HEADER_NAV_HOW_DOES_IT_WORKS}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#users">{context.language.HEADER_NAV_USERS}</a>
+                <Link className="link" to={'/#users'}>
+                  {context.language.HEADER_NAV_USERS}
+                </Link>
               </li>
             </ul>
             <div>
