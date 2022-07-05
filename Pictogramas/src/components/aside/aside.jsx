@@ -16,7 +16,6 @@ const Aside = props => {
       url: '/dashboard',
       alt: 'home',
     },
-
     {
       name: context.language.ASIDE_FAVO,
       src: './assets/icons/favoritos.png',
@@ -27,6 +26,12 @@ const Aside = props => {
       name: context.language.ASIDE_EASY,
       src: './assets/icons/class.png',
       url: '/dashboard',
+      alt: 'easy-mode',
+    },
+    {
+      name: 'Crear rutina',
+      src: './assets/icons/class.png',
+      url: '/Routines',
       alt: 'easy-mode',
     },
   ];
@@ -64,10 +69,16 @@ const Aside = props => {
           {iconsHeader.map((icon, index) => (
             <>
               <li className="aside__item">
-                <span>
-                  <img src={icon.src} alt={icon.alt} className="aside_tools" />
-                </span>
-                {icon.name}
+                <Link to={icon.url}>
+                  <span>
+                    <img
+                      src={icon.src}
+                      alt={icon.alt}
+                      className="aside_tools"
+                    />
+                  </span>
+                  {icon.name}
+                </Link>
               </li>
             </>
           ))}

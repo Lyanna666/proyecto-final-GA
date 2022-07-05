@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Post({ data, kurva }) {
   return (
-    <Link to={`/dashboard/${data._id}`}>
+    <Link to={`/dashboard${data._id}`}>
       <div className="pictogram-div">
         <p>{data.keywords[0].keyword}</p>
         <picture>
