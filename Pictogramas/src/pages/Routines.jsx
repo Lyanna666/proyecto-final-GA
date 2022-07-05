@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '../AppContext';
 import styled from 'styled-components';
@@ -9,6 +9,7 @@ import Spinner from '../components/loading/loading';
 
 function Routines() {
   const context = useContext(AppContext);
+  let dragItem = null;
   const [loading, setLoading] = useState(false);
   const [pictograms, setPictograms] = useState(null);
   const [filas, setFilas] = useState([
@@ -51,6 +52,46 @@ function Routines() {
     }
   }
 
+  const dragStart = (e, position) => {
+    // e.preventDefault();
+    dragItem = e.target;
+    // e.dataTransfer.effectAllowed = 'all';
+    // e.dataTransfer.dropEffect = 'copy';
+
+    // e.dataTransfer.setData(e.target, '1');
+
+    console.log('drag start', e.target, e.originalEvent);
+
+    // e.preventDefault();
+  };
+
+  const dragEnter = (e, position) => {
+    e.preventDefault();
+    // console.log('Dragenter', e, position);
+  };
+
+  const onDragOver = e => {
+    e.preventDefault();
+    // console.log('Grag over', e);
+
+    e.target.setAttribute('drop-active', true);
+  };
+
+  const drop = e => {
+    e.preventDefault();
+
+    const data = e.dataTransfer.getData('1');
+    console.log('Drop', e, data, e.dataTransfer);
+    e.target.setAttribute('drop-active', false);
+    e.target.append(dragItem);
+  };
+
+  const onDragLeave = ev => {
+    ev.preventDefault();
+    ev.target.setAttribute('drop-active', false);
+    // console.log('Leave', ev);
+  };
+
   return (
     <>
       {loading ? <Spinner allWindow={true} /> : <></>}
@@ -70,15 +111,23 @@ function Routines() {
                   <>
                     {pictograms.map(pictogram => (
                       <DivPictogram>
-                        <h3>{pictogram.keywords[0].keyword}</h3>
-                        <picture>
-                          <img
-                            src={`https://static.arasaac.org/pictograms/${
-                              pictogram._id
-                            }/${pictogram._id}_300.png`}
-                            alt={pictogram.keywords[0].keyword}
-                          />
-                        </picture>
+                        <div
+                          draggable
+                          key={pictogram._id}
+                          onDragStart={e => dragStart(e, pictogram._id)}
+                          onDragEnter={e => dragEnter(e, pictogram._id)}
+                        >
+                          <h3>{pictogram.keywords[0].keyword}</h3>
+                          <picture draggable="false">
+                            <img
+                              draggable="false"
+                              src={`https://static.arasaac.org/pictograms/${
+                                pictogram._id
+                              }/${pictogram._id}_300.png`}
+                              alt={pictogram.keywords[0].keyword}
+                            />
+                          </picture>
+                        </div>
                       </DivPictogram>
                     ))}
                   </>
@@ -98,7 +147,15 @@ function Routines() {
                           indexFilas === 0 ? (
                             <th>{contenido}</th>
                           ) : (
-                            <TdTableRoutine>{contenido}</TdTableRoutine>
+                            <TdTableRoutine
+                              drop-active="false"
+                              key={`${indexFilas}-${indexContenido}`}
+                              onDragOver={event => onDragOver(event)}
+                              onDragLeave={event => onDragLeave(event)}
+                              onDrop={event => drop(event)}
+                            >
+                              {contenido}
+                            </TdTableRoutine>
                           ),
                         )}
                       </tr>
@@ -166,6 +223,9 @@ const TdTableRoutine = styled.td`
   height: 7rem;
   border-radius: 0.2rem;
   box-shadow: 0.09rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+  &[drop-active='true'] {
+    border: 0.07rem solid var(--green);
+  }
 `;
 
 const InputTable = styled.input`
@@ -196,8 +256,16 @@ const DivPictogram = styled.div`
   border-radius: 0.5rem;
   font-size: 0.7rem;
   width: 32%;
-  padding: 0.2rem;
+  padding: 0;
   margin-bottom: 0.5rem;
+
+  & > div {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    border-radius: 0.5rem;
+    border: 0.06rem solid lightgray;
+  }
 `;
 
 const DivImagesPictograms = styled.div`
