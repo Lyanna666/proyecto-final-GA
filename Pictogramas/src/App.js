@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Register from './pages/Registrer';
 import Dashboard from './pages/Dashboard';
 import Detail from './pages/Detail';
+import Routines from './pages/Routines';
 
 // PRUEBAS PARA STORAGE LOCAL
 import Data from './pages/Data';
@@ -58,9 +59,10 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
-        <Route path="/registrer" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/:id" element={<Detail />} />
+        <Route exact path="/registrer" element={<Register />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/dashboard:id" element={<Detail />} />
+        <Route exact path="/routines" element={<Routines />} />
         <Route path="/data" element={<Data />} />
       </Routes>
     </AppContext.Provider>

@@ -28,9 +28,12 @@ export async function fetchAllPictogramsBySearch(search, language) {
   /* console.log(urlAll + language); */
 
   try {
-    const response = await fetch(urlGlobal + language + urlSearch + search, {
-      method: 'GET',
-    });
+    const response = await fetch(
+      urlGlobal + '/' + language + urlSearch + search,
+      {
+        method: 'GET',
+      },
+    );
     const pictograms = await response.json();
     return pictograms;
   } catch (error) {

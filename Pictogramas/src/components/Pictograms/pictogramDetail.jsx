@@ -40,7 +40,11 @@ const PictogramDetail = props => {
   return (
     <>
       {loading ? <Spinner allWindow={true} /> : <></>}
+
       <div className="pictograma">
+        <DivBack>
+          <Link to={'/Dashboard'}>🔙</Link>
+        </DivBack>
         <h1>Pictograma {params.id}</h1>
         {pictogramInfo != null ? (
           <ContentPictogram>
@@ -55,21 +59,21 @@ const PictogramDetail = props => {
                   alt={pictogramInfo._id}
                 />
               </picture>
-              <div>
-                <CustomButton name="Descargar" color="green" size="small" />
-                <CustomButton name="Imprimir" color="green" size="small" />
-                <CustomButton name="Descargar" color="green" size="small" />
-              </div>
+              <DivButtons>
+                <CustomButton name="Imprimir" color="green" />
+                <CustomButton name="Descargar" color="green" />
+                <CustomButton name="Marcar como favorito 🤍" color="red" />
+              </DivButtons>
             </DivPictogram>
             <div>
-              <ul>
+              <UlCategory>
                 {pictogramInfo.keywords.map((information, index) => (
                   <li key={index}>
                     <h3>{information.keyword.toUpperCase()}</h3>
                     <p>{information.meaning}</p>
                   </li>
                 ))}
-              </ul>
+              </UlCategory>
 
               <ul>
                 {pictogramInfo.tags.map((tag, index) => (
@@ -88,7 +92,6 @@ const PictogramDetail = props => {
 
 const DivPictogram = styled.div`
   display: flex;
-  width: 30%;
   text-transform: uppercase;
   flex-direction: column;
   justify-content: center;
@@ -96,13 +99,31 @@ const DivPictogram = styled.div`
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
   margin: 1rem;
+  min-width: 20rem;
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
+`;
 
-  @media (max-width: 768px) {
-  }
+const DivBack = styled.div`
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 1rem;
+  margin-right: auto;
+`;
+
+const DivButtons = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+const UlCategory = styled.ul`
+  display: flex;
+  flex-direction: column;
 `;
 
 const LiCategory = styled.li`
+  display: block;
   margin: 0.2rem;
   background-color: rgb(229, 229, 229);
   padding: 0.5rem;
@@ -114,6 +135,9 @@ const ContentPictogram = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const H2Pictogram = styled.h2`
