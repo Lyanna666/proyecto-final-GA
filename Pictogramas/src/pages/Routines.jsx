@@ -1,8 +1,15 @@
-import React, { useRef, useEffect, useState, useContext } from 'react';
+import React, {
+  updateState,
+  useRef,
+  useEffect,
+  useState,
+  useContext,
+} from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '../AppContext';
 import styled from 'styled-components';
 import Header from '../components/Header/header';
+import PictogramRoutine from '../components/table/pictogramRoutine';
 import CustomButton from '../components/elements/customButton';
 import { fetchAllPictogramsBySearch } from '../api/api-rest';
 import Spinner from '../components/loading/loading';
@@ -14,19 +21,17 @@ function Routines() {
   const [pictograms, setPictograms] = useState(null);
   const [filas, setFilas] = useState([
     [' ', 'L', 'M', 'X', 'J', 'V', 'S', 'D'],
-    [
-      <>
-        <InputTable placeholder="texto aqui" />
-      </>,
-      <div />,
-      <div />,
-      <div />,
-      <div />,
-      <div />,
-      <div />,
-      <div />,
-    ],
+    [null, null, null, null, null, null, null, null],
   ]);
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
+  // useEffect(() => {
+  //   setFilas([
+  //     [' ', 'L', 'M', 'X', 'J', 'V', 'S', 'D'],
+  //     [null, null, null, null, null, null, null, null],
+  //   ]);
+  // }, []);
 
   function getPictograms(searchText) {
     setLoading(true);
@@ -52,16 +57,9 @@ function Routines() {
     }
   }
 
-  const dragStart = (e, position) => {
-    // e.preventDefault();
-    dragItem = e.target;
-    // e.dataTransfer.effectAllowed = 'all';
-    // e.dataTransfer.dropEffect = 'copy';
-
-    // e.dataTransfer.setData(e.target, '1');
-
-    console.log('drag start', e.target, e.originalEvent);
-
+  const dragStart = (e, pictogram) => {
+    dragItem = pictogram;
+    console.log('drag start', dragItem);
     // e.preventDefault();
   };
 
@@ -78,12 +76,16 @@ function Routines() {
   };
 
   const drop = e => {
+    const ids = e.target.id.split('-');
     e.preventDefault();
-
-    const data = e.dataTransfer.getData('1');
-    console.log('Drop', e, data, e.dataTransfer);
     e.target.setAttribute('drop-active', false);
-    e.target.append(dragItem);
+    let temporaryArray = filas;
+    temporaryArray[ids[0]][ids[1]] = dragItem;
+    console.log(temporaryArray);
+    // createDivPictogram(e.target);
+    setFilas(temporaryArray);
+    console.log('State', filas);
+    forceUpdate();
   };
 
   const onDragLeave = ev => {
@@ -114,8 +116,13 @@ function Routines() {
                         <div
                           draggable
                           key={pictogram._id}
-                          onDragStart={e => dragStart(e, pictogram._id)}
-                          onDragEnter={e => dragEnter(e, pictogram._id)}
+                          onDragStart={e =>
+                            dragStart(e, {
+                              id: pictogram._id,
+                              name: pictogram.keywords[0].keyword,
+                            })
+                          }
+                          onDragEnter={e => dragEnter(e)}
                         >
                           <h3>{pictogram.keywords[0].keyword}</h3>
                           <picture draggable="false">
@@ -148,13 +155,26 @@ function Routines() {
                             <th>{contenido}</th>
                           ) : (
                             <TdTableRoutine
-                              drop-active="false"
+                              id={`${indexFilas}-${indexContenido}`}
                               key={`${indexFilas}-${indexContenido}`}
                               onDragOver={event => onDragOver(event)}
                               onDragLeave={event => onDragLeave(event)}
                               onDrop={event => drop(event)}
                             >
-                              {contenido}
+                              {indexContenido === 0 ? (
+                                <>
+                                  <InputTable placeholder="texto aqui" />
+                                </>
+                              ) : contenido !== null ? (
+                                <>
+                                  <PictogramRoutine
+                                    id={contenido.id}
+                                    name={contenido.name}
+                                  />
+                                </>
+                              ) : (
+                                <></>
+                              )}
                             </TdTableRoutine>
                           ),
                         )}
