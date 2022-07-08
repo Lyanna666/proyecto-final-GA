@@ -43,10 +43,10 @@ export async function fetchAllPictogramsBySearch(search, language) {
 }
 
 // Cargar pictogramas por categorías
-export async function fetchPictogramsByCategory(url, language) {
-  console.log('***** URL *******', urlGlobal + '/' + language + url);
+export async function fetchPictogramsByCategory(endpoint, language) {
+  console.log('***** URL *******', urlGlobal + '/' + language + endpoint);
   try {
-    const response = await fetch(urlGlobal + '/' + language + url, {
+    const response = await fetch(urlGlobal + '/' + language + endpoint, {
       method: 'GET',
     });
     const pictograms = await response.json();

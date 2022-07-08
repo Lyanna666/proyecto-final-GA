@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Post({ data, kurva }) {
+const Post = ({ data, kurva }) => {
   return (
     <Link to={`/dashboard${data._id}`}>
       <div className="pictogram-div">
@@ -17,6 +17,6 @@ function Post({ data, kurva }) {
       </div>
     </Link>
   );
-}
+};
 
 export default Post;
