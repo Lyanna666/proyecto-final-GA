@@ -27,7 +27,7 @@ export default PictogramRoutine;
 
 const PictogramDiv = styled.div`
   border: 0.08rem solid darkgray;
-  margin: 0.5rem;
+  margin: 1rem;
   padding: 0.2rem;
   font-size: 0.8rem;
   border-radius: 0.5rem;

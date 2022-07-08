@@ -22,7 +22,7 @@ const PictogramDetail = props => {
     fetchPictogramById(context.language.LANGUAGE, props.id)
       .then(data => {
         setPictogramInfo(data);
-        console.log(data);
+        console.log('********************',data);
         setLoading(false);
       })
       .catch(error => {

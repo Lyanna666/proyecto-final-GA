@@ -40,13 +40,12 @@ const Pictograms = () => {
   // -------------- Búsqueda de pictogramas por categoría -----------------
   const onClickCategory = event => {
     const value = event.target.id;
-    console.log(value);
     getFilteredPictogramsByCategory(value);
   };
 
-  const getFilteredPictogramsByCategory = url => {
+  const getFilteredPictogramsByCategory = endpoint => {
     setLoading(true);
-    fetchPictogramsByCategory(url, context.language.LANGUAGE)
+    fetchPictogramsByCategory(endpoint, context.language.LANGUAGE)
       .then(data => {
         setPictograms(data);
         setLoading(false);

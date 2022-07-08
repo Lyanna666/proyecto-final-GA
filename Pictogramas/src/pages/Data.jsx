@@ -16,15 +16,19 @@ function Data() {
 
   const [inputText, setInputText] = useState('');
   const [savedData, setSavedData] = React.useState(false);
+  let favoritos = {};
 
-  const handleInputChange = (event) => {
+  const handleInputChange = event => {
     const name = event.target.value;
     setInputText(name);
-    console.log(inputText);
+
+    favoritos[name] = name;
+    console.log(name, favoritos);
   };
 
   const saveData = () => {
-    localStorage.setItem('nombre', inputText);
+    localStorage['favoritos'] = JSON.stringify({ 'nombre:': 'Andrea' });
+    localStorage.setItem('nombre', JSON.stringify(favoritos));
     alert('Datos guardados');
     setSavedData(true);
   };
