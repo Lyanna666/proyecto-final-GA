@@ -60,7 +60,7 @@ const App = () => {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/dashboard:id" element={<Detail />} />
         <Route exact path="/routines" element={<Routines />} />
-        <Route path="/favoritos" element={<Favoritos />} />
+        <Route exact path="/favoritos" element={<Favoritos />} />
       </Routes>
     </AppContext.Provider>
   );

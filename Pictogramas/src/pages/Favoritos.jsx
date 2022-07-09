@@ -54,6 +54,7 @@ function Favoritos() {
     }
   }
 
+  // Estilos de la página
   const DivForm = styled.div`
     padding: 0.5rem;
     width: 25%;
