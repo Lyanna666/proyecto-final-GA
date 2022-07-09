@@ -3,13 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Post = ({ data, kurva }) => {
-  const [isFavorite, setIsFavorite] = useState(
-    JSON.parse(localStorage.getItem('favorites')).indexOf(
-      data._id.toString(),
-    ) >= 0
-      ? true
-      : false,
-  );
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     checkFavorites();
@@ -17,19 +11,19 @@ const Post = ({ data, kurva }) => {
 
   const checkFavorites = () => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    console.log(storedFavorites, data._id);
-    if (storedFavorites.indexOf(data._id.toString()) >= 0) {
-      setIsFavorite(true);
-    } else {
-      setIsFavorite(false);
+    // console.log(storedFavorites, data._id);
+    if (storedFavorites !== null) {
+      if (storedFavorites.indexOf(data._id.toString()) >= 0) {
+        setIsFavorite(true);
+      } else {
+        setIsFavorite(false);
+      }
     }
   };
 
   const onClickFavorite = event => {
     let favorites = [];
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    console.log('Guardados:', storedFavorites);
-
     if (storedFavorites !== null) {
       favorites = storedFavorites;
     }
@@ -45,8 +39,6 @@ const Post = ({ data, kurva }) => {
       favorites.push(event.target.id);
       setIsFavorite(true);
     }
-
-    console.log(favorites);
     localStorage.setItem('favorites', JSON.stringify(favorites));
   };
 
@@ -96,22 +88,6 @@ const DivHeader = styled.div`
     border: none;
     cursor: pointer;
   }
-  & .no-favorite {
-    color: lightgray;
-    font-size: 1rem;
-    transition: all 0.2s ease-in-out;
-  }
-  & .favorite {
-    /* .no-favorite:hover { */
-    color: orange;
-    transform: scale(1.8);
-    transition: all 0.2s ease-in-out;
-  }
-  /* & .favorite:hover {
-    transform: scale(1.1);
-    color: lightgray;
-    text-shadow: 0 0 0 #000000;
-  } */
 
   & button:hover {
   }

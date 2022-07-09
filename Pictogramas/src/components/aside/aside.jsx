@@ -68,7 +68,7 @@ const Aside = props => {
         <ul className="aside__list">
           {iconsHeader.map((icon, index) => (
             <>
-              <li className="aside__item">
+              <li className="aside__item" key={index}>
                 <Link to={icon.url}>
                   <span>
                     <img
@@ -88,7 +88,7 @@ const Aside = props => {
         <ul className="aside__list">
           {iconsFooter.map((icon, index) => (
             <>
-              <li className="aside_item">
+              <li className="aside_item" key={index}>
                 <span>
                   <img src={icon.src} alt={icon.name} className="aside_tools" />
                 </span>
