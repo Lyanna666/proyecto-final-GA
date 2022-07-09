@@ -6,23 +6,22 @@ import { useContext, React, useState, useEffect } from 'react';
 import { fetchPictogramById } from '../../api/api-rest';
 import CustomButton from '../elements/customButton';
 import Spinner from '../loading/loading';
+import { numeroAleatorio } from '../../Utils/utils';
 
 import './pictogramDetail.css';
 
 const PictogramDetail = props => {
+  const [isFavorite, setIsFavorite] = useState(false);
   const context = useContext(AppContext);
   const params = useParams();
-  console.log('Paso1', context, params, props);
   const [pictogramInfo, setPictogramInfo] = useState(null);
   const [loading, setLoading] = useState(false);
 
   function getPictogram() {
     setLoading(true);
-    console.log('Paso3', params, props);
     fetchPictogramById(context.language.LANGUAGE, props.id)
       .then(data => {
         setPictogramInfo(data);
-        console.log('********************',data);
         setLoading(false);
       })
       .catch(error => {
@@ -32,9 +31,38 @@ const PictogramDetail = props => {
       });
   }
 
+  // Chequeamos favoritos
+  const checkFavorites = () => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    if (storedFavorites !== null) {
+      if (storedFavorites.indexOf(props.id.toString()) >= 0) {
+        setIsFavorite(true);
+      } else {
+        setIsFavorite(false);
+      }
+    }
+  };
+
+  // Añadir a favoritos
+  const onClickFavorite = event => {
+    let favorites = [];
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    if (storedFavorites !== null) {
+      favorites = storedFavorites;
+    }
+    if (favorites.indexOf(event.target.id) >= 0) {
+      favorites.splice(favorites.indexOf(event.target.id), 1);
+      setIsFavorite(false);
+    } else {
+      favorites.push(event.target.id);
+      setIsFavorite(true);
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  };
+
   useEffect(() => {
-    console.log('Paso2');
     getPictogram();
+    checkFavorites();
   }, []);
 
   return (
@@ -49,8 +77,19 @@ const PictogramDetail = props => {
         {pictogramInfo != null ? (
           <ContentPictogram>
             <DivPictogram>
-              <H2Pictogram>{pictogramInfo.keywords[0].keyword} ▶</H2Pictogram>
-
+              <H2Pictogram>
+                {/* <span> */}
+                <button
+                  className={isFavorite ? 'favorite' : 'no-favorite'}
+                  type="button"
+                  id={props.id}
+                  onClick={onClickFavorite}
+                >
+                  ★
+                </button>
+                {/* </span> */}
+                {pictogramInfo.keywords[0].keyword}
+              </H2Pictogram>
               <picture>
                 <img
                   src={`https://static.arasaac.org/pictograms/${
@@ -62,13 +101,17 @@ const PictogramDetail = props => {
               <DivButtons>
                 <CustomButton name="Imprimir" color="green" />
                 <CustomButton name="Descargar" color="green" />
-                <CustomButton name="Marcar como favorito 🤍" color="red" />
+                {/*                 <CustomButton
+                  name="Marcar como favorito 🤍"
+                  color="red"
+                  onClick={onClickFavorite}
+                /> */}
               </DivButtons>
             </DivPictogram>
             <div>
               <UlCategory>
                 {pictogramInfo.keywords.map((information, index) => (
-                  <li key={index}>
+                  <li key={numeroAleatorio}>
                     <h3>{information.keyword.toUpperCase()}</h3>
                     <p>{information.meaning}</p>
                   </li>
@@ -141,8 +184,11 @@ const ContentPictogram = styled.div`
 `;
 
 const H2Pictogram = styled.h2`
-  display: block;
-  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1rem;
   width: 100%;
   font-weight: 400;
   color: var(--gray);
@@ -150,6 +196,10 @@ const H2Pictogram = styled.h2`
   margin-bottom: 1rem;
   text-align: center;
   background-color: #f5f5f5;
+
+  & button {
+    margin-right: 1rem;
+  }
 `;
 
 export default PictogramDetail;

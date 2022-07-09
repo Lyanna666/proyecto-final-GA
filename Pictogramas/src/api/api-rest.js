@@ -9,8 +9,6 @@ const urlSearch = '/search/';
 
 //Cargar todos los pictogramas
 export async function fetchAllPictograms(language) {
-  console.log(urlGlobal + urlAll + language);
-
   try {
     const response = await fetch(urlGlobal + urlAll + language, {
       method: 'GET',

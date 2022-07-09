@@ -12,7 +12,6 @@ const Pagination = ({
   siblingCount,
 }) => {
   const [totalPageCount, setTotalPageCount] = useState(0);
-  console.log(numberPages, totalPageCount);
   const [currentPage, setCurrentPage] = useState(1);
 
   const paginationRange = usePaginationRange({

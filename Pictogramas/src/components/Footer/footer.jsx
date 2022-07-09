@@ -1,14 +1,13 @@
 import './footer.css';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { numeroAleatorio } from '../../Utils/utils';
 
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
 import AppContext from '../../AppContext';
 
-const Footer = (props) => {
+const Footer = props => {
   const context = useContext(AppContext);
-  console.log(context);
 
   const socialIcons = [
     {
@@ -17,15 +16,18 @@ const Footer = (props) => {
     },
     {
       name: 'Twitter',
-      src: 'https://icon-library.com/images/twitter-white-icon/twitter-white-icon-19.jpg',
+      src:
+        'https://icon-library.com/images/twitter-white-icon/twitter-white-icon-19.jpg',
     },
     {
       name: 'Instagram',
-      src: 'https://www.citypng.com/public/uploads/preview/-51609193615decnmgwyz7.png',
+      src:
+        'https://www.citypng.com/public/uploads/preview/-51609193615decnmgwyz7.png',
     },
     {
       name: 'Google',
-      src: 'https://icon-library.com/images/google-plus-icon-white-png/google-plus-icon-white-png-5.jpg',
+      src:
+        'https://icon-library.com/images/google-plus-icon-white-png/google-plus-icon-white-png-5.jpg',
     },
   ];
 
@@ -59,11 +61,11 @@ const Footer = (props) => {
             {footerText.map((item, index) => (
               <>
                 <div className="about">
-                  <h3 key={index}>{item.title}</h3>
+                  <h3 key={numeroAleatorio}>{item.title}</h3>
                   <ul>
-                    <li key={index}>{item.content}</li>
-                    <li key={index}>{item.conten2}</li>
-                    <li key={index}>{item.conten3}</li>
+                    <li key={numeroAleatorio}>{item.content}</li>
+                    <li key={numeroAleatorio}>{item.conten2}</li>
+                    <li key={numeroAleatorio}>{item.conten3}</li>
                   </ul>
                 </div>
               </>
@@ -74,7 +76,7 @@ const Footer = (props) => {
               <img src="./Resources/logo_white.png" alt="logo" />
             </a>
             <div className="footer-social">
-              {socialIcons.map((icon) => (
+              {socialIcons.map(icon => (
                 <a href="/" key={icon.name}>
                   <img src={icon.src} alt={icon.name} />
                 </a>
