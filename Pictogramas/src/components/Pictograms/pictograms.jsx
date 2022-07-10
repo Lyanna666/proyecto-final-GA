@@ -80,7 +80,6 @@ const Pictograms = () => {
 
   return (
     <>
-      <Favorites />
       {loading ? <Spinner allWindow={true} /> : <></>}
       <section className="pictograms-section">
         <button type="button" onClick={getAllPictograms}>
@@ -99,6 +98,7 @@ const Pictograms = () => {
           </button> */}
         </form>
         <div>
+          <Favorites />
           <ul>
             {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
               <>
