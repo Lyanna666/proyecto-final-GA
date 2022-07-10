@@ -11,7 +11,7 @@ const Post = ({ data, kurva }) => {
 
   const checkFavorites = () => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    // console.log(storedFavorites, data._id); // eslint-disable-line
+    // console.log(storedFavorites, data._id);
     if (storedFavorites !== null) {
       if (storedFavorites.indexOf(data._id.toString()) >= 0) {
         setIsFavorite(true);
@@ -86,22 +86,6 @@ const DivHeader = styled.div`
     border: none;
     cursor: pointer;
   }
-  & .no-favorite {
-    color: lightgray;
-    font-size: 1rem;
-    transition: all 0.2s ease-in-out;
-  }
-  & .favorite {
-    /* .no-favorite:hover { */
-    color: orange;
-    transform: scale(1.8);
-    transition: all 0.2s ease-in-out;
-  }
-  /* & .favorite:hover {
-    transform: scale(1.1);
-    color: lightgray;
-    text-shadow: 0 0 0 #000000;
-  } */
 
   & button:hover {
   }

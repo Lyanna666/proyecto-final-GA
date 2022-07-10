@@ -49,9 +49,9 @@ function Routines() {
   }
 
   function onSubmitButton(event) {
+    // entender preventDefault()
     event.preventDefault();
     const value = event.target[0].value;
-    console.log('Esto funciona', value);
     if (value.length > 0) {
       getPictograms(value);
     }

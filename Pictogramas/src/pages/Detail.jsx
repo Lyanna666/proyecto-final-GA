@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Header from '../components/Header/header';
 import Aside from '../components/aside/aside';
 import PictogramDetail from '../components/Pictograms/pictogramDetail';
+import Footer from '../components/Footer/footer';
 
 const Detail = () => {
   let { id } = useParams();
@@ -31,6 +32,7 @@ const Detail = () => {
         <Aside />
         <PictogramDetail id={id} />
       </Container>
+      <Footer />
     </>
   );
 };

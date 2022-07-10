@@ -68,8 +68,8 @@ const Aside = props => {
         <ul className="aside__list">
           {iconsHeader.map((icon, index) => (
             <>
-              <li className="aside__item">
-                <Link to={icon.url}>
+              <li className="aside__item" key={index}>
+                <Link to={icon.url} className="aside__enlaces aside__item">
                   <span>
                     <img
                       src={icon.src}
@@ -88,11 +88,17 @@ const Aside = props => {
         <ul className="aside__list">
           {iconsFooter.map((icon, index) => (
             <>
-              <li className="aside_item">
-                <span>
-                  <img src={icon.src} alt={icon.name} className="aside_tools" />
-                </span>
-                {icon.name}
+              <li className="aside_item" key={index}>
+                <div className="aside__item">
+                  <span>
+                    <img
+                      src={icon.src}
+                      alt={icon.name}
+                      className="aside_tools"
+                    />
+                  </span>
+                  {icon.name}
+                </div>
               </li>
             </>
           ))}

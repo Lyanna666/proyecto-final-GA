@@ -63,3 +63,21 @@ button {
   padding: 1.5rem;
   background-color: var(--backgroundGrayColor);
 }
+
+.no-favorite {
+  color: gray;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.favorite {
+  /* .no-favorite:hover { */
+  color: orange;
+  transform: scale(1.8);
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
