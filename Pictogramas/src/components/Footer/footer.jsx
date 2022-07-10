@@ -8,7 +8,6 @@ import AppContext from '../../AppContext';
 
 const Footer = (props) => {
   const context = useContext(AppContext);
-  console.log(context);
 
   const socialIcons = [
     {

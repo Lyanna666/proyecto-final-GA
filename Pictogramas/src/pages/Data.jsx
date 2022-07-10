@@ -1,24 +1,18 @@
 import React from 'react';
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import AppContext from '../AppContext';
 import Perfil from './Perfil';
 import Header from '../components/Header/header';
-import CustomButton from '../components/elements/customButton';
 import Footer from '../components/Footer/footer';
-import Hero from '../components/Home/hero';
-import Info from '../components/Home/info';
-import Error from '../components/Error/error';
 
 function Data() {
   const context = useContext(AppContext);
-
   const [inputText, setInputText] = useState('');
   const [savedData, setSavedData] = React.useState(false);
   let favoritos = {};
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     const name = event.target.value;
     setInputText(name);
 

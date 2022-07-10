@@ -23,7 +23,7 @@ const Dashboard = () => {
     }
   `;
 
-  const DashboardMain = styled.main`
+  /*   const DashboardMain = styled.main`
     display: flex;
     flex-wrap: nonwrap;
     width: 100%;
@@ -38,7 +38,7 @@ const Dashboard = () => {
       flex-direction: column;
       width: 100%;
     }
-  `;
+  `; */
 
   return (
     <>

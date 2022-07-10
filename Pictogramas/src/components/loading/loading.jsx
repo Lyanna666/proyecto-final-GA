@@ -2,9 +2,7 @@ import React, { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 import AppContext from '../../AppContext';
 
-const Spinner = props => {
-  console.log(props);
-
+const Spinner = (props) => {
   const context = useContext(AppContext);
 
   const spin = keyframes`
