@@ -187,3 +187,6 @@ export const DASHBOARD_CATEGORIES = [
   { id: "Colores", endpoint: "/search/colores" },
   { id: "Números", endpoint: "/search/numeros" },
 ];
+
+/* Favoritos */
+export const FAVO_TITLE = "Favoritos";
