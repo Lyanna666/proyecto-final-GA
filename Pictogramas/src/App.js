@@ -1,20 +1,20 @@
-import { useState, React, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { useState, React, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-import AppContext from './AppContext';
+import AppContext from "./AppContext";
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Registrer';
-import Dashboard from './pages/Dashboard';
-import Detail from './pages/Detail';
-import Routines from './pages/Routines';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Registrer";
+import Dashboard from "./pages/Dashboard";
+import Detail from "./pages/Detail";
+import Routines from "./pages/Routines";
 
 // PRUEBAS PARA STORAGE LOCAL
-import Data from './pages/Data';
+import Data from "./pages/Data";
 
-import * as constantsSpanish from './Constants/spanish';
-import * as constantsEnglish from './Constants/english';
+import * as constantsSpanish from "./Constants/spanish";
+import * as constantsEnglish from "./Constants/english";
 
 const App = () => {
   // Creamos un estado para guardar el idioma selecionado por el usuario
@@ -26,7 +26,7 @@ const App = () => {
 
   function changeLanguage(event) {
     //Esta función se encarga de cambiar el idioma en función del botón que se pulse
-    if (event.target.id === 'EN') {
+    if (event.target.id === "EN") {
       setLanguage(constantsEnglish);
     } else {
       setLanguage(constantsSpanish);
@@ -36,23 +36,20 @@ const App = () => {
   const { pathname, hash, key } = useLocation(); // Aquí guardamos la sección a la que nos queremos mover
 
   // Si no hay nada hacemos scroll al inicio de la pag
-  useEffect(
-    () => {
-      // Si no hay nada hacemos scroll al inicio de la pag
-      if (hash === '') {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      } else {
-        setTimeout(() => {
-          const id = hash.replace('#', '');
-          const element = document.getElementById(id);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 0);
-      }
-    },
-    [pathname, hash, key],
-  );
+  useEffect(() => {
+    // Si no hay nada hacemos scroll al inicio de la pag
+    if (hash === "") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    } else {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
 
   return (
     <AppContext.Provider value={userSettings}>
