@@ -1,10 +1,25 @@
-import { React, useContext } from "react";
-import styled from "styled-components";
+import { React, useContext } from 'react';
+import styled from 'styled-components';
 
-import AppContext from "../../AppContext";
+import AppContext from '../../AppContext';
 
 const Favorites = (props) => {
   const context = useContext(AppContext);
+
+  let listaFavoritos = localStorage.getItem('favorites');
+
+  const mostrarFavoritos = () => {
+    if (listaFavoritos) {
+      listaFavoritos = JSON.parse(listaFavoritos);
+      return listaFavoritos.map((item, index) => {
+        return (
+          <div key={index}>
+            <p>{item.name}</p>
+          </div>
+        );
+      });
+    }
+  };
 
   // estilo de favoritos
   const MostrarFavoritos = styled.div`
@@ -49,16 +64,26 @@ const Favorites = (props) => {
     justify-content: flex-start;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    border: 1px solid #db4444;
+    background-color: #e9a7a7;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
   `;
 
   return (
     <>
       <MostrarFavoritos>
         <H2>{context.language.FAVO_TITLE}</H2>
-        {localStorage.getItem("favorites") && (
+        {localStorage.getItem('favorites') && (
           <ContenedorFavoritos>
             <List>
-              <ListItem> ID: {localStorage.getItem("favorites")}</ListItem>
+              <ListItem> ID: {localStorage.getItem('favorites')}</ListItem>
+              <ListItem> ID: {mostrarFavoritos}</ListItem>
             </List>
           </ContenedorFavoritos>
         )}
