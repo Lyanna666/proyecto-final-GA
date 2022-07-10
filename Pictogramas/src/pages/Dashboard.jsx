@@ -21,22 +21,22 @@ const Dashboard = () => {
     }
   `;
 
-  // const DashboardMain = styled.main`
-  //   display: flex;
-  //   flex-wrap: nonwrap;
-  //   width: 100%;
-  //   height: 100%;
-  //   flex-direction: row;
-  //   min-height: 100vh;
+  /*   const DashboardMain = styled.main`
+    display: flex;
+    flex-wrap: nonwrap;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    min-height: 100vh;
 
-  //   background-color: #eaeaea;
+    background-color: #eaeaea;
 
-  //   @media (min-width: 720px) {
-  //     display: flex;
-  //     flex-direction: column;
-  //     width: 100%;
-  //   }
-  // `;
+    @media (min-width: 720px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  `; */
 
   return (
     <>

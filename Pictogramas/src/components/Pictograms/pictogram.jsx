@@ -21,7 +21,7 @@ const Post = ({ data, kurva }) => {
     }
   };
 
-  const onClickFavorite = event => {
+  const onClickFavorite = (event) => {
     let favorites = [];
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
     if (storedFavorites !== null) {
@@ -61,9 +61,7 @@ const Post = ({ data, kurva }) => {
 
             <picture>
               <img
-                src={`https://static.arasaac.org/pictograms/${data._id}/${
-                  data._id
-                }_300.png`}
+                src={`https://static.arasaac.org/pictograms/${data._id}/${data._id}_300.png`}
                 alt={data.keywords[0].keyword}
               />
             </picture>

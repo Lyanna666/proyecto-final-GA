@@ -33,10 +33,10 @@ const Pagination = ({
   });
 
   function goToNextPage() {
-    setCurrentPage(page => page + 1);
+    setCurrentPage((page) => page + 1);
   }
   function gotToPreviousPage() {
-    setCurrentPage(page => page - 1);
+    setCurrentPage((page) => page - 1);
   }
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);

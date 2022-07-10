@@ -38,6 +38,7 @@ const App = () => {
   // Si no hay nada hacemos scroll al inicio de la pag
   useEffect(() => {
     // Si no hay nada hacemos scroll al inicio de la pag
+
     if (hash === "") {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     } else {
@@ -60,7 +61,7 @@ const App = () => {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/dashboard:id" element={<Detail />} />
         <Route exact path="/routines" element={<Routines />} />
-        <Route path="/data" element={<Data />} />
+        <Route exact path="/favoritos" element={<Favoritos />} />
       </Routes>
     </AppContext.Provider>
   );
