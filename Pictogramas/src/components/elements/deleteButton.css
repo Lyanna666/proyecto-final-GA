@@ -1,0 +1,22 @@
+.trash-div {
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+}
+
+.trash {
+  transform: scale(0.59);
+  transform-origin: center;
+}
+
+.trash-cover {
+  transform-origin: 10% 50%;
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+
+.trash:hover .trash-cover {
+  transform: rotate(-45deg);
+}
