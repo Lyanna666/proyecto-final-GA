@@ -6,7 +6,21 @@ const PictogramRoutine = props => {
   console.log(props);
   return (
     <>
-      <PictogramDiv>
+      <PictogramDiv
+        className="pictogram-routine"
+        draggable
+        onDragStart={e =>
+          props.dragStart(
+            e,
+            {
+              id: props.id,
+              name: props.name,
+            },
+            true,
+          )
+        }
+        onDragEnter={e => props.dragEnter(e)}
+      >
         {/* <DeleteButton type="button">x</DeleteButton> */}
         <p>{props.name.toUpperCase()}</p>
         <picture draggable="false">
