@@ -6,14 +6,18 @@ const Post = ({ data, kurva }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
+    // window.localStorage.clear();
     checkFavorites();
   });
 
   const checkFavorites = () => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    // console.log(storedFavorites, data._id);
+    // console.log('Storage array ', storedFavorites, data._id);
     if (storedFavorites !== null) {
-      if (storedFavorites.indexOf(data._id.toString()) >= 0) {
+      const index = storedFavorites.findIndex(
+        favorite => favorite._id === data._id,
+      );
+      if (index >= 0) {
         setIsFavorite(true);
       } else {
         setIsFavorite(false);
@@ -21,25 +25,29 @@ const Post = ({ data, kurva }) => {
     }
   };
 
-  const onClickFavorite = (event) => {
+  const onClickFavorite = (event, data) => {
     let favorites = [];
+
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    console.log('************', data, storedFavorites);
     if (storedFavorites !== null) {
       favorites = storedFavorites;
     }
-    if (favorites.indexOf(event.target.id) >= 0) {
-      console.log(
-        event.target.id,
-        'Borrando posicion:',
-        favorites.indexOf(event.target.id),
-      );
-      favorites.splice(favorites.indexOf(event.target.id), 1);
+    const index = favorites.findIndex(favorite => favorite._id === data._id);
+    console.log('Index del favorito', index, data._id);
+    if (index >= 0) {
+      console.log(event.target.id, 'Borrando posicion:', index);
+      favorites.splice(index, 1);
       setIsFavorite(false);
     } else {
-      favorites.push(event.target.id);
+      // Como poder pasar la data ¿?
+      console.log(event.target.id, 'Añadiendo posicion:', index, favorites);
+      favorites.push(data);
+      console.log(event.target.id, 'Añadido posicion:', index, favorites);
       setIsFavorite(true);
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
+    window.dispatchEvent(new Event('storage'));
   };
 
   return (
@@ -50,7 +58,7 @@ const Post = ({ data, kurva }) => {
             className={isFavorite ? 'favorite' : 'no-favorite'}
             type="button"
             id={data._id}
-            onClick={onClickFavorite}
+            onClick={event => onClickFavorite(event, data)}
           >
             ★
           </button>
@@ -61,7 +69,9 @@ const Post = ({ data, kurva }) => {
 
             <picture>
               <img
-                src={`https://static.arasaac.org/pictograms/${data._id}/${data._id}_300.png`}
+                src={`https://static.arasaac.org/pictograms/${data._id}/${
+                  data._id
+                }_300.png`}
                 alt={data.keywords[0].keyword}
               />
             </picture>
