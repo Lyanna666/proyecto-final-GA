@@ -16,7 +16,7 @@ function Routines() {
   const [pictograms, setPictograms] = useState(null);
   const [filas, setFilas] = useState([
     [' ', 'L', 'M', 'X', 'J', 'V', 'S', 'D', ''],
-    [null, null, null, null, null, null, null, null, null],
+    ['', null, null, null, null, null, null, null, null],
   ]);
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
@@ -102,7 +102,7 @@ function Routines() {
 
   const newRow = e => {
     let temporaryArray = filas;
-    temporaryArray.push([null, null, null, null, null, null, null, null, null]);
+    temporaryArray.push(['', null, null, null, null, null, null, null, null]);
 
     setFilas(temporaryArray);
 
@@ -173,8 +173,14 @@ function Routines() {
               </DivImagesPictograms>
             </DivForm>
             <DivTable>
-              <div>
+              <div className="div-header-table">
                 <input type="text" placeholder="Nombre de la tabla" />
+                <CustomDeleteButton
+                  color="red"
+                  onDragOver={event => onDragOver(event)}
+                  onDragLeave={event => onDragLeave(event)}
+                  onDrop={event => drop(event)}
+                />
               </div>
               <div>
                 <TableRoutine>
@@ -270,6 +276,19 @@ const DivTable = styled.div`
   padding: 0.5rem;
   background-color: var(--gray);
   border-radius: 0.5rem;
+
+  & .div-header-table {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & input {
+      flex-grow: 1;
+    }
+
+    & > div {
+    }
+  }
 `;
 
 const TableRoutine = styled.table`

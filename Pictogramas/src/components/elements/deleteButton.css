@@ -1,6 +1,14 @@
 .trash-div {
-  width: 100%;
-  height: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.red {
+  fill: var(--red);
+}
+
+.gray {
+  fill: gray;
 }
 
 svg {
@@ -17,6 +25,7 @@ svg {
   transition: transform 0.5s;
 }
 
-.trash:hover .trash-cover {
+.trash-div:hover .trash-cover,
+.drag-over .trash-cover {
   transform: rotate(-45deg);
 }
