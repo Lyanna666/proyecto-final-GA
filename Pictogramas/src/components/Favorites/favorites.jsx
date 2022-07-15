@@ -135,7 +135,7 @@ const Favorites = props => {
                   return (
                     <ListItem>
                       <div key={index}>
-                        <picture width="1rem">
+                        <picture>
                           <img
                             src={`https://static.arasaac.org/pictograms/${
                               item._id
