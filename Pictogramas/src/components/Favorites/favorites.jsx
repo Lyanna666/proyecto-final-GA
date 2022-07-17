@@ -1,23 +1,69 @@
-import { React, useContext } from 'react';
+import { React, useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import AppContext from '../../AppContext';
 
-const Favorites = (props) => {
+const Favorites = props => {
   const context = useContext(AppContext);
 
-  let listaFavoritos = localStorage.getItem('favorites');
+  const [favorites, setFavorites] = useState(null);
 
   const mostrarFavoritos = () => {
+    console.log(favorites);
+  };
+
+  useEffect(() => {
+    console.log(
+      'Aqui no entra fuera',
+      JSON.parse(localStorage.getItem('favorites')),
+    );
+    // window.localStorage.clear();
+    if (JSON.parse(localStorage.getItem('favorites'))) {
+      const todos = JSON.parse(localStorage.getItem('favorites'));
+      console.log('Aqui no entra dentro', todos);
+      setFavorites(todos);
+      console.log('Aqui no entra dentro', favorites);
+    }
+
+    function storageEventHandler(event) {
+      console.log('favoritos ha cambiado');
+      // if (event.key === 'favorites') {
+      if (JSON.parse(localStorage.getItem('favorites'))) {
+        const todos = JSON.parse(localStorage.getItem('favorites'));
+        console.log(todos);
+        setFavorites(todos);
+        console.log(favorites);
+      } else {
+        setFavorites(null);
+      }
+      // }
+    }
+
+    window.addEventListener('storage', storageEventHandler);
+    return () => {
+      window.removeEventListener('storage', storageEventHandler);
+    };
+  }, []);
+
+  // useEffect(
+  //   () => {
+  //     let listaFavoritos = localStorage.getItem('favorites');
+  //     console.log('Lista de favoritos', listaFavoritos);
+  //     if (listaFavoritos) {
+  //       setFavorites(JSON.parse(listaFavoritos));
+  //     }
+  //     console.log('Actualizando favoritos');
+
+  //     // Preguntar porque el hook useEffect no se ejecuta cuando se carga la página o se queda en bucle
+  //   },
+  //   [JSON.parse(localStorage.getItem('favorites')).length],
+  // );
+
+  const updateFavorites = () => {
+    let listaFavoritos = localStorage.getItem('favorites');
+    console.log('Lista de favoritos', listaFavoritos);
     if (listaFavoritos) {
-      listaFavoritos = JSON.parse(listaFavoritos);
-      return listaFavoritos.map((item, index) => {
-        return (
-          <div key={index}>
-            <p>{item.name}</p>
-          </div>
-        );
-      });
+      setFavorites(JSON.parse(listaFavoritos));
     }
   };
 
@@ -81,8 +127,32 @@ const Favorites = (props) => {
         <H2>{context.language.FAVO_TITLE}</H2>
         {localStorage.getItem('favorites') && (
           <ContenedorFavoritos>
+            {mostrarFavoritos()}
             <List>
               <ListItem> ID: {localStorage.getItem('favorites')}</ListItem>
+
+              {favorites !== null ? (
+                favorites.map((item, index) => {
+                  console.log(' ******** puto calor :(', item);
+                  return (
+                    <ListItem>
+                      <div key={index}>
+                        <picture>
+                          <img
+                            src={`https://static.arasaac.org/pictograms/${
+                              item._id
+                            }/${item._id}_300.png`}
+                            alt={item._id}
+                          />
+                        </picture>
+                        <p>{item.keywords[0].keyword}</p>
+                      </div>
+                    </ListItem>
+                  );
+                })
+              ) : (
+                <>No hay favoritos</>
+              )}
             </List>
           </ContenedorFavoritos>
         )}
