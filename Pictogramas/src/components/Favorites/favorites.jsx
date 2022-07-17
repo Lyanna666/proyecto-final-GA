@@ -1,5 +1,6 @@
 import { React, useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
+import CustomLink from '../elements/customLink';
 
 import AppContext from '../../AppContext';
 
@@ -13,10 +14,6 @@ const Favorites = props => {
   };
 
   useEffect(() => {
-    console.log(
-      'Aqui no entra fuera',
-      JSON.parse(localStorage.getItem('favorites')),
-    );
     // window.localStorage.clear();
     if (JSON.parse(localStorage.getItem('favorites'))) {
       const todos = JSON.parse(localStorage.getItem('favorites'));
@@ -44,28 +41,6 @@ const Favorites = props => {
       window.removeEventListener('storage', storageEventHandler);
     };
   }, []);
-
-  // useEffect(
-  //   () => {
-  //     let listaFavoritos = localStorage.getItem('favorites');
-  //     console.log('Lista de favoritos', listaFavoritos);
-  //     if (listaFavoritos) {
-  //       setFavorites(JSON.parse(listaFavoritos));
-  //     }
-  //     console.log('Actualizando favoritos');
-
-  //     // Preguntar porque el hook useEffect no se ejecuta cuando se carga la página o se queda en bucle
-  //   },
-  //   [JSON.parse(localStorage.getItem('favorites')).length],
-  // );
-
-  const updateFavorites = () => {
-    let listaFavoritos = localStorage.getItem('favorites');
-    console.log('Lista de favoritos', listaFavoritos);
-    if (listaFavoritos) {
-      setFavorites(JSON.parse(listaFavoritos));
-    }
-  };
 
   // estilo de favoritos
   const MostrarFavoritos = styled.div`
@@ -129,26 +104,27 @@ const Favorites = props => {
           <ContenedorFavoritos>
             {mostrarFavoritos()}
             <List>
-              <ListItem> ID: {localStorage.getItem('favorites')}</ListItem>
-
               {favorites !== null ? (
                 favorites.map((item, index) => {
                   console.log(' ******** puto calor :(', item);
-                  return (
-                    <ListItem>
-                      <div key={index}>
-                        <picture>
-                          <img
-                            src={`https://static.arasaac.org/pictograms/${
-                              item._id
-                            }/${item._id}_300.png`}
-                            alt={item._id}
-                          />
-                        </picture>
-                        <p>{item.keywords[0].keyword}</p>
-                      </div>
-                    </ListItem>
-                  );
+                  // Mostramos máximo 4 favoritos
+                  if (index < 4) {
+                    return (
+                      <ListItem>
+                        <div key={index}>
+                          <picture>
+                            <img
+                              src={`https://static.arasaac.org/pictograms/${
+                                item._id
+                              }/${item._id}_300.png`}
+                              alt={item._id}
+                            />
+                          </picture>
+                          <p>{item.keywords[0].keyword}</p>
+                        </div>
+                      </ListItem>
+                    );
+                  }
                 })
               ) : (
                 <>No hay favoritos</>
@@ -156,6 +132,7 @@ const Favorites = props => {
             </List>
           </ContenedorFavoritos>
         )}
+        <CustomLink to="/" name="Más favoritos >" />
       </MostrarFavoritos>
     </>
   );
