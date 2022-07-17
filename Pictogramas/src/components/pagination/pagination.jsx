@@ -22,21 +22,31 @@ const Pagination = ({
     currentPage,
   });
 
-  /* 👇 little UX tweak when user clicks on any button we scoll to top of the page */
+  useEffect(
+    () => {
+      setTotalPageCount(Math.ceil(numberPages / contentPerPage));
 
-  useEffect(() => {
-    setTotalPageCount(Math.ceil(numberPages / contentPerPage));
-    window.scrollTo({
-      behavior: 'smooth',
-      top: '0px',
-    });
-  });
+      // window.scrollTo({
+      //   behavior: 'smooth',
+      //   top: '0px',
+      // });
+
+      // Cuando
+      setTimeout(() => {
+        const element = document.getElementById('form-search-pictograms');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    },
+    [currentPage, contentPerPage, numberPages],
+  );
 
   function goToNextPage() {
-    setCurrentPage((page) => page + 1);
+    setCurrentPage(page => page + 1);
   }
   function gotToPreviousPage() {
-    setCurrentPage((page) => page - 1);
+    setCurrentPage(page => page - 1);
   }
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);

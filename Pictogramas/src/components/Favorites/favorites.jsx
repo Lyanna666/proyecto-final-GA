@@ -1,137 +1,89 @@
 import { React, useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import CustomLink from '../elements/customLink';
-
+import { Link } from 'react-router-dom';
 import AppContext from '../../AppContext';
 
 const Favorites = props => {
   const context = useContext(AppContext);
 
+  // Constante donde guardamos el número de favoritos que se muestra en la página
+  const favoriterPerPage = 6;
+
+  // Estado donde guardaremos el array de favoritos
   const [favorites, setFavorites] = useState(null);
 
   const mostrarFavoritos = () => {
     console.log(favorites);
   };
 
-  useEffect(() => {
-    // window.localStorage.clear();
+  const updateFavorites = () => {
+    // Si hay algo en local storage de favoritos, actualizamos favoritos
     if (JSON.parse(localStorage.getItem('favorites'))) {
-      const todos = JSON.parse(localStorage.getItem('favorites'));
-      console.log('Aqui no entra dentro', todos);
-      setFavorites(todos);
-      console.log('Aqui no entra dentro', favorites);
+      const favoritesArray = JSON.parse(localStorage.getItem('favorites'));
+      setFavorites(favoritesArray);
+    } else {
+      setFavorites(null);
     }
+  };
+
+  useEffect(() => {
+    // window.localStorage.clear(); -> Esto elimina todo lo que haya en local storage
+    updateFavorites();
 
     function storageEventHandler(event) {
-      console.log('favoritos ha cambiado');
+      console.log('Favoritos ha cambiado');
       // if (event.key === 'favorites') {
-      if (JSON.parse(localStorage.getItem('favorites'))) {
-        const todos = JSON.parse(localStorage.getItem('favorites'));
-        console.log(todos);
-        setFavorites(todos);
-        console.log(favorites);
-      } else {
-        setFavorites(null);
-      }
-      // }
+      updateFavorites();
     }
 
+    // Añadimos el evento storageEventHandler, este evento se ejecuta cuando cambie el storage de favoritos
     window.addEventListener('storage', storageEventHandler);
     return () => {
       window.removeEventListener('storage', storageEventHandler);
     };
   }, []);
 
-  // estilo de favoritos
-  const MostrarFavoritos = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border: 1px solid #e0e0e0;
-    background-color: #fafafa;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  `;
-
-  const H2 = styled.h2`
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  `;
-
-  const ContenedorFavoritos = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  `;
-
-  const List = styled.ul`
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  `;
-
-  const ListItem = styled.li`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid #db4444;
-    background-color: #e9a7a7;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-  `;
-
   return (
     <>
       <MostrarFavoritos>
-        <H2>{context.language.FAVO_TITLE}</H2>
-        {localStorage.getItem('favorites') && (
-          <ContenedorFavoritos>
-            {mostrarFavoritos()}
-            <List>
-              {favorites !== null ? (
-                favorites.map((item, index) => {
-                  console.log(' ******** puto calor :(', item);
-                  // Mostramos máximo 4 favoritos
-                  if (index < 4) {
-                    return (
-                      <ListItem>
-                        <div key={index}>
-                          <picture>
-                            <img
-                              src={`https://static.arasaac.org/pictograms/${
-                                item._id
-                              }/${item._id}_300.png`}
-                              alt={item._id}
-                            />
-                          </picture>
-                          <p>{item.keywords[0].keyword}</p>
-                        </div>
+        <H2>
+          {context.language.FAVO_TITLE} ({favorites ? favorites.length : 0})
+        </H2>
+        <ContenedorFavoritos>
+          {mostrarFavoritos()}
+          <List>
+            {/* Si favoritos es distinto de null, hacemos un map  */}
+            {favorites !== null ? (
+              favorites.map((item, index) => {
+                // Mostramos como máximo un número de favoritos
+                if (index < favoriterPerPage) {
+                  return (
+                    <Link to={`/dashboard${item._id}`}>
+                      <ListItem key={index} className="pictogram-div">
+                        <picture>
+                          <img
+                            src={`https://static.arasaac.org/pictograms/${
+                              item._id
+                            }/${item._id}_300.png`}
+                            alt={item._id}
+                          />
+                        </picture>
+                        <p>{item.keywords[0].keyword}</p>
                       </ListItem>
-                    );
-                  }
-                })
-              ) : (
-                <>No hay favoritos</>
-              )}
-            </List>
-          </ContenedorFavoritos>
-        )}
+                    </Link>
+                  );
+                }
+              })
+            ) : (
+              // Si favoritos es null mostramos un texto indicando que no hay favoritos guardados
+              <>
+                <ListItem>No hay favoritos</ListItem>
+              </>
+            )}
+          </List>
+        </ContenedorFavoritos>
+
         <CustomLink to="/" name="Más favoritos >" />
       </MostrarFavoritos>
     </>
@@ -139,3 +91,57 @@ const Favorites = props => {
 };
 
 export default Favorites;
+
+// estilo de favoritos
+const MostrarFavoritos = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+`;
+
+const H2 = styled.h2`
+  /* font-size: 1.5rem; */
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+`;
+
+const ContenedorFavoritos = styled.div`
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+`;
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: none;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const ListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #db4444;
+  background-color: #e9a7a7;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+`;
