@@ -25,7 +25,6 @@
   background-color: var(--white);
   border-radius: 2%;
   box-shadow: 0.2rem 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
-  height: 35vh;
 }
 
 .container button {

@@ -83,7 +83,6 @@ const Favorites = (props) => {
           <ContenedorFavoritos>
             <List>
               <ListItem> ID: {localStorage.getItem('favorites')}</ListItem>
-              <ListItem> ID: {mostrarFavoritos}</ListItem>
             </List>
           </ContenedorFavoritos>
         )}
