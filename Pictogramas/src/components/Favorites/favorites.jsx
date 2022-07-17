@@ -1,7 +1,7 @@
 import { React, useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import CustomLink from '../elements/customLink';
-
+import { Link } from 'react-router-dom';
 import AppContext from '../../AppContext';
 
 const Favorites = props => {
@@ -59,17 +59,19 @@ const Favorites = props => {
                 // Mostramos como máximo un número de favoritos
                 if (index < favoriterPerPage) {
                   return (
-                    <ListItem key={index} className="pictogram-div">
-                      <picture>
-                        <img
-                          src={`https://static.arasaac.org/pictograms/${
-                            item._id
-                          }/${item._id}_300.png`}
-                          alt={item._id}
-                        />
-                      </picture>
-                      <p>{item.keywords[0].keyword}</p>
-                    </ListItem>
+                    <Link to={`/dashboard${item._id}`}>
+                      <ListItem key={index} className="pictogram-div">
+                        <picture>
+                          <img
+                            src={`https://static.arasaac.org/pictograms/${
+                              item._id
+                            }/${item._id}_300.png`}
+                            alt={item._id}
+                          />
+                        </picture>
+                        <p>{item.keywords[0].keyword}</p>
+                      </ListItem>
+                    </Link>
                   );
                 }
               })

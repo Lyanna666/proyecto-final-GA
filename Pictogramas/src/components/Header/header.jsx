@@ -46,10 +46,6 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                {/* Esto tampoco funciona */}
-                {/* <Link className="link" to={'/#how-does-it-works'}>
-              {context.language.HEADER_NAV_HOW_DOES_IT_WORKS}
-            </Link> */}
                 <Link className="link" to={'/#how-does-it-works'}>
                   {context.language.HEADER_NAV_HOW_DOES_IT_WORKS}
                 </Link>
