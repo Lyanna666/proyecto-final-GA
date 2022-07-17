@@ -129,6 +129,8 @@ const Favorites = props => {
           <ContenedorFavoritos>
             {mostrarFavoritos()}
             <List>
+              <ListItem> ID: {localStorage.getItem('favorites')}</ListItem>
+
               {favorites !== null ? (
                 favorites.map((item, index) => {
                   console.log(' ******** puto calor :(', item);
@@ -151,8 +153,6 @@ const Favorites = props => {
               ) : (
                 <>No hay favoritos</>
               )}
-
-              {/* <ListItem> ID: {localStorage.getItem('favorites')}</ListItem> */}
             </List>
           </ContenedorFavoritos>
         )}
