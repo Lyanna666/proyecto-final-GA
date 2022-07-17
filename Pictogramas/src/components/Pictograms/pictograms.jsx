@@ -1,33 +1,33 @@
-import "./pictograms.css";
+import './pictograms.css';
 
-import { useContext, React, useState, useEffect } from "react";
+import { useContext, React, useState, useEffect } from 'react';
 import {
   fetchAllPictograms,
   fetchPictogramsByCategory,
-} from "../../api/api-rest";
-import Pagination from "../pagination/pagination";
-import Posts from "./pictogram";
-import AppContext from "../../AppContext";
-import Spinner from "../loading/loading";
-import Favorites from "../Favorites/favorites";
+} from '../../api/api-rest';
+import Pagination from '../pagination/pagination';
+import Posts from './pictogram';
+import AppContext from '../../AppContext';
+import Spinner from '../loading/loading';
+import Favorites from '../Favorites/favorites';
 
 const Pictograms = () => {
   const context = useContext(AppContext);
   const [items, setItems] = useState([]);
   const [pictograms, setPictograms] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState('');
 
   function getAllPictograms() {
     setLoading(true);
     // console.log(context.language.LANGUAGE);
     fetchAllPictograms(context.language.LANGUAGE)
-      .then((data) => {
+      .then(data => {
         setItems(data);
         setPictograms(data);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
         setLoading(false);
       });
@@ -39,19 +39,19 @@ const Pictograms = () => {
   }, []);
 
   // -------------- Búsqueda de pictogramas por categoría -----------------
-  const onClickCategory = (event) => {
+  const onClickCategory = event => {
     const value = event.target.id;
     getFilteredPictogramsByCategory(value);
   };
 
-  const getFilteredPictogramsByCategory = (endpoint) => {
+  const getFilteredPictogramsByCategory = endpoint => {
     setLoading(true);
     fetchPictogramsByCategory(endpoint, context.language.LANGUAGE)
-      .then((data) => {
+      .then(data => {
         setPictograms(data);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(error => {
         setPictograms(items);
         console.error(error);
         setLoading(false);
@@ -60,15 +60,15 @@ const Pictograms = () => {
 
   // -------------- Búsqueda de pictogramas por palabra -----------------
   const getFilteredPictograms = ({ search }) => {
-    const searchString = new RegExp(search, "i");
-    const filteredPictograms = items.filter((pictogram) => {
+    const searchString = new RegExp(search, 'i');
+    const filteredPictograms = items.filter(pictogram => {
       // console.log(pictogram.keywords[0].keyword);
       return searchString.test(pictogram.keywords[0].keyword);
     });
     return filteredPictograms;
   };
 
-  const handleKeyUp = (event) => {
+  const handleKeyUp = event => {
     const value = event.target.value;
     setKeyword(value);
     const filteredPictograms = getFilteredPictograms({
@@ -82,10 +82,9 @@ const Pictograms = () => {
     <>
       {loading ? <Spinner allWindow={true} /> : <></>}
       <section className="pictograms-section">
-        <button type="button" onClick={getAllPictograms}>
-          <h2>{context.language.DASHBOARD_PICTOGRAMS}</h2>
-        </button>
-        <form>
+        <h1>{context.language.DASHBOARD_PICTOGRAMS}</h1>
+        <Favorites />
+        <form id="form-search-pictograms">
           <input
             type="search"
             placeholder={context.language.DASHBOARD_SEARCH}
@@ -98,8 +97,16 @@ const Pictograms = () => {
           </button> */}
         </form>
         <div>
-          <Favorites />
           <ul>
+            <li key="all">
+              <button
+                type="button"
+                className="category-button"
+                onClick={getAllPictograms}
+              >
+                Todos
+              </button>
+            </li>
             {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
               <>
                 <li key={information.endpoint}>

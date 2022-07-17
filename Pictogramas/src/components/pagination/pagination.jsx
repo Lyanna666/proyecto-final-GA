@@ -26,17 +26,25 @@ const Pagination = ({
 
   useEffect(() => {
     setTotalPageCount(Math.ceil(numberPages / contentPerPage));
-    window.scrollTo({
-      behavior: 'smooth',
-      top: '0px',
-    });
+
+    // window.scrollTo({
+    //   behavior: 'smooth',
+    //   top: '0px',
+    // });
+
+    setTimeout(() => {
+      const element = document.getElementById('form-search-pictograms');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
   });
 
   function goToNextPage() {
-    setCurrentPage((page) => page + 1);
+    setCurrentPage(page => page + 1);
   }
   function gotToPreviousPage() {
-    setCurrentPage((page) => page - 1);
+    setCurrentPage(page => page - 1);
   }
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);

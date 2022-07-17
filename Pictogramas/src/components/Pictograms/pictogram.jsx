@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Post = ({ data, kurva }) => {
+  // Estado donde guardamos un booleano que indica si el pictograma es favorito
   const [isFavorite, setIsFavorite] = useState(false);
 
+  // En el useEffect comprobamos si el pictograma es favorito
   useEffect(() => {
-    // window.localStorage.clear();
+    // window.localStorage.clear(); -> Con esta función eliminamos todo lo que haya en el local storagae
     checkFavorites();
   });
 
   const checkFavorites = () => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    // console.log('Storage array ', storedFavorites, data._id);
+    // Comprobamos si hay favoritos en local storage
     if (storedFavorites !== null) {
+      // Si los hay, comprobamos si dentro del array de favoritos está el id del pictograma actual.
+      // En función de eso, ponemos el estado favorito a true o a false.
       const index = storedFavorites.findIndex(
         favorite => favorite._id === data._id,
       );
@@ -25,29 +29,34 @@ const Post = ({ data, kurva }) => {
     }
   };
 
+  // Función que añade o elimina favoritos al local storage
   const onClickFavorite = (event, data) => {
+    // creamos un array vacío llamado favoritos y le asigamos el array de favoritos del local storage, en caso de que haya.
     let favorites = [];
-
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    console.log('************', data, storedFavorites);
     if (storedFavorites !== null) {
       favorites = storedFavorites;
     }
+
+    // Comprobamos si el id del pictograma actual está en el array
+    // Si está, eliminamos el pictograma del array, si no, lo añadimos.
     const index = favorites.findIndex(favorite => favorite._id === data._id);
-    console.log('Index del favorito', index, data._id);
     if (index >= 0) {
-      console.log(event.target.id, 'Borrando posicion:', index);
-      favorites.splice(index, 1);
+      console.log(event.target.id, 'Eliminando favorito posición:', index);
+      favorites.splice(index, 1); // Esto elimina la posición index del array
       setIsFavorite(false);
     } else {
-      // Como poder pasar la data ¿?
-      console.log(event.target.id, 'Añadiendo posicion:', index, favorites);
+      console.log(
+        event.target.id,
+        'Añadiendo favorito posicion:',
+        index,
+        favorites,
+      );
       favorites.push(data);
-      console.log(event.target.id, 'Añadido posicion:', index, favorites);
       setIsFavorite(true);
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    window.dispatchEvent(new Event('storage'));
+    window.dispatchEvent(new Event('storage')); // Lanza un evento para que nuestro componente favoritos sepa que tiene que actualizarse
   };
 
   return (
@@ -84,6 +93,7 @@ const Post = ({ data, kurva }) => {
 
 export default Post;
 
+// Estilo
 const DivHeader = styled.div`
   display: flex;
   justify-content: space-between;
