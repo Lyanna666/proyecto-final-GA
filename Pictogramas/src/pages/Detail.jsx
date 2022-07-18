@@ -8,22 +8,7 @@ import PictogramDetail from '../components/Pictograms/pictogramDetail';
 import Footer from '../components/Footer/footer';
 
 const Detail = () => {
-  let { id } = useParams();
-
-  const Container = styled.div`
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    min-height: 150vh;
-    background-color: #eaeaea;
-    width: 100%;
-    padding: 1rem;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
-  `;
+  let { id } = useParams(); // El id lo coge de la url
 
   return (
     <>
@@ -38,3 +23,18 @@ const Detail = () => {
 };
 
 export default Detail;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  min-height: 150vh;
+  background-color: #eaeaea;
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;

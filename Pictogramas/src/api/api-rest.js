@@ -17,7 +17,8 @@ export async function fetchAllPictograms(language) {
     return pictograms;
   } catch (error) {
     console.error({ error });
-    alert('Ha ocurrido un error:', error);
+    return error;
+    // alert('Ha ocurrido un error:', error);
   }
 }
 
@@ -36,7 +37,7 @@ export async function fetchAllPictogramsBySearch(search, language) {
     return pictograms;
   } catch (error) {
     console.error({ error });
-    alert('Ha ocurrido un error:', error);
+    // alert('Ha ocurrido un error:', error);
   }
 }
 
@@ -51,7 +52,7 @@ export async function fetchPictogramsByCategory(endpoint, language) {
     return pictograms;
   } catch (error) {
     console.error({ error });
-    alert('Ha ocurrido un error:', error);
+    // alert('Ha ocurrido un error:', error);
   }
 }
 

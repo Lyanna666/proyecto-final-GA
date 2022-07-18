@@ -31,7 +31,7 @@ const Pagination = ({
       //   top: '0px',
       // });
 
-      // Cuando
+      // Cuando cambias de pág hace scroll hacia arriba
       setTimeout(() => {
         const element = document.getElementById('form-search-pictograms');
         if (element) {
@@ -42,16 +42,23 @@ const Pagination = ({
     [currentPage, contentPerPage, numberPages],
   );
 
+  // Avanza una página
   function goToNextPage() {
     setCurrentPage(page => page + 1);
   }
+
+  // Va a la pág anterior
   function gotToPreviousPage() {
     setCurrentPage(page => page - 1);
   }
+
+  // cambia el estado CurrentPage con la página actual
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);
     setCurrentPage(pageNumber);
   }
+
+  // Coge la data correspondiente a la página
   const getPaginatedData = () => {
     const startIndex = currentPage * contentPerPage - contentPerPage;
     const endIndex = startIndex + contentPerPage;

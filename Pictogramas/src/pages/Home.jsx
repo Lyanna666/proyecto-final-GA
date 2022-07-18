@@ -8,7 +8,6 @@ import Header from '../components/Header/header';
 import Footer from '../components/Footer/footer';
 import Hero from '../components/Home/hero';
 import Info from '../components/Home/info';
-import Error from '../components/Error/error';
 
 const Home = () => {
   const context = useContext(AppContext);

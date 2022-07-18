@@ -1,6 +1,6 @@
 import { React, useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import CustomLink from '../elements/customLink';
+import CustomButton from '../elements/customButton';
 import { Link } from 'react-router-dom';
 import AppContext from '../../AppContext';
 
@@ -8,7 +8,7 @@ const Favorites = props => {
   const context = useContext(AppContext);
 
   // Constante donde guardamos el número de favoritos que se muestra en la página
-  const favoriterPerPage = 6;
+  const [favoritesPerPage, setFavoritesPerPage] = useState(4);
 
   // Estado donde guardaremos el array de favoritos
   const [favorites, setFavorites] = useState(null);
@@ -24,6 +24,17 @@ const Favorites = props => {
       setFavorites(favoritesArray);
     } else {
       setFavorites(null);
+    }
+  };
+
+  // Función para mostrar más favoritos
+  const showMoreFavorites = event => {
+    if (favoritesPerPage === 4) {
+      setFavoritesPerPage(favorites.length);
+      /*  event.target.textContent = context.language.SHOW_LESS_FAVORITES; */
+    } else {
+      setFavoritesPerPage(4);
+      /* event.target.textContent = context.language.SHOW_MORE_FAVORITES; */
     }
   };
 
@@ -57,7 +68,7 @@ const Favorites = props => {
             {favorites !== null ? (
               favorites.map((item, index) => {
                 // Mostramos como máximo un número de favoritos
-                if (index < favoriterPerPage) {
+                if (index < favoritesPerPage) {
                   return (
                     <Link to={`/dashboard${item._id}`}>
                       <ListItem key={index} className="pictogram-div">
@@ -74,9 +85,8 @@ const Favorites = props => {
                     </Link>
                   );
                 }
-              })
+              }) // Si favoritos es null mostramos un texto indicando que no hay favoritos guardados
             ) : (
-              // Si favoritos es null mostramos un texto indicando que no hay favoritos guardados
               <>
                 <ListItem>No hay favoritos</ListItem>
               </>
@@ -84,7 +94,14 @@ const Favorites = props => {
           </List>
         </ContenedorFavoritos>
 
-        <CustomLink to="/" name="Más favoritos >" />
+        <CustomButton
+          name={
+            favoritesPerPage === 4
+              ? context.language.SHOW_MORE_FAVORITES
+              : context.language.SHOW_LESS_FAVORITES
+          }
+          onClick={showMoreFavorites}
+        />
       </MostrarFavoritos>
     </>
   );

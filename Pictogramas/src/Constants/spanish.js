@@ -188,5 +188,15 @@ export const DASHBOARD_CATEGORIES = [
   { id: 'Números', endpoint: '/search/numeros' },
 ];
 
+export const DASHBOARD_CATEGORIES_ALL = 'Todas las categorias';
+
 /* Favoritos */
 export const FAVO_TITLE = 'Favoritos';
+
+// Error
+export const ERROR_TITLE = 'Ha Ocurrido un Error';
+export const ERROR_BUTTON_TEXT = 'Reintentar';
+
+// boton mostrar mas favoritos
+export const SHOW_MORE_FAVORITES = 'Mostrar más';
+export const SHOW_LESS_FAVORITES = 'Mostrar menos';
