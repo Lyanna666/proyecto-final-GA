@@ -183,5 +183,15 @@ export const DASHBOARD_CATEGORIES = [
   { id: 'Numbers', endpoint: '/search/numbers' },
 ];
 
+export const DASHBOARD_CATEGORIES_ALL = 'All categories';
+
 /* Favorites */
 export const FAVO_TITLE = 'Favorites';
+
+// Error messages
+export const ERROR_TITLE = 'An Error Has Occurred';
+export const ERROR_BUTTON_TEXT = 'Retry';
+
+// Boton mostrar mas fav ori t assembled os
+export const SHOW_MORE_FAVORITES = 'Show  more favorites';
+export const SHOW_LESS_FAVORITES = 'Show less favorites';

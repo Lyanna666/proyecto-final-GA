@@ -10,9 +10,9 @@ const CustomButton = ({
   type = null,
   onClick,
 }) => {
-  const onButtonClick = () => {
+  const onButtonClick = event => {
     if (onClick) {
-      onClick(name);
+      onClick(event);
     }
   };
   return (

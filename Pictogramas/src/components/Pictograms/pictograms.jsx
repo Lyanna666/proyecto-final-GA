@@ -10,6 +10,7 @@ import Posts from './pictogram';
 import AppContext from '../../AppContext';
 import Spinner from '../loading/loading';
 import Favorites from '../Favorites/favorites';
+import Error from '../Error/error';
 
 const Pictograms = () => {
   const context = useContext(AppContext);
@@ -17,19 +18,27 @@ const Pictograms = () => {
   const [pictograms, setPictograms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [keyword, setKeyword] = useState('');
+  const [error, setError] = useState(null);
 
   function getAllPictograms() {
     setLoading(true);
-    // console.log(context.language.LANGUAGE);
     fetchAllPictograms(context.language.LANGUAGE)
       .then(data => {
-        setItems(data);
-        setPictograms(data);
-        setLoading(false);
+        console.log('esto es un error', Array.isArray(data));
+        if (Array.isArray(data)) {
+          setError(null);
+          setItems(data);
+          setPictograms(data);
+          setLoading(false);
+        } else {
+          setError(data);
+          setLoading(false);
+        }
       })
       .catch(error => {
         console.error(error);
         setLoading(false);
+        setError(error);
       });
   }
 
@@ -78,9 +87,27 @@ const Pictograms = () => {
     setPictograms(filteredPictograms);
   };
 
+  const onClickCloseButton = () => {
+    setError(null);
+  };
+
+  const onClickRestartButton = () => {
+    setError(null);
+    getAllPictograms();
+  };
+
   return (
     <>
       {loading ? <Spinner allWindow={true} /> : <></>}
+      {error ? (
+        <Error
+          errorProps={error}
+          onClickClose={onClickCloseButton}
+          onClickRestart={onClickRestartButton}
+        />
+      ) : (
+        <></>
+      )}
       <section className="pictograms-section">
         <h1>{context.language.DASHBOARD_PICTOGRAMS}</h1>
         <Favorites />
@@ -104,7 +131,7 @@ const Pictograms = () => {
                 className="category-button"
                 onClick={getAllPictograms}
               >
-                Todos
+                {context.language.DASHBOARD_CATEGORIES_ALL}
               </button>
             </li>
             {context.language.DASHBOARD_CATEGORIES.map((information, index) => (
@@ -129,6 +156,7 @@ const Pictograms = () => {
             <>
               <Pagination
                 data={pictograms}
+                currentPagee={1}
                 numberPages={pictograms.length}
                 RenderComponent={Posts}
                 title="Pictogramas Paginación"
