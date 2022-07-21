@@ -23,7 +23,7 @@
     └───Utils
 ```
 
-## Authors
+
 
 - [@jacobo87](https://www.github.com/jacobo87)
 - [@Lyanna666](https://github.com/Lyanna666/)

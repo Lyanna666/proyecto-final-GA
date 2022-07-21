@@ -3,17 +3,24 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Post = ({ data, kurva }) => {
+  // Estado donde guardamos un booleano que indica si el pictograma es favorito
   const [isFavorite, setIsFavorite] = useState(false);
 
+  // En el useEffect comprobamos si el pictograma es favorito
   useEffect(() => {
+    // window.localStorage.clear(); -> Con esta función eliminamos todo lo que haya en el local storagae
     checkFavorites();
   });
 
   const checkFavorites = () => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
-    // console.log(storedFavorites, data._id);
+
     if (storedFavorites !== null) {
-      if (storedFavorites.indexOf(data._id.toString()) >= 0) {
+      // Si los hay, comprobamos si dentro del array de favoritos está el id del pictograma actual.
+      // En función de eso, ponemos el estado favorito a true o a false.
+      const index = storedFavorites.findIndex(
+        favorite => favorite._id === data._id,
+      );
+      if (index >= 0) {
         setIsFavorite(true);
       } else {
         setIsFavorite(false);
@@ -21,25 +28,31 @@ const Post = ({ data, kurva }) => {
     }
   };
 
-  const onClickFavorite = (event) => {
+  // Función que añade o elimina favoritos al local storage
+  const onClickFavorite = (event, data) => {
+    // creamos un array vacío llamado favoritos y le asigamos el array de favoritos del local storage, en caso de que haya.
     let favorites = [];
     const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
     if (storedFavorites !== null) {
       favorites = storedFavorites;
     }
-    if (favorites.indexOf(event.target.id) >= 0) {
-      console.log(
-        event.target.id,
-        "Borrando posicion:",
-        favorites.indexOf(event.target.id)
-      );
-      favorites.splice(favorites.indexOf(event.target.id), 1);
+
+    // Comprobamos si el id del pictograma actual está en el array
+    // Si está, eliminamos el pictograma del array, si no, lo añadimos.
+    const index = favorites.findIndex(favorite => favorite._id === data._id);
+    if (index >= 0) {
+      console.log(event.target.id, 'Eliminando favorito posición:', index);
+      favorites.splice(index, 1); // Esto elimina la posición index del array
       setIsFavorite(false);
     } else {
-      favorites.push(event.target.id);
+      console.log(
+        event.target.id,
+
+      );
+      favorites.push(data);
       setIsFavorite(true);
     }
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+
   };
 
   return (
@@ -50,7 +63,7 @@ const Post = ({ data, kurva }) => {
             className={isFavorite ? "favorite" : "no-favorite"}
             type="button"
             id={data._id}
-            onClick={onClickFavorite}
+            onClick={event => onClickFavorite(event, data)}
           >
             ★
           </button>
@@ -61,7 +74,9 @@ const Post = ({ data, kurva }) => {
 
             <picture>
               <img
-                src={`https://static.arasaac.org/pictograms/${data._id}/${data._id}_300.png`}
+                src={`https://static.arasaac.org/pictograms/${data._id}/${
+                  data._id
+                }_300.png`}
                 alt={data.keywords[0].keyword}
               />
             </picture>
@@ -74,6 +89,7 @@ const Post = ({ data, kurva }) => {
 
 export default Post;
 
+// Estilo
 const DivHeader = styled.div`
   display: flex;
   justify-content: space-between;

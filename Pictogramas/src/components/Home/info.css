@@ -99,4 +99,9 @@
   .div-users {
     width: 100%;
   }
+
+  .hero-div h1 {
+    white-space: normal;
+    margin: 1rem;
+  }
 }

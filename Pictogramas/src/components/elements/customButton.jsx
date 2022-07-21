@@ -10,14 +10,14 @@ const CustomButton = ({
   type = null,
   onClick,
 }) => {
-  const onButtonClick = () => {
+  const onButtonClick = event => {
     if (onClick) {
-      onClick(name);
+      onClick(event);
     }
   };
   return (
     <button
-      className={`custom-button ${color} ${size} ${type}`}
+      className={`custom-button ${color} ${size} ${type} link-button`}
       onClick={onButtonClick}
     >
       {name}

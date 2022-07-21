@@ -7,24 +7,26 @@ import CustomButton from '../elements/customButton';
 
 import AppContext from '../../AppContext';
 
-const Error = () => {
+const Error = props => {
   const context = useContext(AppContext);
+  console.log(props);
 
   return (
     <>
       <div className="error-div">
         <div>
-          <button onClick="this.remove()" type="button">
+          <button onClick={props.onClickClose} type="button">
             x
           </button>
           <div>
-            <h1>Ha ocurrido un error</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s,
-            </p>
-            <CustomButton color="green" name="Aceptar" size="medium" />
+            <h1>{props.title}</h1>
+            <p>{props.errorProps}</p>
+            <CustomButton
+              color="green"
+              name={props.button}
+              size="medium"
+              onClick={props.onClickRestart}
+            />
           </div>
         </div>
       </div>

@@ -1,0 +1,31 @@
+.trash-div {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.red {
+  fill: var(--red);
+}
+
+.gray {
+  fill: gray;
+}
+
+svg {
+}
+
+.trash {
+  transform: scale(0.59);
+  transform-origin: center;
+}
+
+.trash-cover {
+  transform-origin: 10% 50%;
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+
+.trash-div:hover .trash-cover,
+.drag-over .trash-cover {
+  transform: rotate(-45deg);
+}

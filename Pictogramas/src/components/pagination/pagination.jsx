@@ -22,26 +22,43 @@ const Pagination = ({
     currentPage,
   });
 
-  /* 👇 little UX tweak when user clicks on any button we scoll to top of the page */
+  useEffect(
+    () => {
+      setTotalPageCount(Math.ceil(numberPages / contentPerPage));
 
-  useEffect(() => {
-    setTotalPageCount(Math.ceil(numberPages / contentPerPage));
-    window.scrollTo({
-      behavior: 'smooth',
-      top: '0px',
-    });
-  });
+      // window.scrollTo({
+      //   behavior: 'smooth',
+      //   top: '0px',
+      // });
 
+      // Cuando cambias de pág hace scroll hacia arriba
+      setTimeout(() => {
+        const element = document.getElementById('form-search-pictograms');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    },
+    [currentPage, contentPerPage, numberPages],
+  );
+
+  // Avanza una página
   function goToNextPage() {
-    setCurrentPage((page) => page + 1);
+    setCurrentPage(page => page + 1);
   }
+
+  // Va a la pág anterior
   function gotToPreviousPage() {
-    setCurrentPage((page) => page - 1);
+    setCurrentPage(page => page - 1);
   }
+
+  // cambia el estado CurrentPage con la página actual
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);
     setCurrentPage(pageNumber);
   }
+
+  // Coge la data correspondiente a la página
   const getPaginatedData = () => {
     const startIndex = currentPage * contentPerPage - contentPerPage;
     const endIndex = startIndex + contentPerPage;

@@ -1,11 +1,5 @@
-import React, {
-  updateState,
-  useRef,
-  useEffect,
-  useState,
-  useContext,
-} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import Aside from '../components/aside/aside';
 import AppContext from '../AppContext';
 import styled from 'styled-components';
 import Header from '../components/Header/header';
@@ -13,6 +7,7 @@ import PictogramRoutine from '../components/table/pictogramRoutine';
 import CustomButton from '../components/elements/customButton';
 import { fetchAllPictogramsBySearch } from '../api/api-rest';
 import Spinner from '../components/loading/loading';
+import CustomDeleteButton from '../components/elements/customDeleteButton';
 
 function Routines() {
   const context = useContext(AppContext);
@@ -20,12 +15,13 @@ function Routines() {
   const [loading, setLoading] = useState(false);
   const [pictograms, setPictograms] = useState(null);
   const [filas, setFilas] = useState([
-    [' ', 'L', 'M', 'X', 'J', 'V', 'S', 'D'],
-    [null, null, null, null, null, null, null, null],
+    [' ', 'L', 'M', 'X', 'J', 'V', 'S', 'D', ''],
+    ['', null, null, null, null, null, null, null, null],
   ]);
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
-
+  let move = false;
+  let parentTd = null;
   // useEffect(() => {
   //   setFilas([
   //     [' ', 'L', 'M', 'X', 'J', 'V', 'S', 'D'],
@@ -57,9 +53,13 @@ function Routines() {
     }
   }
 
-  const dragStart = (e, pictogram) => {
+  const dragStart = (e, pictogram, moveInsideTable) => {
     dragItem = pictogram;
-    console.log('drag start', dragItem);
+    console.log('drag start', e.target.parentNode, moveInsideTable);
+
+    moveInsideTable ? (parentTd = e.target.parentNode) : (parentTd = null);
+    move = moveInsideTable;
+
     // e.preventDefault();
   };
 
@@ -80,6 +80,12 @@ function Routines() {
     e.preventDefault();
     e.target.setAttribute('drop-active', false);
     let temporaryArray = filas;
+
+    if (move) {
+      const idsParent = parentTd.id.split('-');
+      console.log(idsParent);
+      temporaryArray[idsParent[0]][idsParent[1]] = null;
+    }
     temporaryArray[ids[0]][ids[1]] = dragItem;
     console.log(temporaryArray);
     // createDivPictogram(e.target);
@@ -94,16 +100,35 @@ function Routines() {
     // console.log('Leave', ev);
   };
 
+  const newRow = e => {
+    let temporaryArray = filas;
+    temporaryArray.push(['', null, null, null, null, null, null, null, null]);
+
+    setFilas(temporaryArray);
+
+    forceUpdate();
+  };
+
+  const deleteRow = e => {
+    let temporaryArray = filas;
+    temporaryArray.splice(e, 1);
+    console.log(e);
+
+    setFilas(temporaryArray);
+    forceUpdate();
+  };
+
   return (
     <>
       {loading ? <Spinner allWindow={true} /> : <></>}
       <Header />
+
       <ContainerRoutines>
+        <Aside />
         <ContainerDiv>
           <h1>Rutina</h1>
           <DivRoutine>
             <DivForm onSubmit={onSubmitButton}>
-              <h2>Buscar pictogramas</h2>
               <CustomForm>
                 <input type="text" placeholder="Buscar pictograma" />
                 <CustomButton type="submit" value="search" name="Buscar" />
@@ -117,10 +142,14 @@ function Routines() {
                           draggable
                           key={pictogram._id}
                           onDragStart={e =>
-                            dragStart(e, {
-                              id: pictogram._id,
-                              name: pictogram.keywords[0].keyword,
-                            })
+                            dragStart(
+                              e,
+                              {
+                                id: pictogram._id,
+                                name: pictogram.keywords[0].keyword,
+                              },
+                              false,
+                            )
                           }
                           onDragEnter={e => dragEnter(e)}
                         >
@@ -144,7 +173,15 @@ function Routines() {
               </DivImagesPictograms>
             </DivForm>
             <DivTable>
-              <h2>Tabla</h2>
+              <div className="div-header-table">
+                <input type="text" placeholder="Nombre de la tabla" />
+                <CustomDeleteButton
+                  color="red"
+                  onDragOver={event => onDragOver(event)}
+                  onDragLeave={event => onDragLeave(event)}
+                  onDrop={event => drop(event)}
+                />
+              </div>
               <div>
                 <TableRoutine>
                   {filas.map((fila, indexFilas) => (
@@ -165,9 +202,18 @@ function Routines() {
                                 <>
                                   <InputTable placeholder="texto aqui" />
                                 </>
+                              ) : indexContenido === 8 ? (
+                                <>
+                                  <CustomDeleteButton
+                                    name={indexFilas}
+                                    onClick={event => deleteRow(event)}
+                                  />
+                                </>
                               ) : contenido !== null ? (
                                 <>
                                   <PictogramRoutine
+                                    dragEnter={dragEnter}
+                                    dragStart={dragStart}
                                     id={contenido.id}
                                     name={contenido.name}
                                   />
@@ -182,8 +228,10 @@ function Routines() {
                     </tbody>
                   ))}
                 </TableRoutine>
-                <ButtonMore>Eliminar fila</ButtonMore>
-                <ButtonMore>Añadir nueva fila</ButtonMore>
+                {/* <ButtonMore>Eliminar fila</ButtonMore> */}
+                <ButtonMore onClick={event => newRow(event)}>
+                  Nueva fila
+                </ButtonMore>
               </div>
             </DivTable>
           </DivRoutine>
@@ -198,6 +246,7 @@ export default Routines;
 const ContainerRoutines = styled.div`
   padding: 1rem;
   text-align: center;
+  display: flex;
   background-color: var(--backgroundGrayColor);
   min-height: 80vh;
 `;
@@ -209,25 +258,37 @@ const DivRoutine = styled.div`
 
 const ContainerDiv = styled.div`
   padding: 1rem;
+  margin-top: 1rem;
   border-radius: 0.5rem;
-
-  width: 100%;
   background-color: white;
   box-shadow: 0.09rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
 `;
 
 const DivForm = styled.div`
   padding: 0.5rem;
-  width: 25%;
+  width: 20%;
   margin-right: 1rem;
 `;
 
 const DivTable = styled.div`
-  width: 75%;
+  width: 80%;
 
   padding: 0.5rem;
   background-color: var(--gray);
   border-radius: 0.5rem;
+
+  & .div-header-table {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & input {
+      flex-grow: 1;
+    }
+
+    & > div {
+    }
+  }
 `;
 
 const TableRoutine = styled.table`
@@ -260,14 +321,23 @@ const InputTable = styled.input`
 
 const CustomForm = styled.form`
   display: flex;
+  flex-direction: column;
   align-items: center;
+
+  & button {
+    width: 100%;
+  }
 `;
 
 const ButtonMore = styled.button`
   width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
   font-size: 1rem;
   border: none;
-  background-color: lightgray;
+  color: white;
+  border-radius: 1rem;
+  background-color: var(--green);
 `;
 
 const DivPictogram = styled.div`

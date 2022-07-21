@@ -12,7 +12,7 @@ const CustomLink = ({
   url = '#',
 }) => {
   return (
-    <Link className={`custom-button ${color} ${size}`} to={url}>
+    <Link className={`custom-button ${color} ${size} link-button`} to={url}>
       {name}
     </Link>
   );

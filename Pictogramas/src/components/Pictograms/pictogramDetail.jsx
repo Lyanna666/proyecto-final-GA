@@ -22,6 +22,7 @@ const PictogramDetail = props => {
     fetchPictogramById(context.language.LANGUAGE, props.id)
       .then(data => {
         setPictogramInfo(data);
+        checkFavorites(data);
         setLoading(false);
       })
       .catch(error => {
@@ -32,10 +33,14 @@ const PictogramDetail = props => {
   }
 
   // Chequeamos favoritos
-  const checkFavorites = () => {
+  const checkFavorites = data => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    console.log(pictogramInfo);
     if (storedFavorites !== null) {
-      if (storedFavorites.indexOf(props.id.toString()) >= 0) {
+      const index = storedFavorites.findIndex(
+        favorite => favorite._id === data._id,
+      );
+      if (index >= 0) {
         setIsFavorite(true);
       } else {
         setIsFavorite(false);
@@ -46,23 +51,34 @@ const PictogramDetail = props => {
   // Añadir a favoritos
   const onClickFavorite = event => {
     let favorites = [];
+
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    console.log('************', pictogramInfo, storedFavorites);
     if (storedFavorites !== null) {
       favorites = storedFavorites;
     }
-    if (favorites.indexOf(event.target.id) >= 0) {
-      favorites.splice(favorites.indexOf(event.target.id), 1);
+    const index = favorites.findIndex(
+      favorite => favorite._id === pictogramInfo._id,
+    );
+    console.log('Index del favorito', index, pictogramInfo._id);
+    if (index >= 0) {
+      console.log(event.target.id, 'Borrando posicion:', index);
+      favorites.splice(index, 1);
       setIsFavorite(false);
     } else {
-      favorites.push(event.target.id);
+      // Como poder pasar la data ¿?
+      console.log(event.target.id, 'Añadiendo posicion:', index, favorites);
+      favorites.push(pictogramInfo);
+      console.log(event.target.id, 'Añadido posicion:', index, favorites);
       setIsFavorite(true);
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
+    window.dispatchEvent(new Event('storage'));
   };
 
   useEffect(() => {
     getPictogram();
-    checkFavorites();
+    // checkFavorites();
   }, []);
 
   return (
@@ -83,7 +99,7 @@ const PictogramDetail = props => {
                   className={isFavorite ? 'favorite' : 'no-favorite'}
                   type="button"
                   id={props.id}
-                  onClick={onClickFavorite}
+                  onClick={event => onClickFavorite(event)}
                 >
                   ★
                 </button>

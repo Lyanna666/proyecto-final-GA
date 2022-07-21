@@ -1,19 +1,40 @@
 import './header-menu.css';
 
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import AppContext from '../../AppContext';
 
 const HeaderMenu = () => {
   const context = useContext(AppContext);
+  const [user, setUser] = useState(null);
 
-  // HEADER_NAV_HOME = 'Home';
-  // export const HEADER_NAV_USERS = '¿A quién va dirigido?';
-  // export const HEADER_NAV_HOW_DOES_IT_WORKS = '¿Cómo funciona?';
-  // export const HEADER_NAV_LOGIN = 'Regístrate o \nInicia sesión';
+  const updateUser = () => {
+    // Si hay algo en local storage de user, actualizamos user
+    if (localStorage.getItem('user')) {
+      setUser(localStorage.getItem('user'));
+    } else {
+      setUser(null);
+    }
+  };
 
-  // export const HEADER_LANGUAGE
+  useEffect(() => {
+    // window.localStorage.clear(); -> Esto elimina todo lo que haya en local storage
+    updateUser();
+
+    function storageEventHandler(event) {
+      console.log('Usuario ha cambiado');
+      if (event.key === 'user') {
+        updateUser();
+      }
+    }
+
+    // Añadimos el evento storageEventHandler, este evento se ejecuta cuando cambie el localstorage
+    window.addEventListener('storage', storageEventHandler);
+    return () => {
+      window.removeEventListener('storage', storageEventHandler);
+    };
+  }, []);
 
   return (
     <menu className="header-menu">
@@ -42,9 +63,15 @@ const HeaderMenu = () => {
         </button>
       </li>
       <li>
-        <Link className="link link-login" to={'/login'}>
-          {context.language.HEADER_NAV_LOGIN}
-        </Link>
+        {!user ? (
+          <Link className="link link-login" to={'/login'}>
+            {context.language.HEADER_NAV_LOGIN}
+          </Link>
+        ) : (
+          <Link className="link link-login" to={'/dashboard'}>
+            {context.language.DASHBOARD}
+          </Link>
+        )}
       </li>
     </menu>
   );
