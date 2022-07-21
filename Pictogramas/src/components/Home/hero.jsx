@@ -25,7 +25,7 @@ const Hero = props => {
     //Esto es temporal
     localStorage.setItem('user', 'user');
     window.location.href = '/dashboard';
-    // console.log('Aqui no entra');
+    console.log('Aqui no entra');
   };
 
   useEffect(() => {
