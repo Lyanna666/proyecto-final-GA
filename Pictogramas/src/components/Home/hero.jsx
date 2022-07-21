@@ -4,6 +4,7 @@ import { useContext, useState, useEffect } from 'react';
 
 import AppContext from '../../AppContext';
 import CustomLink from '../elements/customLink';
+import CustomButton from '../elements/customButton';
 
 const Hero = props => {
   const context = useContext(AppContext);
@@ -18,6 +19,13 @@ const Hero = props => {
     } else {
       setUser(null);
     }
+  };
+
+  const onClickContinue = event => {
+    //Esto es temporal
+    localStorage.setItem('user', 'user');
+    window.location.href = '/dashboard';
+    // console.log('Aqui no entra');
   };
 
   useEffect(() => {
@@ -52,16 +60,15 @@ const Hero = props => {
               url="/login"
             />
             <div>
-              <CustomLink
+              <CustomButton
                 name={context.language.HERO_NO_SIGNUP}
                 color="blue"
-                url="/login"
+                onClick={onClickContinue}
               />
             </div>
           </>
         ) : (
           <>
-            {' '}
             <CustomLink
               name={context.language.DASHBOARD}
               color="blue"

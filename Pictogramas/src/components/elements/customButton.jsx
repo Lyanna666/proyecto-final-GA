@@ -17,7 +17,7 @@ const CustomButton = ({
   };
   return (
     <button
-      className={`custom-button ${color} ${size} ${type}`}
+      className={`custom-button ${color} ${size} ${type} link-button`}
       onClick={onButtonClick}
     >
       {name}
