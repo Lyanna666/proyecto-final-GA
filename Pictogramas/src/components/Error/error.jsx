@@ -19,11 +19,11 @@ const Error = props => {
             x
           </button>
           <div>
-            <h1>{context.language.ERROR_TITLE}</h1>
-            <p>{props.errorProps.message}</p>
+            <h1>{props.title}</h1>
+            <p>{props.errorProps}</p>
             <CustomButton
               color="green"
-              name={context.language.ERROR_BUTTON_TEXT}
+              name={props.button}
               size="medium"
               onClick={props.onClickRestart}
             />

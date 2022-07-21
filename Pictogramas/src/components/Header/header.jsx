@@ -1,6 +1,6 @@
 import './header.css';
 
-import { useContext, React, useState } from 'react';
+import { useContext, React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import AppContext from '../../AppContext';
@@ -8,6 +8,12 @@ import HeaderMenu from '../HeaderMenu/header-menu';
 
 const Header = () => {
   const context = useContext(AppContext);
+
+  // Estado para saber si el usuario ha iniciado sesion
+  const [user, setUser] = useState(null);
+  // Creo un estado para saber si se está mostrando el menú o no.
+  // En el evento onClick cambio ese estado a true o false en función de si se muestra el menú
+  const [openedMenu, setOpenedMenu] = useState(false);
 
   // Se añade un evento que se ejecuta cuando el tamaño de la pantalla cambia
   window.addEventListener('resize', checkForWindowResize);
@@ -19,10 +25,32 @@ const Header = () => {
     }
   }
 
-  const [openedMenu, setOpenedMenu] = useState(false);
+  const updateUser = () => {
+    // Si hay algo en local storage de user, actualizamos user
+    if (localStorage.getItem('user')) {
+      setUser(localStorage.getItem('user'));
+    } else {
+      setUser(null);
+    }
+  };
 
-  //Creo un estado para saber si se está mostrando el menú o no.
-  // En el evento onClick cambio ese estado a true o false en función de si se muestra el menú
+  useEffect(() => {
+    // window.localStorage.clear(); -> Esto elimina todo lo que haya en local storage
+    updateUser();
+
+    function storageEventHandler(event) {
+      console.log('Usuario ha cambiado');
+      if (event.key === 'user') {
+        updateUser();
+      }
+    }
+
+    // Añadimos el evento storageEventHandler, este evento se ejecuta cuando cambie el localstorage
+    window.addEventListener('storage', storageEventHandler);
+    return () => {
+      window.removeEventListener('storage', storageEventHandler);
+    };
+  }, []);
 
   const onClickMenu = event => {
     setOpenedMenu(!openedMenu);
@@ -84,9 +112,15 @@ const Header = () => {
                   </ul>
                 </li>
               </ul>
-              <Link className="link link-login" to={'/login'}>
-                {context.language.HEADER_NAV_LOGIN}
-              </Link>
+              {!user ? (
+                <Link className="link link-login" to={'/login'}>
+                  {context.language.HEADER_NAV_LOGIN}
+                </Link>
+              ) : (
+                <Link className="link link-login" to={'/dashboard'}>
+                  {`${context.language.DASHBOARD} \n${user}`}
+                </Link>
+              )}
             </div>
           </nav>
         </div>

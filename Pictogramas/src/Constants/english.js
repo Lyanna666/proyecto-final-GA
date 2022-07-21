@@ -87,6 +87,7 @@ export const HERO_TITLE =
   'Symbol set and resources for Augmentive and \nAlternative Communicación (AAC)';
 export const HERO_SUBTITLE = 'Sign up or Sign in to use the app! ';
 export const HERO_BUTTON = 'Sign up / Login';
+export const HERO_NO_SIGNUP = 'Continue without an account';
 
 /* HOME INFO */
 export const TOP_PAGE = 'Scroll to the top ⬆';
@@ -155,6 +156,7 @@ export const USERS = [
 ];
 
 /* DASHBOARD */
+export const DASHBOARD = 'Dashboard';
 export const DASHBOARD_PICTOGRAMS = 'Pictograms';
 export const DASHBOARD_SEARCH = 'Enter seach text';
 export const DASHBOARD_ALL_CATEGORIES = 'All categories';
@@ -191,6 +193,8 @@ export const FAVO_TITLE = 'Favorites';
 // Error messages
 export const ERROR_TITLE = 'An Error Has Occurred';
 export const ERROR_BUTTON_TEXT = 'Retry';
+export const ERROR_LOGIN =
+  'This functionality is not implemented in this version of the app.';
 
 // Boton mostrar mas fav ori t assembled os
 export const SHOW_MORE_FAVORITES = 'Show  more favorites';

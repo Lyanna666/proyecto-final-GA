@@ -92,6 +92,7 @@ export const HERO_TITLE =
 export const HERO_SUBTITLE =
   'Regístrate o inicia sesión para empezar a utlizar la aplicación';
 export const HERO_BUTTON = 'Registro / Login';
+export const HERO_NO_SIGNUP = 'Continuar sin iniciar sesión';
 
 /* HOME INFO */
 export const TOP_PAGE = 'Volver arriba ⬆';
@@ -160,6 +161,7 @@ export const USERS = [
 ];
 
 /* DASHBOARD */
+export const DASHBOARD = 'Dashboard';
 export const DASHBOARD_PICTOGRAMS = 'Pictogramas';
 export const DASHBOARD_SEARCH = '🔍 Introduce el texto a buscar';
 export const DASHBOARD_ALL_CATEGORIES = 'Todas las categorías';
@@ -194,8 +196,10 @@ export const DASHBOARD_CATEGORIES_ALL = 'Todas las categorias';
 export const FAVO_TITLE = 'Favoritos';
 
 // Error
-export const ERROR_TITLE = 'Ha Ocurrido un Error';
+export const ERROR_TITLE = 'Ha ocurrido un error';
 export const ERROR_BUTTON_TEXT = 'Reintentar';
+export const ERROR_LOGIN =
+  'Esta funcionalidad todavía no está implementada en la versión actual de la aplicación.';
 
 // boton mostrar mas favoritos
 export const SHOW_MORE_FAVORITES = 'Mostrar más';

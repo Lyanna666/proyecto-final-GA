@@ -101,7 +101,9 @@ const Pictograms = () => {
       {loading ? <Spinner allWindow={true} /> : <></>}
       {error ? (
         <Error
-          errorProps={error}
+          title={context.language.ERROR_TITLE}
+          errorProps={error.message}
+          button={context.language.ERROR_BUTTON_TEXT}
           onClickClose={onClickCloseButton}
           onClickRestart={onClickRestartButton}
         />
