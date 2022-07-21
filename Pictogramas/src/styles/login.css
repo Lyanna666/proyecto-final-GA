@@ -76,6 +76,7 @@ input:hover {
 
 .register {
   border-top: 0.1rem rgb(212, 212, 212) solid;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
@@ -99,6 +100,7 @@ input:hover {
 }
 
 .register a {
+  margin: 0;
   width: 100%;
   display: block;
   text-align: center;

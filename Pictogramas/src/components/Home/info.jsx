@@ -1,11 +1,7 @@
 import './info.css';
-
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
 import AppContext from '../../AppContext';
-import CustomButton from '../elements/customButton';
-import CustomLink from '../elements/customLink';
 
 const Info = props => {
   const context = useContext(AppContext);

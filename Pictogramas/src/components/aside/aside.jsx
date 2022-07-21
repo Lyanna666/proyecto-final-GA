@@ -9,6 +9,12 @@ import './aside.css';
 const Aside = props => {
   const context = useContext(AppContext);
 
+  const logout = () => {
+    localStorage.removeItem('user');
+    window.dispatchEvent(new Event('storage'));
+    window.location.href = '/';
+  };
+
   const iconsHeader = [
     {
       name: context.language.ASIDE_HOME,
@@ -110,9 +116,7 @@ const Aside = props => {
           color="blue"
           name="Cerrar sesión"
           size="large"
-          onClick={() => {
-            props.logout();
-          }}
+          onClick={logout}
         />
       </div>
     </aside>
