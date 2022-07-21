@@ -1,12 +1,13 @@
-import { React, useContext } from 'react';
-import styled from 'styled-components';
+import { React, useContext, useState, useEffect } from "react";
+import styled from "styled-components";
 
-import AppContext from '../../AppContext';
+import AppContext from "../../AppContext";
 
 const Favorites = (props) => {
   const context = useContext(AppContext);
+  const [favorites, setFavorites] = useState([]);
 
-  let listaFavoritos = localStorage.getItem('favorites');
+  let listaFavoritos = localStorage.getItem("favorites");
 
   const mostrarFavoritos = () => {
     if (listaFavoritos) {
@@ -64,8 +65,8 @@ const Favorites = (props) => {
     justify-content: flex-start;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    border: 1px solid #db4444;
-    background-color: #e9a7a7;
+    border: 1px solid #0066ff;
+    background-color: #2b5294;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
@@ -79,11 +80,10 @@ const Favorites = (props) => {
     <>
       <MostrarFavoritos>
         <H2>{context.language.FAVO_TITLE}</H2>
-        {localStorage.getItem('favorites') && (
+        {localStorage.getItem("favorites") && (
           <ContenedorFavoritos>
             <List>
-              <ListItem> ID: {localStorage.getItem('favorites')}</ListItem>
-              <ListItem> ID: {mostrarFavoritos}</ListItem>
+              <ListItem> ID: {localStorage.getItem("favorites")}</ListItem>
             </List>
           </ContenedorFavoritos>
         )}

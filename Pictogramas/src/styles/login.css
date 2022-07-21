@@ -1,7 +1,6 @@
 .box-container {
   width: 100%;
   padding: var(--base-space);
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   background-color: var(--backgroundGrayColor);
@@ -11,7 +10,6 @@
   width: 20rem;
   margin: 0 auto;
   padding: var(--base-space);
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -12,19 +12,19 @@ const Footer = (props) => {
   const socialIcons = [
     {
       name: "Facebook",
-      src: "http://assets.stickpng.com/thumbs/60fea6c83d624000048712b7.png",
+      src: "https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Facebook_svg-512.png",
     },
     {
       name: "Twitter",
-      src: "https://icon-library.com/images/twitter-white-icon/twitter-white-icon-19.jpg",
+      src: "https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png",
     },
     {
       name: "Instagram",
-      src: "https://www.citypng.com/public/uploads/preview/-51609193615decnmgwyz7.png",
+      src: "https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/600/Instagram_glyph_svg-512.png",
     },
     {
       name: "Google",
-      src: "https://icon-library.com/images/google-plus-icon-white-png/google-plus-icon-white-png-5.jpg",
+      src: "https://cdn4.iconfinder.com/data/icons/picons-social/57/09-google-3-256.png",
     },
   ];
 

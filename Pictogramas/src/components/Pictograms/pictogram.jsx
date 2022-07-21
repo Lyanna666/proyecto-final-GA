@@ -1,6 +1,6 @@
-import { React, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { React, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Post = ({ data, kurva }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -10,7 +10,7 @@ const Post = ({ data, kurva }) => {
   });
 
   const checkFavorites = () => {
-    const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
     // console.log(storedFavorites, data._id);
     if (storedFavorites !== null) {
       if (storedFavorites.indexOf(data._id.toString()) >= 0) {
@@ -23,15 +23,15 @@ const Post = ({ data, kurva }) => {
 
   const onClickFavorite = (event) => {
     let favorites = [];
-    const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
     if (storedFavorites !== null) {
       favorites = storedFavorites;
     }
     if (favorites.indexOf(event.target.id) >= 0) {
       console.log(
         event.target.id,
-        'Borrando posicion:',
-        favorites.indexOf(event.target.id),
+        "Borrando posicion:",
+        favorites.indexOf(event.target.id)
       );
       favorites.splice(favorites.indexOf(event.target.id), 1);
       setIsFavorite(false);
@@ -39,7 +39,7 @@ const Post = ({ data, kurva }) => {
       favorites.push(event.target.id);
       setIsFavorite(true);
     }
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
   return (
@@ -47,7 +47,7 @@ const Post = ({ data, kurva }) => {
       <div className="pictogram-div">
         <DivHeader>
           <button
-            className={isFavorite ? 'favorite' : 'no-favorite'}
+            className={isFavorite ? "favorite" : "no-favorite"}
             type="button"
             id={data._id}
             onClick={onClickFavorite}
