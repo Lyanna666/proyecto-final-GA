@@ -7,16 +7,20 @@ import { useNavigate } from 'react-router-dom';
 import './aside.css';
 
 const Aside = props => {
+  // Creamos constante context para coger el idioma selecionado por el usuario
   const context = useContext(AppContext);
+
+  // Creamos constante navigate
   const navigate = useNavigate();
 
+  // Función que elimina el usuario de localStorage y navega hacia home (/)
   const logout = () => {
     localStorage.removeItem('user');
-    window.dispatchEvent(new Event('storage'));
-    // window.location.href = '/';
+    // window.dispatchEvent(new Event('storage'));
     navigate('/');
   };
 
+  // Iconos y textos de aside
   const iconsHeader = [
     {
       name: context.language.ASIDE_HOME,
@@ -63,17 +67,24 @@ const Aside = props => {
     <aside className="aside">
       <div className="aside__header">
         <picture>
-          <img src="./Resources/users.png" alt="user" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+            alt="user"
+          />
         </picture>
         <h2 className="aside__title">
-          <span className="aside__title-text">Nombre Apellido</span>
+          {/* Si hay un usuario guardado en local storage mostramos el usuario guardado,
+          si no, mostramos User */}
+          <span className="aside__title-text">
+            {localStorage.getItem('user')
+              ? localStorage.getItem('user')
+              : 'User'}
+          </span>
         </h2>
-        <div>
-          <span className="aside__title-text">Usuario</span>
-        </div>
       </div>
       <div className="aside__body">
         <ul className="aside__list">
+          {/* Recorremos los arrays de iconos y por cada icono, hacemos un link  */}
           {iconsHeader.map((icon, index) => (
             <>
               <li className="aside__item" key={index}>
@@ -116,7 +127,7 @@ const Aside = props => {
         <CustomButton
           className="aside__button"
           color="blue"
-          name="Cerrar sesión"
+          name={context.language.ASIDE_LOGOUT}
           size="large"
           onClick={logout}
         />
