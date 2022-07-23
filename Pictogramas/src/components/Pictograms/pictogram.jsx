@@ -57,6 +57,7 @@ const Post = ({ data, kurva }) => {
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
     window.dispatchEvent(new Event('storage')); // Lanza un evento para que nuestro componente favoritos sepa que tiene que actualizarse
+    console.log('Evento favoritos lanzado');
   };
 
   return (

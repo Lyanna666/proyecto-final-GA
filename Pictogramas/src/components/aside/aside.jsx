@@ -14,7 +14,7 @@ const Aside = props => {
     localStorage.removeItem('user');
     window.dispatchEvent(new Event('storage'));
     // window.location.href = '/';
-    navigate('./');
+    navigate('/');
   };
 
   const iconsHeader = [
