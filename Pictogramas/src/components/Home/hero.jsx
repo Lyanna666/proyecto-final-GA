@@ -6,6 +6,7 @@ import AppContext from '../../AppContext';
 import CustomLink from '../elements/customLink';
 import CustomButton from '../elements/customButton';
 import { useNavigate } from 'react-router-dom';
+import Error from '../Error/error';
 
 const Hero = props => {
   const navigate = useNavigate();
@@ -13,6 +14,8 @@ const Hero = props => {
 
   // Estado para saber si el usuario ha iniciado sesion
   const [user, setUser] = useState(null);
+
+  const [error, setError] = useState(false);
 
   const updateUser = () => {
     // Si hay algo en local storage de user, actualizamos user
@@ -25,11 +28,11 @@ const Hero = props => {
 
   const onClickContinue = event => {
     //Esto es temporal
-    localStorage.setItem('user', 'user');
+    // localStorage.setItem('user', 'user');
     // window.location.href = '/dashboard#';
-    navigate('/dashboard');
-    // this.context.router.transitionTo('/dashboard');
-    console.log('Aqui no entra');
+    // navigate('/dashboard');
+
+    setError(true);
   };
 
   useEffect(() => {
@@ -50,8 +53,33 @@ const Hero = props => {
     };
   }, []);
 
+  const onClickCloseButton = () => {
+    setError(false);
+  };
+
+  const onClickSubmitButton = event => {
+    event.preventDefault();
+    const user = event.target.elements.user.value;
+    localStorage.setItem('user', user);
+    navigate('/dashboard');
+  };
+
   return (
     <>
+      {/* Si hay un error, mostramos el componente Error */}
+      {error ? (
+        <Error
+          type="submit"
+          title={context.language.HERO_NO_SIGNUP}
+          errorProps={context.language.HERO_NO_SIGNUP}
+          button={context.language.HERO_NO_SIGNUP}
+          onClickClose={onClickCloseButton}
+          onSubmit={onClickSubmitButton}
+          input={context.language.SIGNUP_NAME}
+        />
+      ) : (
+        <></>
+      )}
       <div className="hero-div">
         <p> {context.language.NAME_APP}</p>
         <h1>{context.language.HERO_TITLE}</h1>

@@ -63,7 +63,7 @@ const Header = () => {
           <picture>
             <img
               src="./Resources/Logo-black.png"
-              alt={context.language.APP_NAME}
+              alt={context.language.NAME_APP}
             />
           </picture>
           <nav>
