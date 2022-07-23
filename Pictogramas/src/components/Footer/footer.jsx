@@ -1,30 +1,31 @@
-import "./footer.css";
-import { useContext } from "react";
-import { numeroAleatorio } from "../../Utils/utils";
+import './footer.css';
+import { useContext } from 'react';
+import { numeroAleatorio } from '../../Utils/utils';
 
 // import styled from 'styled-components'; Si quereís usar esto lo descomentamos
 
-import AppContext from "../../AppContext";
+import AppContext from '../../AppContext';
 
-const Footer = (props) => {
+const Footer = props => {
   const context = useContext(AppContext);
 
   const socialIcons = [
-       {
-      name: "Facebook",
-      src: "https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Facebook_svg-512.png",
+    {
+      name: 'Facebook',
+      src: 'https://cdn-icons-png.flaticon.com/512/733/733547.png',
     },
     {
-      name: "Twitter",
-      src: "https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png",
+      name: 'Twitter',
+      src:
+        'https://cdn-icons.flaticon.com/png/512/3670/premium/3670151.png?token=exp=1658597021~hmac=8b2e62a481d517442ced87c24a8c512b',
     },
     {
-      name: "Instagram",
-      src: "https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/600/Instagram_glyph_svg-512.png",
+      name: 'Instagram',
+      src: 'https://cdn-icons-png.flaticon.com/512/174/174855.png',
     },
     {
-      name: "Google",
-      src: "https://cdn4.iconfinder.com/data/icons/picons-social/57/09-google-3-256.png",
+      name: 'Google',
+      src: 'https://cdn-icons-png.flaticon.com/512/281/281764.png',
     },
   ];
 
@@ -80,7 +81,7 @@ const Footer = (props) => {
               <img src="./Resources/logo_white.png" alt="logo" />
             </a>
             <div className="footer-social">
-              {socialIcons.map((icon) => (
+              {socialIcons.map(icon => (
                 <a href="/" key={icon.name}>
                   <img src={icon.src} alt={icon.name} />
                 </a>
@@ -91,15 +92,15 @@ const Footer = (props) => {
       </div>
       <div className="copy-right">
         <p>
-          {context.language.FOOTER_COPYRIGHT}{" "}
+          {context.language.FOOTER_COPYRIGHT}{' '}
           <a
             href="https://github.com/Lyanna666"
             target="_blank"
             rel="noreferrer"
           >
             Andrea Gonzalez
-          </a>{" "}
-          &#38;{" "}
+          </a>{' '}
+          &#38;{' '}
           <a
             href="https://github.com/jacobo87"
             target="_blank"
@@ -112,7 +113,7 @@ const Footer = (props) => {
       </div>
       <div className="made">
         <p>
-          {context.language.FOOTER_MADE} <span>&#10084;</span>{" "}
+          {context.language.FOOTER_MADE} <span>&#10084;</span>{' '}
         </p>
       </div>
     </footer>

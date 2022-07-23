@@ -262,6 +262,8 @@ const ContainerDiv = styled.div`
   border-radius: 0.5rem;
   background-color: white;
   box-shadow: 0.09rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+  width: 100%;
+  min-width: 80%;
 `;
 
 const DivForm = styled.div`
@@ -272,7 +274,6 @@ const DivForm = styled.div`
 
 const DivTable = styled.div`
   width: 80%;
-
   padding: 0.5rem;
   background-color: var(--gray);
   border-radius: 0.5rem;

@@ -7,6 +7,7 @@ import { fetchPictogramById } from '../../api/api-rest';
 import CustomButton from '../elements/customButton';
 import Spinner from '../loading/loading';
 import { numeroAleatorio } from '../../Utils/utils';
+import Error from '../Error/error';
 
 import './pictogramDetail.css';
 
@@ -16,16 +17,23 @@ const PictogramDetail = props => {
   const params = useParams();
   const [pictogramInfo, setPictogramInfo] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   function getPictogram() {
     setLoading(true);
     fetchPictogramById(context.language.LANGUAGE, props.id)
       .then(data => {
-        setPictogramInfo(data);
-        checkFavorites(data);
-        setLoading(false);
+        if (data.errors) {
+          setLoading(false);
+          setError(data);
+        } else {
+          setPictogramInfo(data);
+          checkFavorites(data);
+          setLoading(false);
+        }
       })
       .catch(error => {
+        setError(error);
         setPictogramInfo(null);
         console.error(error);
         setLoading(false);
@@ -53,27 +61,36 @@ const PictogramDetail = props => {
     let favorites = [];
 
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    console.log('************', pictogramInfo, storedFavorites);
+    // console.log('************', pictogramInfo, storedFavorites);
     if (storedFavorites !== null) {
       favorites = storedFavorites;
     }
     const index = favorites.findIndex(
       favorite => favorite._id === pictogramInfo._id,
     );
-    console.log('Index del favorito', index, pictogramInfo._id);
+    // console.log('Index del favorito', index, pictogramInfo._id);
     if (index >= 0) {
-      console.log(event.target.id, 'Borrando posicion:', index);
+      // console.log(event.target.id, 'Borrando posicion:', index);
       favorites.splice(index, 1);
       setIsFavorite(false);
     } else {
       // Como poder pasar la data ¿?
-      console.log(event.target.id, 'Añadiendo posicion:', index, favorites);
+      // console.log(event.target.id, 'Añadiendo posicion:', index, favorites);
       favorites.push(pictogramInfo);
-      console.log(event.target.id, 'Añadido posicion:', index, favorites);
+      // console.log(event.target.id, 'Añadido posicion:', index, favorites);
       setIsFavorite(true);
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
     window.dispatchEvent(new Event('storage'));
+  };
+
+  const onClickCloseButton = () => {
+    setError(null);
+  };
+
+  const onClickRestartButton = () => {
+    setError(null);
+    getPictogram();
   };
 
   useEffect(() => {
@@ -84,7 +101,17 @@ const PictogramDetail = props => {
   return (
     <>
       {loading ? <Spinner allWindow={true} /> : <></>}
-
+      {error ? (
+        <Error
+          title={context.language.ERROR_TITLE}
+          errorProps={error.message}
+          button={context.language.ERROR_BUTTON_TEXT}
+          onClickClose={onClickCloseButton}
+          onClickRestart={onClickRestartButton}
+        />
+      ) : (
+        <></>
+      )}
       <div className="pictograma">
         <DivBack>
           <Link to={'/Dashboard'}>🔙</Link>
