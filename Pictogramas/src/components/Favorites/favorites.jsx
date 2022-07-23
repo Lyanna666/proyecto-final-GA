@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 import AppContext from '../../AppContext';
 
 const Favorites = props => {
+  const favoritesPerPageNumber = 4;
   const context = useContext(AppContext);
 
   // Constante donde guardamos el número de favoritos que se muestra en la página
-  const [favoritesPerPage, setFavoritesPerPage] = useState(4);
+  const [favoritesPerPage, setFavoritesPerPage] = useState(
+    favoritesPerPageNumber,
+  );
 
   // Estado donde guardaremos el array de favoritos
   const [favorites, setFavorites] = useState(null);
@@ -22,6 +25,9 @@ const Favorites = props => {
     if (JSON.parse(localStorage.getItem('favorites'))) {
       const favoritesArray = JSON.parse(localStorage.getItem('favorites'));
       setFavorites(favoritesArray);
+      if (favoritesPerPage !== favoritesPerPageNumber) {
+        setFavoritesPerPage(favoritesPerPageNumber);
+      }
     } else {
       setFavorites(null);
     }
@@ -29,11 +35,11 @@ const Favorites = props => {
 
   // Función para mostrar más favoritos
   const showMoreFavorites = event => {
-    if (favoritesPerPage === 4) {
+    if (favoritesPerPage === favoritesPerPageNumber) {
       setFavoritesPerPage(favorites.length);
       /*  event.target.textContent = context.language.SHOW_LESS_FAVORITES; */
     } else {
-      setFavoritesPerPage(4);
+      setFavoritesPerPage(favoritesPerPageNumber);
       /* event.target.textContent = context.language.SHOW_MORE_FAVORITES; */
     }
   };
@@ -66,10 +72,10 @@ const Favorites = props => {
           <List>
             {/* Si favoritos es distinto de null, hacemos un map  */}
             {favorites !== null ? (
-              favorites.map((item, index) => {
+              favorites.map((item, index) =>
                 // Mostramos como máximo un número de favoritos
-                if (index < favoritesPerPage) {
-                  return (
+                index < favoritesPerPage ? (
+                  <>
                     <Link to={`/dashboard${item._id}`}>
                       <ListItem key={index} className="pictogram-div">
                         <picture>
@@ -83,9 +89,11 @@ const Favorites = props => {
                         <p>{item.keywords[0].keyword}</p>
                       </ListItem>
                     </Link>
-                  );
-                }
-              }) // Si favoritos es null mostramos un texto indicando que no hay favoritos guardados
+                  </>
+                ) : (
+                  <></>
+                ),
+              ) // Si favoritos es null mostramos un texto indicando que no hay favoritos guardados
             ) : (
               <>
                 <ListItem>No hay favoritos</ListItem>
