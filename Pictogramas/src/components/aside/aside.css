@@ -44,14 +44,17 @@
 
 .aside__header picture {
   border: 2px solid var(--white);
-  width: 50%;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   background-color: white;
 }
 
 .aside__header picture img {
   margin: auto;
-  height: auto;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
   border-radius: 50%;
 }
 
@@ -117,26 +120,17 @@ span img:hover {
 }
 
 .aside__button {
-  display: flex;
+  width: 100%;
   align-items: center;
-  justify-content: center;
   padding: 10px 0;
   border-top: 1px solid #e6e6e6;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .aside {
     display: inline-block;
     width: 100%;
     margin: 0 auto;
-  }
-
-  .aside__header picture img {
-    width: 50%;
-    margin: 0 auto;
-    height: auto;
-    border: 0.25rem solid var(--white);
-    border-radius: 50%;
   }
 
   .aside__item {

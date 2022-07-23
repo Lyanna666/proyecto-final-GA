@@ -125,14 +125,6 @@ const Login = () => {
               size="small"
             />
           </div>
-          <div className="register">
-            <CustomButton
-              name={context.language.HERO_NO_SIGNUP}
-              color="green"
-              size="small"
-              onClick={onClickContinue}
-            />
-          </div>
         </div>
         <div className="terms">
           <p> {context.language.LOGIN_TERMS} </p>

@@ -71,7 +71,7 @@ const Hero = props => {
         <Error
           type="submit"
           title={context.language.HERO_NO_SIGNUP}
-          errorProps={context.language.HERO_NO_SIGNUP}
+          errorProps={context.language.ERROR_TEXT_USER}
           button={context.language.HERO_NO_SIGNUP}
           onClickClose={onClickCloseButton}
           onSubmit={onClickSubmitButton}

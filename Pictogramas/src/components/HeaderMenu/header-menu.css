@@ -3,13 +3,30 @@
   width: 100%;
   text-align: center;
   margin: 0;
+  padding: 0;
   border-bottom: 0.06rem solid lightgray;
   transition: ease all 0.5s;
 }
 
 .header-menu li {
   padding: 0.5rem;
+  margin: 0;
   display: block;
+}
+
+.header-menu li button {
+  margin-right: 0.5rem;
+  padding: 0.3rem;
+  font-family: 'Inter', sans-serif;
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.header-menu li button:hover {
+  background-color: var(--blue);
+  color: white;
 }
 
 .header-menu li:not(:last-of-type) {
