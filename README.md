@@ -6,7 +6,7 @@ We also give you the option to register and have more advanced functions or, alt
 
 ## Live Demo
 
-[teayuda.netlify.app](hhttps://teayuda.netlify.app/)
+- [teayuda.netlify.app](https://teayuda.netlify.app/)
 
 ## UI Wireframe Design
 
