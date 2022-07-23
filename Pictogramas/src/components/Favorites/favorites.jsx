@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 import AppContext from '../../AppContext';
 
 const Favorites = props => {
+  // Constante donde guardamos el número de favoritos que queremos mostrar
   const favoritesPerPageNumber = 4;
+
+  // Context para selecionar el idioma
   const context = useContext(AppContext);
 
-  // Constante donde guardamos el número de favoritos que se muestra en la página
+  // Estado donde guardamos el número de favoritos que se muestra en la página
+  // Lo inicializamos a 4
   const [favoritesPerPage, setFavoritesPerPage] = useState(
     favoritesPerPageNumber,
   );
@@ -16,41 +20,38 @@ const Favorites = props => {
   // Estado donde guardaremos el array de favoritos
   const [favorites, setFavorites] = useState(null);
 
-  const mostrarFavoritos = () => {
-    console.log(favorites);
-  };
-
+  // Funcion que actualiza el estado de favoritos con lo que haya en local storage
   const updateFavorites = () => {
-    // Si hay algo en local storage de favoritos, actualizamos favoritos
     if (JSON.parse(localStorage.getItem('favorites'))) {
       const favoritesArray = JSON.parse(localStorage.getItem('favorites'));
       setFavorites(favoritesArray);
       if (favoritesPerPage !== favoritesPerPageNumber) {
-        setFavoritesPerPage(favoritesPerPageNumber);
+        setFavoritesPerPages(favoritesArray.length);
       }
     } else {
       setFavorites(null);
     }
   };
 
-  // Función para mostrar más favoritos
+  // Función que setea el numéro de favoritos que se muestra
+  const setFavoritesPerPages = newLength => {
+    setFavoritesPerPage(newLength);
+  };
+
+  // Función para mostrar más o menos favoritos
   const showMoreFavorites = event => {
     if (favoritesPerPage === favoritesPerPageNumber) {
-      setFavoritesPerPage(favorites.length);
-      /*  event.target.textContent = context.language.SHOW_LESS_FAVORITES; */
+      setFavoritesPerPages(favorites.length);
     } else {
-      setFavoritesPerPage(favoritesPerPageNumber);
-      /* event.target.textContent = context.language.SHOW_MORE_FAVORITES; */
+      setFavoritesPerPages(favoritesPerPageNumber);
     }
   };
 
   useEffect(() => {
     // window.localStorage.clear(); -> Esto elimina todo lo que haya en local storage
     updateFavorites();
-
     function storageEventHandler(event) {
-      console.log('Favoritos ha cambiado');
-      // if (event.key === 'favorites') {
+      // Cuando entra en esta función es porque favoritos ha cambiado
       updateFavorites();
     }
 
@@ -65,10 +66,10 @@ const Favorites = props => {
     <>
       <MostrarFavoritos>
         <H2>
+          {/* Mostramos el título y el número de favoritos, si es nulo entonces mostramos 0 */}
           {context.language.FAVO_TITLE} ({favorites ? favorites.length : 0})
         </H2>
         <ContenedorFavoritos>
-          {mostrarFavoritos()}
           <List>
             {/* Si favoritos es distinto de null, hacemos un map  */}
             {favorites !== null ? (
@@ -104,7 +105,7 @@ const Favorites = props => {
 
         <CustomButton
           name={
-            favoritesPerPage === 4
+            favoritesPerPage === favoritesPerPageNumber
               ? context.language.SHOW_MORE_FAVORITES
               : context.language.SHOW_LESS_FAVORITES
           }

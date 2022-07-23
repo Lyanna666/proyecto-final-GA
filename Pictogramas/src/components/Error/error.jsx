@@ -1,17 +1,9 @@
 import './error.css';
-import { useState } from 'react';
 
 import CustomButton from '../elements/customButton';
 
 const Error = props => {
-  console.log(props);
-  // const [inputValue, setInputValue] = useState('');
-
-  // const onButtonClick = event => {
-  //   if (props.onClickRestart && inputValue) {
-  //     props.onClickRestart();
-  //   }
-  // };
+  // Componente que muestra una ventana de error / aviso
 
   return (
     <>
@@ -23,11 +15,13 @@ const Error = props => {
           <div>
             <h1>{props.title}</h1>
             <p>{props.errorProps}</p>
+
+            {/* Si pops.input es distinto de null, mostramos un formulario, si no, simplemente un botón */}
+
             {props.input ? (
               <form onSubmit={props.onSubmit}>
                 <input
                   type="text"
-                  // handleChange={e => setInputValue(e.target.value)}
                   name="user"
                   required
                   placeholder={props.input}
@@ -38,7 +32,6 @@ const Error = props => {
                   size="medium"
                   type={props.type ? props.type : 'button'}
                 />
-                {/* // onClick={props.onClickRestart} */}
               </form>
             ) : (
               <>
