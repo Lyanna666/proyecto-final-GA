@@ -161,11 +161,11 @@ const PictogramDetail = props => {
                 ))}
               </UlCategory>
 
-              <ul>
+              <UlCategories>
                 {pictogramInfo.tags.map((tag, index) => (
                   <LiCategory key={tag}>{tag}</LiCategory>
                 ))}
-              </ul>
+              </UlCategories>
             </div>
           </ContentPictogram>
         ) : (
@@ -203,13 +203,25 @@ const DivButtons = styled.div`
   align-items: center;
 `;
 
+const UlCategories = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1rem;
+`;
+
 const UlCategory = styled.ul`
   display: flex;
   flex-direction: column;
+  margin: 1rem;
+
+  & li {
+    margin: 0.5rem;
+  }
 `;
 
 const LiCategory = styled.li`
-  display: block;
+  /* display: block; */
   margin: 0.2rem;
   background-color: rgb(229, 229, 229);
   padding: 0.5rem;
@@ -218,10 +230,11 @@ const LiCategory = styled.li`
 
 const ContentPictogram = styled.div`
   padding: 0.5rem;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: row;
-  @media (max-width: 900px) {
+  /* flex-wrap: wrap; */
+  @media (max-width: 1200px) {
     flex-wrap: wrap;
   }
 `;

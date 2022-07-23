@@ -53,7 +53,7 @@ const HeaderMenu = () => {
           onClick={context.changeLanguage}
         >
           {context.language.ES}
-        </button>{' '}
+        </button>
         <button
           id={context.language.EN_ID}
           type="button"

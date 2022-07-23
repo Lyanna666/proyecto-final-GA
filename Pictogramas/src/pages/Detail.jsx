@@ -34,7 +34,7 @@ const Container = styled.div`
   padding: 1rem;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     flex-direction: column;
   }
 `;

@@ -128,7 +128,7 @@ const Aside = props => {
           className="aside__button"
           color="blue"
           name={context.language.ASIDE_LOGOUT}
-          size="large"
+          size="all"
           onClick={logout}
         />
       </div>

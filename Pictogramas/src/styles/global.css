@@ -42,6 +42,7 @@ a:hover,
 /* He puesto esto para que todas las listas por defecto salgan sin el circulito y en una linea */
 
 ul {
+  padding: 0;
   display: flex;
 }
 

@@ -198,6 +198,7 @@ export const FAVO_TITLE = 'Favoritos';
 // Error
 export const ERROR_TITLE = 'Ha ocurrido un error';
 export const ERROR_BUTTON_TEXT = 'Reintentar';
+export const ERROR_TEXT_USER = 'Introduzca un nombre de usuario temporal.';
 export const ERROR_LOGIN =
   'Esta funcionalidad todavía no está implementada en la versión actual de la aplicación.';
 

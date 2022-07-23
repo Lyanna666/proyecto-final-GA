@@ -195,6 +195,7 @@ export const ERROR_TITLE = 'An Error Has Occurred';
 export const ERROR_BUTTON_TEXT = 'Retry';
 export const ERROR_LOGIN =
   'This functionality is not implemented in this version of the app.';
+export const ERROR_TEXT_USER = 'Enter a user name.';
 
 // Boton mostrar mas fav ori t assembled os
 export const SHOW_MORE_FAVORITES = 'Show  more favorites';
