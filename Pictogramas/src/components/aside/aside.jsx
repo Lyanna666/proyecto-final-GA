@@ -3,16 +3,18 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CustomButton from '../../components/elements/customButton';
 import AppContext from '../../AppContext';
-
+import { useNavigate } from 'react-router-dom';
 import './aside.css';
 
 const Aside = props => {
   const context = useContext(AppContext);
+  const navigate = useNavigate();
 
   const logout = () => {
     localStorage.removeItem('user');
     window.dispatchEvent(new Event('storage'));
-    window.location.href = '/';
+    // window.location.href = '/';
+    navigate('./');
   };
 
   const iconsHeader = [

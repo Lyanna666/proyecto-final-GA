@@ -8,7 +8,6 @@ import CustomButton from '../elements/customButton';
 import AppContext from '../../AppContext';
 
 const Error = props => {
-  const context = useContext(AppContext);
   console.log(props);
 
   return (

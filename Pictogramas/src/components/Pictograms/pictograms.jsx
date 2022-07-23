@@ -42,10 +42,13 @@ const Pictograms = () => {
       });
   }
 
-  useEffect(() => {
-    // printJSON();
-    getAllPictograms();
-  }, []);
+  useEffect(
+    () => {
+      // printJSON();
+      getAllPictograms();
+    },
+    [context],
+  );
 
   // -------------- Búsqueda de pictogramas por categoría -----------------
   const onClickCategory = event => {

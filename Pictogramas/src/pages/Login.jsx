@@ -9,8 +9,10 @@ import CustomLink from '../components/elements/customLink';
 import Header from '../components/Header/header';
 import Footer from '../components/Footer/footer';
 import Error from '../components/Error/error';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   const context = useContext(AppContext);
   const [error, setError] = useState(false);
 
@@ -22,7 +24,8 @@ const Login = () => {
   const onClickContinue = event => {
     //Esto es temporal
     localStorage.setItem('user', 'user');
-    window.location.href = '/dashboard';
+    navigate('./dashboard');
+    // window.location.href = '/dashboard';
     // console.log('Aqui no entra');
   };
 

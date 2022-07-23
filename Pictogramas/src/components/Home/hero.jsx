@@ -5,8 +5,10 @@ import { useContext, useState, useEffect } from 'react';
 import AppContext from '../../AppContext';
 import CustomLink from '../elements/customLink';
 import CustomButton from '../elements/customButton';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = props => {
+  const navigate = useNavigate();
   const context = useContext(AppContext);
 
   // Estado para saber si el usuario ha iniciado sesion
@@ -24,8 +26,10 @@ const Hero = props => {
   const onClickContinue = event => {
     //Esto es temporal
     localStorage.setItem('user', 'user');
-    window.location.href = '/dashboard';
-    // console.log('Aqui no entra');
+    // window.location.href = '/dashboard#';
+    navigate('/dashboard');
+    // this.context.router.transitionTo('/dashboard');
+    console.log('Aqui no entra');
   };
 
   useEffect(() => {
@@ -61,6 +65,7 @@ const Hero = props => {
             />
             <div>
               <CustomButton
+                type="button"
                 name={context.language.HERO_NO_SIGNUP}
                 color="blue"
                 onClick={onClickContinue}
