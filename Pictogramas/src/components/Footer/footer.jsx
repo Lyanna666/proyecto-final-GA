@@ -12,20 +12,23 @@ const Footer = props => {
   const socialIcons = [
     {
       name: 'Facebook',
-      src: 'https://cdn-icons-png.flaticon.com/512/733/733547.png',
+      src:
+        'https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Facebook_svg-512.png',
     },
     {
       name: 'Twitter',
       src:
-        'https://cdn-icons.flaticon.com/png/512/3670/premium/3670151.png?token=exp=1658597021~hmac=8b2e62a481d517442ced87c24a8c512b',
+        'https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png',
     },
     {
       name: 'Instagram',
-      src: 'https://cdn-icons-png.flaticon.com/512/174/174855.png',
+      src:
+        'https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/600/Instagram_glyph_svg-512.png',
     },
     {
       name: 'Google',
-      src: 'https://cdn-icons-png.flaticon.com/512/281/281764.png',
+      src:
+        'https://cdn4.iconfinder.com/data/icons/picons-social/57/09-google-3-256.png',
     },
   ];
 
