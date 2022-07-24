@@ -59,7 +59,7 @@ export const FOOTER_CONTACT = 'Contacto';
 export const FOOTER_TERMS = 'Condiciones de servicio';
 export const FOOTER_PRIVACY = 'Política de privacidad';
 export const FOOTER_COPYRIGHT =
-  'Copyright © 2020 Pictogramas. Todos los derechos reservados. Diseñado por';
+  'Copyright © 2022 Pictogramas. Todos los derechos reservados. Diseñado por';
 export const FOOTER_MADE = 'Made with';
 
 export const FOOTER_TEAYUDA = 'TeAyuda';
